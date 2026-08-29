@@ -1,0 +1,98 @@
+:root {
+  /*Color */ 
+
+  --Slate-900: #1F314F;
+  --Slate-500: #68778D;
+  --Slate-300: #D5E1EF;
+  --White: #FFFFFF;
+
+  /*Typography */
+  
+  --font-heading: 'Outfit', sans-serif;
+  --font-heading-weight: 700 /*Bold */;
+  --font-heading-size: 22px;
+  --font-heading-line-height: 120%;
+  --font-heading-Letter-Spacing: 0px;
+
+  --font-body: 'Outfit', sans-serif;
+  --font-body-weight: 400 /*Regular*/;
+  --font-body-size: 15px;
+  --font-body-line-height: 140%;
+  --font-body-letter-spacing: 0.2px;
+
+  /*Space */
+
+  --Space-1: 16px;
+  --Space-2: 24px;
+  --Space-3: 40px;
+  
+  
+
+  background-color: var(--Slate-300);
+
+
+@media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 850px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  background-color: var(--White);
+  width: 320px;
+  height: 499px;
+  border-radius: 20px;
+  
+}
+
+.image {
+  width: 288px;
+  height: 288px;
+  margin-top: var(--Space-1);
+  margin-right: var(--Space-1);
+  margin-left: var(--Space-1);
+  margin-bottom: var(--Space-2);
+  border-radius: 10px;
+  
+}
+
+section {
+  margin-left: var(--Space-1);
+  margin-right: var(--Space-1);
+}
+
+h1 {
+  font-family: var(--font-heading);
+  font-size: var(--font-heading-size);
+  text-align: center;
+  line-height: var(--font-heading-line-height);
+  letter-spacing: var(--font-heading-Letter-Spacing); 
+  color: var(--Slate-900);
+  padding-right: var(--Space-1);
+  padding-left: var(--Space-1);
+  padding-top: 0px;
+  margin: 0px;
+
+}
+
+p {
+  font-family: var(--font-body);
+  font-size: var(--font-body-size);
+  line-height: var(--font-body-line-height);
+  text-align: center;
+  letter-spacing: var(--font-body-letter-spacing); 
+  color: var(--Slate-500);
+  padding-right: var(--Space-1);
+  padding-left: var(--Space-1);
+}
