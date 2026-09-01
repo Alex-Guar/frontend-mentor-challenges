@@ -1,0 +1,51 @@
+:root {
+  /* Colors */
+  --background-color-main: #F4D04E;
+  --background-color-card: #FFFFFF;
+
+  --color-text-1: #111111;
+  --color-text-2: #6B6B6B;
+
+  /* Typography */
+  --font-1: "Figtree Extra Bold";
+  --font-1-weight: 24px;
+  --font-1-line-height: 150%;
+  --font-1-letter-spacing: 0px;
+
+
+  --font-2: "Figtree Extra Medium";
+  --font-2-weight: 16px;
+  --font-2-line-height: 150%;
+  --font-2-letter-spacing: 0px;
+
+
+  --font-3: "Figtree Medium";
+  --font-3-weight: 14px;
+  --font-3-line-height: 150%;
+  --font-3-letter-spacing: 0px;
+
+  --font-4: "Figtree Medium";
+  --font-4-weight: 14px;
+  --font-4-line-height: 150%;
+  --font-4-letter-spacing: 0px;
+
+
+  /* Spacing */
+  
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 24px;
+
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+
+
+
+body {
+  background-color: var(--background-color-main);
+}
