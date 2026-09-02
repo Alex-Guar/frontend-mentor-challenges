@@ -37,15 +37,46 @@
   --space-3: 12px;
   --space-4: 24px;
 
+  /* Coorner Radius */ 
 
+  --radius-1: 20px;
+  --radius-2: 10px;
+  --radius-3: 4px;
+
+  /* Border */
+
+  --border-1: 1px;
   @media (max-width: 1024px) {
     font-size: 16px;
   }
 }
 
 
-
-
 body {
   background-color: var(--background-color-main);
+}
+
+.wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card{
+  display: flex;
+  flex-direction: column;
+  width: 384px;
+  height: 522px;
+  background-color: var(--background-color-card);
+
+  border-color: var(--color-text-1);
+  border-style: solid;
+  border-width: var(--border-1);
+  border-radius: var(--radius-1);
+  padding: var(--space-4);
+}
+
+.card-poster{
+  border-radius: var(--radius-2);
+  margin-bottom: var(--space-4);
 }
