@@ -46,9 +46,20 @@
   /* Border */
 
   --border-1: 1px;
-  @media (max-width: 1024px) {
+
+  /* family */
+
+
+@media (max-width: 1024px) {
     font-size: 16px;
   }
+}
+
+
+@font-face {
+    font-family: "Figtree";
+    src: url("./assets/fonts/Figtree-Italic-VariableFont_wght.ttf");
+    src: url("./assets/fonts/Figtree-VariableFont_wght.ttf");
 }
 
 
@@ -79,4 +90,16 @@ body {
 .card-poster{
   border-radius: var(--radius-2);
   margin-bottom: var(--space-4);
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-status{
+  background-color: var(--background-color-main);
+  font-family:  "Figtree";
+  font-size: 14px;
+  font-weight: bold;
 }
