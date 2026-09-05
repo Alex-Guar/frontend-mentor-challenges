@@ -91,6 +91,9 @@ body {
   padding: var(--space-4);
   margin-top: 219px;
   margin-bottom: 219px;
+  box-shadow: var(--space-2) var(--space-2) 0 var(--color-text-1);
+
+  transition: box-shadow 1.5s 100ms;
 }
 
 .card-poster{
@@ -139,8 +142,10 @@ body {
   font-weight: var(--font-1-bold);
   line-height: var(--font-1-line-height);
   letter-spacing: var(--font-1-letter-spacing);
+  color: var(--color-text-1);
   margin-top: 0px;
   margin-bottom: var(--space-2);
+  transition: color 1.5s 90ms;
 }
 
 .card-detail-description {
@@ -177,4 +182,13 @@ body {
   text-align: start;
   margin-left: var(--space-3);
   vertical-align: top;
+}
+
+/* Interaction */
+
+.card:hover { 
+  box-shadow: var(--space-3) var(--space-3) 0 var(--color-text-1);
+  .card-detail-h1 {
+    color: var(--background-color-main);
+  }
 }
