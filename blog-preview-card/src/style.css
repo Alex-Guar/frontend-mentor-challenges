@@ -88,7 +88,6 @@ body {
   border-style: solid;
   border-width: var(--border-1);
   border-radius: var(--radius-1);
-  padding: var(--space-4);
   margin-top: 219px;
   margin-bottom: 219px;
   box-shadow: var(--space-2) var(--space-2) 0 var(--color-text-1);
@@ -98,12 +97,16 @@ body {
 
 .card-poster{
   border-radius: var(--radius-2);
+  margin-top: var(--space-4);
   margin-bottom: var(--space-4);
+  margin-left: var(--space-4);
+  margin-right: var(--space-4);
 }
 
 .card-info {
   display: flex;
   flex-direction: column;
+  margin-left: var(--space-4);
 }
 
 .card-status{
@@ -134,6 +137,8 @@ body {
 .card-details {
   display: flex;
   flex-direction: column;
+  margin-left: var(--space-4);
+
 }
 
 .card-detail-h1 {
@@ -166,6 +171,7 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin-left: var(--space-4);
 } 
 
 .card-by-avatar{
