@@ -28,9 +28,139 @@
   --space-3: 30px;  /* p */
   --space-4: 10px;
   --space-5: 15px;
-
+ 
+  background-color: var(--Stone-100);
+  font-family: "Outfit", sans-serif;
   @media (max-width: 1024px) {
     font-size: 16px;
   }
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+article {
+  width:var(--width-card);
+  height: var(--height-card);
+  border-radius: 32px;
+  background-color: var(--White);
+  
+
+}
+
+header, article > section{
+  margin-right: var(--space-padding-left);
+  margin-top: var(--space-padding-top);
+  margin-left: var(--space-padding-left);
+
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}
+
+.title {
+  font-family: "Young Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 40px;
+
+  color: var(--Stone-900);
+}
+
+p{
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: var(--font-weight-0);
+  font-style: normal;
+  
+  color: var(--Stone-600);
+}
+
+.info-preparation {
+  padding-top: 10px;
+  padding-left: 30px;
+  padding-bottom: 10px;
+
+  background-color: var(--Rose-50);
+}
+
+.info-p-h, .info-list, li{
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+
+  color: var(--Stone-600);
+}
+
+.info-p-h {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--Rose-800);
+}
+ /* list style */
+.info-list, section > ul, ol{
+  padding-left: 22px;
+  list-style-position: outside;
+}
+
+.info-list-i, li{
+  padding-bottom: 10px;
+  padding-left: 12px;
+}
+
+ol > li::marker{
+
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: var(--font-weight-2);
+  color: var(--Brown-800);
+}
+
+/* h secction */
+article > section > h2 {
+  font-size: 32px;
+  font-weight: var(--font-weight-2);
+  color: var(--Brown-800);
+}
+
+hr {
+  opacity: 20%;
+}
+
+ /* style table */
+
+table {
+  width: 100%;
+  height: 100%;
+}
+
+th, td {
+  text-align: left;
+  border-top: 0px;
+  border-left: 0px;
+  border-bottom: 1px;
+  border-right: 0px;
+  border-style: solid;
+  border-color: var(--Stone-150);
+}
+
+th {
+  padding-top: 10px;
+  padding-left: 30px;
+  padding-right: 0px;
+  padding-bottom: 10px;
+  color: var(--Stone-600);
+  font-weight: var(--font-weight-0);
+}
+
+td {
+  padding-right: 30px;
+  color: var(--Brown-800);
+}
