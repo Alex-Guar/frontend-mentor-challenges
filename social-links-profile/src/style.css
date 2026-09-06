@@ -33,9 +33,6 @@
   font-family: "Inter", sans-serif;
   color: var(--White);
 
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
 }
 
 .wrapper{
