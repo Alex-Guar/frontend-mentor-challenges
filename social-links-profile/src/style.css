@@ -52,6 +52,8 @@ article {
 
   background-color: var(--Grey-800);
   border-radius: var(--border-radius);
+  margin-top: 180px;
+  margin-bottom: 180px;
 }
 
 
