@@ -1,0 +1,130 @@
+:root{
+
+  /* colors */
+
+  --Green: hsl(75, 94%, 57%);
+  --White: hsl(0, 0%, 100%);
+  --Grey-700: hsl(0, 0%, 20%);
+  --Grey-800: hsl(0, 0%, 12%);
+  --Grey-900: hsl(0, 0%, 8%);
+
+  /* font */
+
+  --font-size-p: 14px;
+  --font-size-h1: 25px;
+  --font-size-h2: 15px;
+
+  --font-weight-1: 400;
+  --font-weight-2: 600;
+  --font-weight-3: 700;
+
+  --font-weight-4: 200;
+  
+  --border-radius: 10px;
+
+  /* space */
+  --space-1: 35px;
+  --space-2: 10px;
+  
+
+
+  /* first steps */
+  background-color: var(--Grey-900);
+  font-family: "Inter", sans-serif;
+  color: var(--White);
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  width: 383px;
+  height: 610px;
+
+  background-color: var(--Grey-800);
+  border-radius: var(--border-radius);
+}
+
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: var(--space-1);
+}
+
+.photo {
+  border-radius: 50%;
+  width: 87px;
+  height: 87px; 
+  margin-bottom: var(--space-1);
+}
+
+.name {
+  margin: 0;
+  padding: 0;
+
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-2);
+}
+
+.country{
+  margin-top: var(--space-2);
+  font-size: var(--font-size-h2); 
+  font-weight: var(--font-weight-2);
+
+  color: var(--Green);
+}
+
+.pharse {
+  font-weight: var(--font-weight-4);
+  font-size:var(--font-size-h2);
+  color: var(--White);
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+
+  margin-top: 0;
+  margin-left: var(--space-1);
+  margin-right: var(--space-1);
+}
+
+.link {
+  list-style-type: none;
+  background-color: var(--Grey-700);
+  font-weight: var(--font-weight-2);
+  font-size: 15px;
+
+  text-align: center;
+  margin-bottom: 14px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 18px;
+  padding-right: 18px;
+  border-radius: 10px;
+  border-width: 0;
+  color: var(--White);
+ transition: background-color 1s 50ms; 
+ transition: color 0s 20ms; 
+
+}
+
+
+/* interaction */
+
+.link:hover {
+  background-color: var(--Green);
+  color: var(--Grey-900);
+}
