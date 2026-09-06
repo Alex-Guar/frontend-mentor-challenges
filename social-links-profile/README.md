@@ -26,8 +26,8 @@ This is a solution to the [QR code component challenge on Frontend Mentor](https
 
 ### Links
 
-* Solution URL: [Add solution URL here](https://github.com/Alex-Guar/frontend-mentor-challenges/tree/main/blog-preview-card/)
-* Live Site URL: [Add live site URL here](https://alex-guar.github.io/frontend-mentor-challenges/blog-preview-card/)
+* Solution URL: [link](https://github.com/Alex-Guar/frontend-mentor-challenges/tree/main/social-links-profile/)
+* Live Site URL: [link](https://alex-guar.github.io/frontend-mentor-challenges/social-links-profile/)
 
 ## My process
 
