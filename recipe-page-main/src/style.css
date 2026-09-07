@@ -14,14 +14,14 @@
 
   /* font */
 
-  --font-size: 16px;
+  --font-size: 1 rem;
   --font-weight-0: 400;
   --font-weight-1: 500;
   --font-weight-2: 700;
 
   /* space */
-  --width-card: 736px;
-  --height-card:1711px;
+  --width-card: 46rem; /* 736 */
+  --height-card:106.938rem;/*1711*/
 
   --space-padding-left: 40px;  /* h1 */
   --space-padding-top: 40px;
@@ -31,7 +31,8 @@
  
   background-color: var(--Stone-100);
   font-family: "Outfit", sans-serif;
-  @media (max-width: 1024px) {
+
+@media (min-width: 375px) {
     font-size: 16px;
   }
 }
@@ -40,35 +41,44 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 0;
+  border: 0;
+  margin: 0;
+}
+
+body {
+  margin: 0;
 }
 
 article {
   width:var(--width-card);
   height: var(--height-card);
+  margin-block-start: 60px;
+  margin-block-end: 32px ;
   border-radius: 32px;
   background-color: var(--White);
-  
+
 
 }
 
 header, article > section{
-  margin-right: var(--space-padding-left);
-  margin-top: var(--space-padding-top);
-  margin-left: var(--space-padding-left);
-
+  margin-inline-end: var(--space-padding-left);
+  margin-block-start: var(--space-padding-top);
+  margin-inline-start: var(--space-padding-left);
 }
 
 .image {
-  width: 100%;
-  height: 100%;
-  border-radius: 12px;
+  inline-size: 100%;
+  block-size: 100%;
+  border-radius: 15px;
+  max-width: 100%;
 }
 
 .title {
   font-family: "Young Serif", serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 40px;
+  font-size: 2.5em;
 
   color: var(--Stone-900);
 }
@@ -83,9 +93,9 @@ p{
 }
 
 .info-preparation {
-  padding-top: 10px;
-  padding-left: 30px;
-  padding-bottom: 10px;
+  padding-block-start: clamp(8px, 50%, 10px);
+  padding-inline-start: 30px;
+  padding-block-end: 10px;
 
   background-color: var(--Rose-50);
 }
@@ -99,7 +109,7 @@ p{
 }
 
 .info-p-h {
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 600;
   color: var(--Rose-800);
 }
@@ -125,8 +135,10 @@ ol > li::marker{
 
 /* h secction */
 article > section > h2 {
-  font-size: 32px;
-  font-weight: var(--font-weight-2);
+  font-family: "Young Serif", serif;
+  font-style: normal;
+  font-size: 2rem;
+  font-weight: var(--font-weight-0);
   color: var(--Brown-800);
 }
 
@@ -137,30 +149,77 @@ hr {
  /* style table */
 
 table {
-  width: 100%;
-  height: 100%;
+  inline-size: 100%;
+  block-size: 100%;
 }
 
 th, td {
   text-align: left;
-  border-top: 0px;
-  border-left: 0px;
-  border-bottom: 1px;
-  border-right: 0px;
+  border-block-start: 0px;
+  border-inline-start: 0px;
+  border-block-end: 1px;
+  border-inline-end: 0px;
   border-style: solid;
   border-color: var(--Stone-150);
 }
 
 th {
-  padding-top: 10px;
-  padding-left: 30px;
-  padding-right: 0px;
-  padding-bottom: 10px;
+  padding-block-start: 10px;
+  padding-inline-start: 30px;
+  padding-inline-end: 0px;
+  padding-block-end: 10px;
   color: var(--Stone-600);
   font-weight: var(--font-weight-0);
 }
 
 td {
-  padding-right: 30px;
+  padding-inline-end: 30px;
   color: var(--Brown-800);
+}
+
+
+/* responsible */
+
+@media screen and (width <=  28rem) {
+
+  :root {
+    background-color: var(--White);
+  }
+
+  main {
+    align-items: stretch;
+  }
+
+  .image {
+    border-radius: 0rem;
+    padding-block: 0;
+    padding-inline: 0;
+    margin-inline: 0;
+    margin-block: 0;
+  }
+
+  header {
+    margin-inline: 0;
+    margin-block: 0;
+  }
+
+  .title {
+    font-size: 2.1rem;
+ }
+
+  header h1, header p, header section  {
+    margin-inline-end: var(--space-padding-left);
+    margin-block-start: var(--space-padding-top);
+    margin-inline-start: var(--space-padding-left);
+  }
+
+  article {
+    margin-inline: 0;
+    margin-block: 0;
+    padding-block: 0;
+    padding-inline: 0;
+    border-radius: 0;
+    inline-size: 100%;
+    block-size: 100%;
+  }
 }
