@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>product-preview-card-component</title>
   </head>
@@ -10,8 +10,16 @@
     <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
     <main> 
-      <div>
-        <h1> Hola Word </h1>
+      <div class="card">
+        <img class="card__portada" alt="Perfume with plants" src="./src/assets/image-product-desktop.jpg"
+        <h1 class="card__title">Gabrielle Essence Eau De Parfum</h1>
+        <h2 class="card__subtitle">PERFUME</h2>
+        <p class="card__description">A flor, solar and vouptuos interpretation
+        composed by Oliver Polge, Perfumer-Creator
+          for the House of CHANEL.</p> 
+        <p class="card__price card__price--available">149.99</p>
+        <p class="card__price card__price--disable">$169.00</p>
+        <button class="card__button">Add to Cart</button>
       </div>
     </main>
   </body>

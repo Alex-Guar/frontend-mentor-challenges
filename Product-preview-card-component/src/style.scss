@@ -1,23 +1,31 @@
-:root {
-  margin-block: 0;
-}
 
-div, main, body {
+main, body {
   border-block: 0;
   border-inline: 0;
   padding-inline: 0;
   padding-block: 0;
-  display: grid;
-}
-
-
-h1 {
-  background-color: green;
-  border-inline: 0;
-  border-block: 0;
   margin-inline: 0;
   margin-block: 0;
-  padding-block: 0;
-  padding-inline: 0;
-  font-size: 100%;
+}
+
+
+.card {
+  display: grid;
+  grid-template-columns:  2fr 1fr;
+  grid-template-rows: repeat(7,1fr);
+  gap: 0px 0px;
+}
+
+.card__portada {
+  grid-column-start: 1;
+  grid-column-end: 2 ;
+  grid-row-start: 1;
+  grid-row-end: 8;
+}
+
+card__title {
+  grid-column-start: 2;
+  grid-column-end: 3 ;
+  grid-row-start: 1;
+  grid-column-end: 2;
 }
