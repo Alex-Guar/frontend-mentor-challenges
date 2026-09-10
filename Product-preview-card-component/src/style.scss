@@ -1,4 +1,31 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
+
+  
+/* @link https://utopia.fyi/type/calculator?c=360,7,1.618,1240,33,1.26,1,4,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,2xs,xl,3 */
+
+:root {
+  --step--4: clamp(0.0638rem, -0.2448rem + 1.3718vw, 0.8183rem);
+  --step--3: clamp(0.1033rem, -0.2763rem + 1.6869vw, 1.0311rem);
+  --step--2: clamp(0.1671rem, -0.296rem + 2.0582vw, 1.2991rem);
+  --step--1: clamp(0.2704rem, -0.2886rem + 2.4846vw, 1.6369rem);
+  --step-0: clamp(0.4375rem, -0.2273rem + 2.9545vw, 2.0625rem);
+  --step-1: clamp(0.7079rem, -0.0657rem + 3.438vw, 2.5988rem);
+}
+
+$font-montserrat-weight-medium: 500;
+$font-montserrat-weight-bold: 700;
+$font-frances-weight-bold: 700;
+:root {
+  --grid-max-width: 37.50rem;
+  --grid-gutter: var(--space-3xs-m, clamp(0.3125rem, -2.0312rem + 10.4167vw, 1.875rem));
+  --grid-columns: 3;
+
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+
+}
 main, body {
   border-block: 0;
   border-inline: 0;
@@ -11,21 +38,108 @@ main, body {
 
 .card {
   display: grid;
-  grid-template-columns:  2fr 1fr;
-  grid-template-rows: repeat(7,1fr);
-  gap: 0px 0px;
+  grid-template-columns:  2fr 1fr 1fr;
+  grid-template-rows:  0.1fr  0.3fr 0.2fr 0.3fr 0.1fr;
+  margin-inline: auto;
+  margin-block: 5%;
+
+  inline-size: min(100%, var(--grid-max-width));
+  
+  border-radius: 12px;
+  border-color: black;
+  border-style: solid;
+
 }
 
 .card__portada {
   grid-column-start: 1;
   grid-column-end: 2 ;
   grid-row-start: 1;
-  grid-row-end: 8;
+  grid-row-end: 6;
+  inline-size: 100%;
+  block-size: 100%;
 }
 
-card__title {
+.card__subtitle {
   grid-column-start: 2;
-  grid-column-end: 3 ;
+  grid-column-end: 4 ;
   grid-row-start: 1;
-  grid-column-end: 2;
+  grid-row-end: 2;
+
+  font-weight: $font-montserrat-weight-medium;
+
+  padding-block: 0;
+  padding-inline: 0;
+  margin-block: 0;
+  margin-inline: 0;
+
+
+  font-size: var(--step--3);
+}
+
+.card__title {
+  grid-column-start: 2;
+  grid-column-end: 4 ;
+  grid-row-start: 2;
+  grid-row-end: 3;
+
+  font-family: "Fraunces", serif;
+  font-optical-sizing: auto;
+  font-size: var(--step-0);
+
+  padding-block: 0;
+  padding-inline: 0;
+  margin-block: 0;
+  margin-inline: 0;
+}
+
+.card__description {
+  grid-column-start: 2;
+  grid-column-end: 4 ;
+  grid-row-start: 3;
+  grid-row-end: 4;
+
+  font-size: var(--step--4);
+  padding-block: 0;
+  padding-inline: 0;
+  margin-block: 0;
+  margin-inline: 0;
+}
+
+.card__price--available{
+  grid-column: 2 / 3;
+  grid-row: 4 / 5;
+
+
+  font-family: "Fraunces", serif;
+  font-optical-sizing: auto;
+
+  padding-block: 0;
+  padding-inline: 0;
+  margin-block: 0;
+  margin-inline: 0;
+}
+
+.card__price--disable{
+  grid-column: 3 / 4;
+  grid-row: 4 / 5;
+
+
+  font-family: "Fraunces", serif;
+  font-optical-sizing: auto;
+
+  padding-block: 0;
+  padding-inline: 0;
+  margin-block: 0;
+  margin-inline: 0;
+}
+
+.card__button {
+  grid-column: 2 / 4;
+  grid-row: 5 / 6 ;
+
+  padding-block: 0;
+  padding-inline: 0;
+  margin-block: 0;
+  margin-inline: 0;
 }
