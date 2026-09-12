@@ -88,8 +88,6 @@ main, body {
       padding: var(--grid-gutter);
   }
 
-
-
   &__portada {
     grid-column-start: 1;
     grid-column-end: 2 ;
@@ -98,8 +96,6 @@ main, body {
     background-size: cover;
 
   }
-
-
 
   &__subtitle {
     order: 1;
@@ -189,7 +185,13 @@ main, body {
     border-block: 0px;
     border-radius: 5px;
     background-color:$color-Green-emphasis-500;
+
+    &:hover {
+      background-color: $color-Green-emphasis-700;
+      cursor: url("./assets/icons8-hand-cursor-30.png"),pointer;
+    }
   }
+
 }
 
 .button__image {
