@@ -10,20 +10,31 @@
     <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
     <main> 
-      <div class="containar">
+      <div class="container">
         <div class="card">
-          <img class="card__portada" alt="Perfume with plants" src="./src/assets/image-product-desktop.jpg" />
+          <picture>
+            <source 
+              media="(width <= 27em)"
+              srcset="./src/assets/image-product-mobile.jpg" />
+            <img 
+              class="card__portada" 
+              alt="Perfume with plants" 
+              src="./src/assets/image-product-desktop.jpg" />
+          </picture>
           <div class="card__content">
             <h1 class="card__title">Gabrielle Essence Eau De Parfum</h1>
             <h2 class="card__subtitle">PERFUME</h2>
-            <p class="card__description">A flor, solar and vouptuos interpretation
+            <p class="card__description">A floral, solar and vouptuos interpretation
             composed by Oliver Polge, Perfumer-Creator
               for the House of CHANEL.</p> 
             <div class="card__price">
               <p class="card__price--available">$149.99</p>
               <p class="card__price--disable">$169.00</p>
             </div>
-            <button class="card__button">Add to Cart</button>
+            <button type="button" class="card__button">
+              <img  class="button__image" src="src/assets/icon-cart.svg" />
+              <span class="button__text">Add to Cart</span >
+            </button>
           </div>
         </div>
       </div>
