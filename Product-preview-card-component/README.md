@@ -26,8 +26,8 @@ This is a solution to the [QR code component challenge on Frontend Mentor](https
 
 ### Links
 
-* Solution URL: [link](https://github.com/Alex-Guar/frontend-mentor-challenges/tree/main/recipe-page-main/)
-* Live Site URL: [link](https://alex-guar.github.io/frontend-mentor-challenges/recipe-page-main/)
+* Solution URL: [link](https://github.com/Alex-Guar/frontend-mentor-challenges/tree/main/Product-preview-card-component/)
+* Live Site URL: [link](https://alex-guar.github.io/frontend-mentor-challenges/Product-preview-card-component/)
 
 ## My process
 
