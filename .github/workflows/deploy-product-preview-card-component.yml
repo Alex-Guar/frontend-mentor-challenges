@@ -4,7 +4,7 @@ on:
   push:
     branches: ['main']
     paths:
-      - 'social-links-profile/**'
+      - 'Product-preview-card-component/**'
   workflow_dispatch:
 
 permissions:
