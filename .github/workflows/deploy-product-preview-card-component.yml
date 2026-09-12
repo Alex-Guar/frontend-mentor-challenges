@@ -1,4 +1,4 @@
-name: Deploy social-links-profile to Pages
+name: Deploy Product-preview-card-component to Pages
 
 on:
   push:
@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory:  Product-preview-card-component  
+        working-directory: Product-preview-card-component
     steps:
       - name: Checkout
         uses: actions/checkout@v4
