@@ -1,0 +1,178 @@
+
+
+/* @link https://utopia.fyi/grid/calculator?c=425,13,1.2,1440,14,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6|8|11|15|20|20,s-l&g=s,m,8xl,3 */
+
+
+
+
+:root {
+  --grid-max-width: 64.75rem;
+  --grid-gutter: var(--space-s-l, clamp(0.8125rem, 0.1604rem + 2.455vw, 1.75rem));
+  --grid-columns: 3;
+
+  /* Colors*/
+  /* Primary */
+  --color-Red: hsl(0, 78%, 62%);
+  --color-Cyan: hsl(180, 62%, 55%);
+  --color-Orange: hsl(34, 97%, 64%);
+  --color-Blue: hsl(212, 86%, 64%);
+  /*Color Neutroal */
+  --color-Grey-500: hsl(234, 12%, 34%);
+  --color-Grey-400: hsl(212, 6%, 44%);
+  --color-White: hsl(0, 0%, 100%);
+
+  font-family: "Poppins", sans-serif;
+
+  /* weights */
+  --Weight-1: 200;
+  --Weight-2: 400;
+  --Weight-3: 600;
+
+  --step--2: clamp(0.56rem, 0.566rem + -0.0067cqi, 0.5642rem);
+  --step--1: clamp(0.6771rem, 0.6675rem + 0.0361cqi, 0.7rem);
+  --step-0: clamp(0.8125rem, 0.7863rem + 0.0985cqi, 0.875rem);
+  --step-1: clamp(0.975rem, 0.9253rem + 0.1872cqi, 1.0938rem);
+  --step-2: clamp(1.17rem, 1.0874rem + 0.3108cqi, 1.3672rem);
+  --step-3: clamp(1.404rem, 1.2763rem + 0.4808cqi, 1.709rem);
+  --step-4: clamp(1.6848rem, 1.4958rem + 0.7116cqi, 2.1362rem);
+  --step-5: clamp(2.0218rem, 1.7502rem + 1.0223cqi, 2.6703rem);
+  --step-6: clamp(2.4261rem, 2.0443rem + 1.4372cqi, 3.3379rem);
+  --step-7: clamp(2.9113rem, 2.3833rem + 1.9878cqi, 4.1723rem);
+
+  --space-s-m: clamp(0.8125rem, 0.6031rem + 0.7882cqi, 1.3125rem);
+  --space-2xs-xs: clamp(0.5rem, 0.4477rem + 0.197cqi, 0.625rem);
+}
+
+main,body {
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin-block: 8%;
+  text-align: center;
+}
+.header__title {
+  color: var(--color-Grey-500);
+  font-weight: var(--Weight-3);
+  font-size: var(--step-4);
+  width: 100%;
+  max-width: clamp(20rem, 15rem + 15cqi, 25.625rem);
+  }
+
+h1::first-line{
+  color: var(--color-Grey-500);
+  font-weight: var(--Weight-1);
+}
+.header__describe {
+  font-size: var(--step-0);
+  color: var(--color-Grey-500);
+  width: 100%;
+  max-width: clamp(20rem, 15.7386rem + 21.3068cqi, 29.375rem);
+}
+
+.container{
+  box-sizing: border-box;
+  margin-block: 5%;
+  margin-inline: auto;
+  padding-inline: var(--grid-gutter);
+  max-width: var(--grid-max-width);
+  margin-block-end:10% ;
+  container-type: inline-size;
+  container-name: card-container;
+}
+
+.layout {
+  display: grid;
+  gap: var(--grid-gutter);
+
+}
+
+.layout > .layout__card {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  border-block-start-width: 3px; 
+  border-block-start-style: solid;
+
+  container-type: inline-size;
+  background-color: var(--color-White);
+
+  box-shadow: 0px 8px 10px  hsl(234, 12%, 84%);
+  border-radius: 4px;
+  gap: var(--space-2xs-xs);
+  box-sizing: border-box;
+  padding: clamp(1.25rem, 1.0406rem + 0.7882cqi, 1.75rem);
+}
+
+.layout__image {
+  width: 62px;
+  align-self: end;
+  margin-block: clamp(1.25rem, 1.2238rem + 0.0985cqi, 1.3125rem);
+}
+
+.layout__card__title {
+  font-size: var(--step-2);
+  font-weight:var(--Weight-3) ;
+  color: var(--color-Grey-500);
+
+}
+
+.layout__card__description {
+  font-size: var(--step-0);
+  color: var(--color-Grey-400);
+  box-sizing: border-box;
+  max-width: clamp(14.375rem, 7.5568rem + 34.0909cqi, 29.375rem);
+}
+
+.layout__card__title,
+.layout__card__description
+{
+  margin-inline: 0;
+  margin-block: 0;
+}
+
+.layout__card-team {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  border-block-start-color: var(--color-Red);
+}
+.layout__card-supervisor {
+  grid-column: 1/ 2;
+  grid-row: 1/ span 2;
+  align-self: center;
+  border-block-start-color: var(--color-Cyan);
+}
+.layout__card-Karma {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  border-block-start-color: var(--color-Orange);
+}
+.layout__card-calculator {
+  grid-column: 3/4;
+  grid-row: 1/ span 2;
+  align-self: center;
+
+  border-block-start-color: var(--color-Blue);
+}
+
+
+/* responsive */
+@media (width <= 26.5625em) {
+.layout {
+    display: flex;
+    flex-direction: column;
+  }
+.layout__card-supervisor {
+  align-self: auto;
+}
+.layout__card-calculator {
+    align-self: auto;
+  }
+}
+
+
