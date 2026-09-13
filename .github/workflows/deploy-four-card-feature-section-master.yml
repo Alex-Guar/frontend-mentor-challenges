@@ -45,5 +45,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./four-card-feature-section-master/dist
-          destination_dir: /four-card-feature-section-master 
+          destination_dir: four-card-feature-section-master 
           keep_files: true
