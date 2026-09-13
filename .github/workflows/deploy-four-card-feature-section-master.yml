@@ -20,7 +20,7 @@ jobs:
     defaults:
       run:
         working-directory: four-card-feature-section-master
-        steps:
+    steps:
       - name: Checkout
         uses: actions/checkout@v4
 
