@@ -1,6 +1,5 @@
-# Frontend Mentor - Testimonail grid section 
-
-This is a solution to the testimonial grids section 
+# Frontend Mentor - QR code component solution
+ Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
@@ -11,7 +10,6 @@ This is a solution to the testimonial grids section
 * [My process](#my-process)
 
   * [Built with](#built-with)
-  * [What I learned](#what-i-learned)
 * [Author](#author)
 
 
@@ -26,21 +24,16 @@ This is a solution to the testimonial grids section
 
 ### Links
 
-* Solution URL: [Add solution URL here](https://github.com/Alex-Guar/frontend-mentor-challenges/tree/main/testimonials-grid-section/)
-* Live Site URL: [Add live site URL here](https://alex-guar.github.io/frontend-mentor-challenges/testimonials-grid-section/)
+* Solution URL: [link](https://github.com/Alex-Guar/frontend-mentor-challenges/tree/main/four-card-feature-section-master/)
+* Live Site URL: [link](https://alex-guar.github.io/frontend-mentor-challenges/four-card-feature-section-master/)
 
 ## My process
 
 ### Built with
 
-* Vite
 * Semantic HTML5 markup
 * CSS custom properties
-* Grid
 * Flexbox
-* Animatios
-    -Keyframes
-    -view()
 
 The organization of this project is this:
 
@@ -52,10 +45,8 @@ The CSS has three parts:
 
 2. It has the style of the page.
 
-3. It has the interaction and animations.
 
 Every part has a comment.
-### What I learned
 
 
 

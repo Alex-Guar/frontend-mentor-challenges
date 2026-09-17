@@ -118,7 +118,7 @@ html {
 
   animation-name: slide-in-jeanette;
   animation-timeline: view();
-  animation-range: entry 10% exit -25%;
+  animation-range: entry exit -95%;
 }
 
 .testimonial__case-jeanette .testimonial__personalinformation--container,
@@ -135,7 +135,7 @@ html {
 
   animation-name: slide-in-patrick;
   animation-timeline: view();
-  animation-range: entry 10% exit -25%;
+  animation-range: entry  exit -95%;
 }
 
 
