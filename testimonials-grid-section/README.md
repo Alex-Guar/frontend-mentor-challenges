@@ -1,4 +1,4 @@
-# Frontend Mentor - QR code component solution
+# Frontend Mentor - testimonials-grid-section 
  Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
@@ -24,8 +24,8 @@
 
 ### Links
 
-* Solution URL: [link](https://github.com/Alex-Guar/frontend-mentor-challenges/tree/main/four-card-feature-section-master/)
-* Live Site URL: [link](https://alex-guar.github.io/frontend-mentor-challenges/four-card-feature-section-master/)
+* Solution URL: [link](https://github.com/Alex-Guar/frontend-mentor-challenges/tree/main/testimonials-grid-section/)
+* Live Site URL: [link](https://alex-guar.github.io/frontend-mentor-challenges/testimonials-grid-section/)
 
 ## My process
 

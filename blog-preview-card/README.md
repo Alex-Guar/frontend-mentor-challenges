@@ -1,4 +1,4 @@
-# Frontend Mentor - Testimonail grid section 
+# Frontend Mentor - blog-preview-card 
 
 This is a solution to the testimonial grids section 
 
@@ -26,8 +26,8 @@ This is a solution to the testimonial grids section
 
 ### Links
 
-* Solution URL: [Add solution URL here](https://github.com/Alex-Guar/frontend-mentor-challenges/tree/main/testimonials-grid-section/)
-* Live Site URL: [Add live site URL here](https://alex-guar.github.io/frontend-mentor-challenges/testimonials-grid-section/)
+* Solution URL: [Add solution URL here](https://github.com/Alex-Guar/frontend-mentor-challenges/tree/main/blog-preview-card/)
+* Live Site URL: [Add live site URL here](https://alex-guar.github.io/frontend-mentor-challenges/blog-preview-card/)
 
 ## My process
 
