@@ -45,5 +45,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./testimonials-grid-section/dist
-          destination_dir: testimonials-grid-sectiotestimonials-grid-sectionn 
+          destination_dir: testimonials-grid-section 
           keep_files: true
