@@ -8,16 +8,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="/frontend-mentor-challenges/article-preview-component/assets/index-DBvmDPdG.js"></script>
+    <script type="module" crossorigin src="/frontend-mentor-challenges/article-preview-component/assets/index-C9ZbaRPx.js"></script>
     <link rel="stylesheet" crossorigin href="/frontend-mentor-challenges/article-preview-component/assets/index-CWdVaQZS.css">
   </head>
   <body>
     <div id="app"></div>
-
+    <main>
     <div class="card__container"> 
       <!-- first child -->
       <div class="card__wrapper"> 
-        <div class="c__portada_container">
+        <div role="image font" class="c__portada_container">
           <img class="c__portada" src="/frontend-mentor-challenges/article-preview-component/assets/drawers-Dp_c42v-.jpg" alt="Furniture drawers" />
         </div>
 
@@ -42,7 +42,7 @@
               <p class="c__byline_time"> <time datetime="2020-07-28">28 Jul 2020</time> </p>
             </div>
 
-            <button class="c__byline-wrapper-button-share">
+            <button type="button" aria-label="share content" class="c__byline-wrapper-button-share">
               <!-- logo Bottom -->
               <svg 
                 class="c__byline-button-logo"
@@ -101,5 +101,6 @@
       <!-- close card__wrapper -->
     </div> 
     <!-- end card__container -->
+    </main>
   </body>
 </html>
