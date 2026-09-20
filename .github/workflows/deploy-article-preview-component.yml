@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: testimonials-grid-section
+        working-directory:  article-preview-component 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
