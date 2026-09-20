@@ -4,7 +4,7 @@ const barShareContent = document.querySelector('.c__container-socialshare');
 
 
 
-
+console.log(barShareContent.style.display);
 button.addEventListener('click', activeBarShareOptions); 
 
 function activeBarShareOptions() {

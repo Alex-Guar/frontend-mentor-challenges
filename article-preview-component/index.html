@@ -12,11 +12,11 @@
   <body>
     <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
-
+    <main>
     <div class="card__container"> 
       <!-- first child -->
       <div class="card__wrapper"> 
-        <div class="c__portada_container">
+        <div role="image font" class="c__portada_container">
           <img class="c__portada" src="./src/assets/drawers.jpg" alt="Furniture drawers" />
         </div>
 
@@ -41,7 +41,7 @@
               <p class="c__byline_time"> <time datetime="2020-07-28">28 Jul 2020</time> </p>
             </div>
 
-            <button class="c__byline-wrapper-button-share">
+            <button type="button" aria-label="share content" class="c__byline-wrapper-button-share">
               <!-- logo Bottom -->
               <svg 
                 class="c__byline-button-logo"
@@ -100,5 +100,6 @@
       <!-- close card__wrapper -->
     </div> 
     <!-- end card__container -->
+    </main>
   </body>
 </html>
