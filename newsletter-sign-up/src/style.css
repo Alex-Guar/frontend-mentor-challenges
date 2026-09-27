@@ -1,0 +1,187 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* @link https://utopia.fyi/space/calculator?c=360,14,1.2,1440,16,1.25,6,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+:root{
+
+  --color-Red: hsl(4, 100%, 67%);
+  --color-Blue-800: hsl(234, 29%, 20%);
+  --color-Blue-700: hsl(235, 18%, 26%);
+  --color-Grey: hsl(0, 0%,58%);
+  --color-White: hsl(0, 0%, 100%);
+
+  --weight-normal: 400;
+  --weight-bold: 700;
+
+  --step-5: clamp(2.1773rem, 1.8858rem + 1.2955vw, 3.0518rem);
+  --step-1: clamp(1.05rem, 0.9833rem + 0.2963vw, 1.25rem);
+  --step-0: clamp(0.875rem, 0.8333rem + 0.1852vw, 1rem);
+
+  --space-s: clamp(0.875rem, 0.8333rem + 0.1852vw, 1rem);
+  --space-m: clamp(1.3125rem, 1.25rem + 0.2778vw, 1.5rem);
+  --space-xs: clamp(0.6875rem, 0.6667rem + 0.0926vw, 0.75rem);
+  --space-2xl: clamp(3.5rem, 3.3333rem + 0.7407vw, 4rem);
+  --space-3xl: clamp(5.25rem, 5rem + 1.1111vw, 6rem);
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  background-color:var(--color-Blue-800);
+}
+
+main {
+  display: flex;
+  align-content:center;
+  justify-content:center;
+  border: blue 1px solid;
+}
+
+.l-wrapper {
+  max-inline-size:900px;
+  display: flex;
+  flex-direction:column;
+  justify-content:center;
+  align-content: center;
+  margin-block: 195px;
+}
+.newsletter-card {
+  display:flex;
+  justify-content:center;
+  align-content: center;
+  gap: var(--space-m);
+  background-color:var(--color-White);
+  padding: 22px;
+
+  border-radius: 28px;
+}
+
+.newsletter-card__media {
+  order: 2;
+}
+
+.newsletter-card__media img{
+  object-fit: cover;
+}
+
+.newsletter-card__content {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  order: 1;
+
+}
+
+
+
+.newsletter-card__content {
+  justify-content:center;
+  align-content: center;
+}
+
+
+.newsletter-card__title {
+  font-size:var(--step-5);
+  color:var(--color-Blue-700);
+}
+    
+.newsletter-card__description {
+  font-size: var(--step-0);
+  margin-block-start:var(--space-m);
+  margin-block-end: var(--space-m);
+  color:var(--color-Blue-800);
+}
+
+
+.newsletter-card__list {
+  font-size: var(--step-0);
+  color:var(--color-Blue-800);
+  list-style: none;
+  margin-block-end:var(--space-m);
+}
+
+li {
+  margin-block: var(--space-s);
+  display: flex;
+  align-content: center;
+}
+
+li::before {
+  background-image:url("./assets/icon-success.svg");
+  width: 20px;
+  height: 20px;
+  content: "";
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  margin-inline-end: 8px;
+}
+
+
+
+.newsletter-form__group{
+  display: flex;
+  flex-direction:column;
+}
+
+
+.newsletter-form__label{
+  margin-block-end: var(--space-xs);
+  font-weight: var(--weight-bold); 
+  color: var(--color-Blue-800);
+}
+
+.newsletter-form__input{
+  border-color: var(--color-Grey);
+  border-radius: 8px;
+  border-width: 0.2px;
+  border-style: solid;
+  block-size:var(--space-2xl) ;
+  padding-inline-start:var(--space-m);
+  margin-block-end:var(--space-m) ;
+}
+
+
+.newsletter-form__input::placeholder {
+  font-size: var(--step-0);
+  opacity: 0.5;
+}
+
+
+.newsletter-form__input:invalid {
+  background-color: hsl(4, 100%, 89%);
+  border-color: hsl(4, 100%, 69%);
+
+  color:  hsl(4, 100%, 65%);
+  font-size: var(--step-0);
+
+}
+.newsletter-form__input:focus-visible {
+  outline-color: hsl(4, 100%, 79%);
+
+}
+
+.newsletter-form__button{
+  font-size: clamp(0.9375rem, 0.8958rem + 0.1852vw, 1.0625rem);
+  font-weight: var(--weight-bold);
+  background-color: var(--color-Blue-800);
+  border-width: 0;
+  border-radius: 8px;
+  block-size:var(--space-2xl) ;
+  color:var(--color-White);
+}
