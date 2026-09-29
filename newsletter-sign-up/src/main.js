@@ -8,6 +8,18 @@ const userEmail = successModule.querySelector("#user-email-display");
 const dismissButton = document.getElementById("sucess-button")
 
 
+const emailRegExp = /^[\w.!#$%&'*+/=?^`{|}~-]+@[a-z\d-]+(?:\.[a-z\d-]+)*$/i;
+
+
+const isValidEmail = () => {
+  const validity = inputFormat.value.length !== 0 && emailRegExp.test(inputFormat.value);
+  return validity;
+};
+
+
+
+
+
 
 function updateUserNameDisplay(text) {
   userEmail.textContent = `${text}`;
@@ -31,14 +43,8 @@ function hideNewsLetterModule() {
 }
 
 
-function isIncorrectEmail() {
-  if (inputFormat.validity.typeMismatch) {
-    return true}
-  else {
-    return false}
-}
 
-  
+
 const handleSubmit = (e) => {
   e.preventDefault(e);
   const formData = new FormData(e.target);
@@ -53,7 +59,7 @@ const handleSubmit = (e) => {
 
 function handleInputFormat(e) {
   e.preventDefault(e);
-  if (isIncorrectEmail) {
+  if (!(isValidEmail())) {
     errorMessage.classList.remove("is-hidden");
   }
   else {
@@ -68,5 +74,5 @@ function onClickDismiss(e) {
 }
 
 form.addEventListener("submit", handleSubmit);
-inputFormat.addEventListener("input",handleInputFormat);
-dismissButton.addEventListener("click",onClickDismiss);
+inputFormat.addEventListener("input", handleInputFormat);
+dismissButton.addEventListener("click", onClickDismiss);
