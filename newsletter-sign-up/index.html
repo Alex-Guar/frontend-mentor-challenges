@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Newsletter Sign Up</title>
+  <script type="module" crossorigin src="/frontend-mentor-challenges/testimonials-grid-section/assets/index-BiRjLq6x.js"></script>
+  <link rel="stylesheet" crossorigin href="/frontend-mentor-challenges/testimonials-grid-section/assets/index-P-5Wd8oM.css">
+</head>
+
+<body>
+
+  <main class="l-main">
+    <div class="l-wrapper">
+
+      <article id="newsletter" class="newsletter-card">
+        <picture class="newsletter-card__media">
+          <source srcset="/frontend-mentor-challenges/testimonials-grid-section/assets/illustration-sign-up-mobile-DkrvVqU_.svg" media="(max-width: 425px)" />
+          <source srcset="/frontend-mentor-challenges/testimonials-grid-section/assets/illustration-sign-up-tablet-CLCqFoBb.svg" media="(max-width: 786px)" />
+          <img src="/frontend-mentor-challenges/testimonials-grid-section/assets/illustration-sign-up-desktop-DX21DkyK.svg" alt="Illustration for newsletter sign up" />
+        </picture>
+
+        <div class="newsletter-card__content">
+          <h1 class="newsletter-card__title">Stay updated!</h1>
+          <p class="newsletter-card__description">Join 60,000+ product managers receiving monthly updates on:</p>
+
+          <ul class="newsletter-card__list">
+            <li>Product discovery and building what matters</li>
+            <li>Measuring to ensure updates are a success</li>
+            <li>And much more!</li>
+          </ul>
+
+          <form id="form" class="newsletter-form" >
+            <div class="newsletter-form__group">
+                <div class="newsletter-form__labels"> 
+                  <label class="newsletter-form__label" for="email">Email address</label>
+                  <span id="errorLabel" class="newsletter-form__error-message is-hidden" aria-live="polite">Valid email required</span>
+                </div> 
+              <input id="newsletter-input" class="newsletter-form__input" type="email" name="email" id="email" placeholder="email@company.com"
+                required />
+              <button class="newsletter-form__button" type="submit">Subscribe to monthly newsletter</button>
+            </div>
+          </form>
+        </div>
+      </article>
+
+      <article id="success"  class="success-card is-hidden">
+        <img class="success-card__icon" src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='64'%20height='64'%20viewBox='0%200%2064%2064'%3e%3cdefs%3e%3clinearGradient%20id='a'%20x1='100%25'%20x2='0%25'%20y1='0%25'%20y2='100%25'%3e%3cstop%20offset='0%25'%20stop-color='%23FF6A3A'/%3e%3cstop%20offset='100%25'%20stop-color='%23FF527B'/%3e%3c/linearGradient%3e%3c/defs%3e%3cg%20fill='none'%3e%3ccircle%20cx='32'%20cy='32'%20r='32'%20fill='url(%23a)'/%3e%3cpath%20stroke='%23FFF'%20stroke-width='4'%20d='m18.286%2034.686%208.334%207.98%2019.094-18.285'/%3e%3c/g%3e%3c/svg%3e" alt="" />
+        <h2 class="success-card__title">Thanks for subscribing!</h2>
+        <p class="success-card__message">
+          A confirmation email has been sent to <strong id="user-email-display">ash@lumberjack.com</strong>.
+          Please open it and click the button inside to confirm your suscription.
+        </p>
+        <button id="sucess-button" class="success-card__button" type="button">Dismiss message</button>
+      </article>
+
+    </div>
+  </main>
+
+</body>
+
+</html>
