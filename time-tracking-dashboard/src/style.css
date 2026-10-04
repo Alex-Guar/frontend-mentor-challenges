@@ -63,18 +63,18 @@ main {
 }
 
 
-.container {
+.dash-container {
   inline-size: 100%;
   margin: auto;
   max-inline-size: 1200px;
+  padding: 2%;
 
 }
 
-.wrapper {
+.dash-wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
   grid-gap: 1.2em;
-  margin: 2%;
 }
 
 .user {
@@ -182,11 +182,11 @@ main {
   gap: 5px;
 }
 
-.activity-time--now {
+.activity-time--current {
   font-size: var(--step-5);
 }
 
-.activity-LastTime {
+.activity-time--previous {
   font-size: var(--step--1);
   font-weight: 100;
   opacity: 0.6;
