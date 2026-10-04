@@ -7,7 +7,119 @@
     <title>time-tracking-dashboard</title>
   </head>
   <body>
-    <div id="app"></div>
+    <main> 
+      <div class="container">
+        <div class="wrapper">
+
+          <div class="user">
+            <section class="u-information">
+              <img class="u-image" src="./src/assets/images/image-jeremy.png" alt="Face of Jeremy" />
+              <div class="u-report">
+                <p class="u-report-header">Report for </p>
+                <h1 class="u-name">Jeremy Robson</h1>
+              </div>
+            </section>
+            <div class="filter">
+              <ul class="filter-options">
+                <li>Daily</li>
+                <li>Weelly</li>
+                <li>Monthly</li>
+              </ul>
+            </div>
+          </div>
+      
+        <div class="activity work">
+          <div class="activity-portada work"> </div>
+          <section class="activity-information"> 
+            <header class="activity-header">
+              <h2 class="activity-name">Work</h2>
+              <img class="activity-icon" alt="ellipsis" src="./src/assets/images/icon-ellipsis.svg"/> 
+            </header>
+            <div class="activity-time">
+              <p class="activity-time--now"><time datatime="PT32H">32hrs</time></p> 
+              <p class="activity-LastTime">Last Week - <time datatime="PT36H">36hrs</time></p> 
+            </div>
+          </section>
+        </div>
+
+
+        <div class="activity play">
+          <div class="activity-portada play"> </div>
+          <section class="activity-information"> 
+            <header class="activity-header">
+              <h2 class="activity-name">Play</h2>
+              <img class="activity-icon" alt="ellipsis" src="./src/assets/images/icon-ellipsis.svg"/> 
+            </header>
+            <div class="activity-time">
+              <p class="activity-time--now"><time datatime="PT32H">32hrs</time></p> 
+              <p class="activity-LastTime">Last Week - <time datatime="PT36H">36hrs</time></p> 
+            </div>
+          </section>
+        </div>
+
+
+        <div class="activity study">
+          <div class="activity-portada study"> </div>
+          <section class="activity-information"> 
+            <header class="activity-header">
+              <h2 class="activity-name">Study</h2>
+              <img class="activity-icon" alt="ellipsis" src="./src/assets/images/icon-ellipsis.svg"/> 
+            </header>
+            <div class="activity-time">
+              <p class="activity-time--now"><time datatime="PT32H">32hrs</time></p> 
+              <p class="activity-LastTime">Last Week - <time datatime="PT36H">36hrs</time></p> 
+            </div>
+          </section>
+        </div>
+
+        
+        <div class="activity exercise">
+          <div class="activity-portada exercise"> </div>
+          <section class="activity-information"> 
+            <header class="activity-header">
+              <h2 class="activity-name">Exercise</h2>
+              <img class="activity-icon" alt="ellipsis" src="./src/assets/images/icon-ellipsis.svg"/> 
+            </header>
+            <div class="activity-time">
+              <p class="activity-time--now"><time datatime="PT32H">32hrs</time></p> 
+              <p class="activity-LastTime">Last Week - <time datatime="PT36H">36hrs</time></p> 
+            </div>
+          </section>
+        </div>
+
+        <!-- Social Activity Card -->
+        <div class="activity social">
+          <div class="activity-portada social"></div>
+          <section class="activity-information"> 
+            <header class="activity-header">
+              <h2 class="activity-name">Social</h2>
+              <img class="activity-icon" alt="ellipsis" src="./src/assets/images/icon-ellipsis.svg"/> 
+            </header>
+            <div class="activity-time">
+              <p class="activity-time--now"><time datetime="PT5H">5hrs</time></p> 
+              <p class="activity-LastTime">Last Week - <time datetime="PT10H">10hrs</time></p> 
+            </div>
+          </section>
+        </div>
+
+        <!-- Self Care Activity Card -->
+        <div class="activity self-care">
+          <div class="activity-portada self-care"></div>
+          <section class="activity-information"> 
+            <header class="activity-header">
+              <h2 class="activity-name">Self Care</h2>
+              <img class="activity-icon" alt="ellipsis" src="./src/assets/images/icon-ellipsis.svg"/> 
+            </header>
+            <div class="activity-time">
+              <p class="activity-time--now"><time datetime="PT2H">2hrs</time></p> 
+              <p class="activity-LastTime">Last Week - <time datetime="PT1H"> 1hr</time></p> 
+            </div>
+          </section>
+        </div>
+
+        </div>
+      </div>
+    </main>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
