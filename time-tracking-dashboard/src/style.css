@@ -128,11 +128,20 @@ main {
   inline-size: clamp(100%, 33.8636rem + -42.7273vw, 12.5rem);
   list-style: none;
   justify-content: space-around;
+  font-weight: 100;
 }
 
 .filter-options>li {
   margin: 0px 0px var(--space-m) 0px;
 
+}
+
+li>a {
+  opacity: 0.5
+}
+
+li>a:hover {
+  opacity: 1;
 }
 
 
@@ -159,14 +168,19 @@ main {
   display: flex;
   flex-direction: column;
   background-color: var(--color-work);
-  border-radius: 12px 12px 0px 0px;
+  border-radius: 14px;
 }
 
 .activity-information {
   padding: var(--space-l);
   background-color: var(--color-navy-900);
-  border-radius: 12px 12px 0px 0px;
+  border-radius: 12px;
   height: 100%;
+}
+
+
+.activity-information:hover {
+  background-color: var(--color-purple-500);
 }
 
 .activity-name {
@@ -231,4 +245,8 @@ main {
   background-repeat: no-repeat;
   background-position-x: right 12px;
   background-color: var(--color-self-care);
+}
+
+.is-select {
+  opacity: 1 !important;
 }
