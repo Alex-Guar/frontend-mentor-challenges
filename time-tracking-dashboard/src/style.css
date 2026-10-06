@@ -29,7 +29,7 @@
   /* #6f76c5 */
   --color-navy-200: hsl(236, 100%, 87%);
   /* #bdc1ff */
-
+  --step-2: clamp(1.35rem, 1.1832rem + 0.7415vw, 1.7578rem);
   --step-1: clamp(1.125rem, 1.0099rem + 0.5114vw, 1.4063rem);
   --step-5: clamp(2.3328rem, 1.8826rem + 2.0008vw, 3.4332rem);
   --step--1: clamp(0.7813rem, 0.7327rem + 0.2159vw, 0.9rem);
@@ -37,6 +37,7 @@
 
   --space-l: clamp(1.3125rem, 1.2102rem + 0.4545vw, 1.5625rem);
   --space-m: clamp(1.125rem, 1.0227rem + 0.4545vw, 1.375rem);
+  --space-xl: clamp(1.6875rem, 1.5597rem + 0.5682vw, 2rem);
 }
 
 html {
@@ -89,11 +90,11 @@ main {
 
 .u-information {
   display: flex;
-  flex-wrap: wrap;
   background: var(--color-purple-600);
   margin: 0px 0px 6px 0px;
   border-radius: 12px;
-  padding: var(--space-m);
+  padding: var(--space-xl);
+  flex-direction: column;
 }
 
 .u-image {
@@ -104,7 +105,7 @@ main {
 }
 
 .u-report {
-  margin: clamp(0rem, -3.4091rem + 6.8182vw, 1.875rem) 0px clamp(0rem, -4.5455rem + 9.0909vw, 2.5rem) clamp(0rem, 2.1136rem + -2.7273vw, 0.75rem)
+  margin: 62px 0px 62px 0px
 }
 
 .u-report-header {
@@ -115,6 +116,7 @@ main {
 
 .u-name {
   font-weight: 300;
+
 
 }
 
@@ -192,8 +194,8 @@ li>a:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
   gap: 5px;
+  flex-direction: column;
 }
 
 .activity-time--current {
@@ -249,4 +251,19 @@ li>a:hover {
 
 .is-select {
   opacity: 1 !important;
+}
+
+@media (max-width: 27.5em) {
+  .u-information {
+    flex-direction: row;
+    align-items: center;
+  }
+
+}
+
+@media (max-width: 28em) {
+
+  .u-report {
+    margin: 0px 0px 0px 15px;
+  }
 }
