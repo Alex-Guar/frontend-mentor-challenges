@@ -8,7 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist --dest newsletter-sign-up --add"
+    "deploy": "gh-pages -d dist --dest time-tracking-dashboard --add"
   },
   "devDependencies": {
     "vite": "^8.3.0"
