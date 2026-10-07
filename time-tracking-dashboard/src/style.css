@@ -1,49 +1,81 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 :root {
-
   /* Brand / Primary */
   --color-purple-600: hsl(246, 80%, 60%);
-  /* #5846f6 */
 
   /* Category Colors */
   --color-work: hsl(15, 100%, 70%);
-  /* #ff8c66 - Orange 300 */
   --color-play: hsl(195, 74%, 62%);
-  /* #56c2e6 - Blue 300 */
   --color-study: hsl(348, 100%, 68%);
-  /* #ff5e7e - Pink 400 */
   --color-exercise: hsl(145, 58%, 55%);
-  /* #4ace82 - Green 400 */
   --color-social: hsl(264, 64%, 52%);
-  /* #7535d2 - Purple 700 */
   --color-self-care: hsl(43, 84%, 65%);
-  /* #f1c653 - Yellow 300 */
 
   /* Neutral Scale */
+  --color-white: #ffffff;
   --color-navy-950: hsl(226, 43%, 10%);
-  /* #0e1325 */
   --color-navy-900: hsl(235, 46%, 20%);
-  /* #1c1f48 */
   --color-purple-500: hsl(235, 45%, 61%);
-  /* #6f76c5 */
   --color-navy-200: hsl(236, 100%, 87%);
-  /* #bdc1ff */
-  --step-2: clamp(1.35rem, 1.1832rem + 0.7415vw, 1.7578rem);
-  --step-1: clamp(1.125rem, 1.0099rem + 0.5114vw, 1.4063rem);
-  --step-5: clamp(2.3328rem, 1.8826rem + 2.0008vw, 3.4332rem);
+
+  /* Typography Sizes */
   --step--1: clamp(0.7813rem, 0.7327rem + 0.2159vw, 0.9rem);
+  --step-1: clamp(1.125rem, 1.0099rem + 0.5114vw, 1.4063rem);
+  --step-2: clamp(1.35rem, 1.1832rem + 0.7415vw, 1.7578rem);
+  --step-3: clamp(1.5625rem, 1.1023rem + 2.0455vw, 2.6875rem);
+  --step-4: clamp(1.944rem, 1.6157rem + 1.4592vw, 2.7466rem);
+  --step-5: clamp(2.3328rem, 1.8826rem + 2.0008vw, 3.4332rem);
 
+  /* Typography Weights */
+  --font-weight-thin: 100;
+  --font-weight-light: 300;
+  --font-weight-medium: 500;
 
-  --space-l: clamp(1.3125rem, 1.2102rem + 0.4545vw, 1.5625rem);
+  /* Font Family */
+  --font-family-base: "Rubik", sans-serif;
+
+  /* Spacing Scale */
+  --space-xs: 4px;
+  --space-s: 5px;
   --space-m: clamp(1.125rem, 1.0227rem + 0.4545vw, 1.375rem);
+  --space-l: clamp(1.3125rem, 1.2102rem + 0.4545vw, 1.5625rem);
   --space-xl: clamp(1.6875rem, 1.5597rem + 0.5682vw, 2rem);
+  --space-xxl: 62px;
+
+  /* Border Radii */
+  --radius-avatar: 50%;
+  --radius-card: 12px;
+  --radius-outer-card: 14px;
+
+  /* Border Widths */
+  --border-width-avatar: 3px;
+
+  /* Opacity Levels */
+  --opacity-muted: 0.5;
+  --opacity-subtle: 0.6;
+  --opacity-full: 1;
+
+  /* Layout Dimensions & Gaps */
+  --container-max-width: 1200px;
+  --container-padding: 2%;
+  --grid-gap: 1.2em;
+  --grid-min-track: 15em;
+  --avatar-size: 55px;
+  --card-cover-height: 50px;
+  --ellipsis-width: 8px;
+  --ellipsis-height: 2px;
+  --filter-clamp-width: clamp(100%, 33.8636rem + -42.7273vw, 12.5rem);
+  --background-icon-offset: right 12px;
+
+  /* Breakpoints */
+  --breakpoint-mobile-narrow: 27.5em;
+  --breakpoint-mobile: 28em;
 }
 
 html {
   box-sizing: border-box;
   background: var(--color-navy-950);
-
 }
 
 *,
@@ -54,28 +86,25 @@ html {
   padding: 0;
 }
 
-
 main {
-  color: white;
-  font-family: "Rubik", sans-serif;
+  color: var(--color-white);
+  font-family: var(--font-family-base);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-
 .dash-container {
   inline-size: 100%;
   margin: auto;
-  max-inline-size: 1200px;
-  padding: 2%;
-
+  max-inline-size: var(--container-max-width);
+  padding: var(--container-padding);
 }
 
 .dash-wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
-  grid-gap: 1.2em;
+  grid-template-columns: repeat(auto-fill, minmax(var(--grid-min-track), 1fr));
+  grid-gap: var(--grid-gap);
 }
 
 .user {
@@ -83,41 +112,39 @@ main {
   flex-direction: column;
   flex-wrap: wrap;
   background: var(--color-navy-900);
-  border-radius: 12px;
-  grid-row: 1/ span 2;
-
+  border-radius: var(--radius-card);
+  grid-row: 1 / span 2;
 }
 
 .u-information {
   display: flex;
   background: var(--color-purple-600);
-  margin: 0px 0px 6px 0px;
-  border-radius: 12px;
+  margin: 0 0 6px 0;
+  border-radius: var(--radius-card);
   padding: var(--space-xl);
   flex-direction: column;
 }
 
 .u-image {
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  border: 3px white solid;
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  border-radius: var(--radius-avatar);
+  border: var(--border-width-avatar) var(--color-white) solid;
 }
 
 .u-report {
-  margin: 62px 0px 62px 0px
+  margin: var(--space-xxl) 0 var(--space-xxl) 0;
 }
 
 .u-report-header {
   font-size: var(--step--1);
-  font-weight: 100;
-  opacity: 0.6;
+  font-weight: var(--font-weight-thin);
+  opacity: var(--opacity-subtle);
 }
 
 .u-name {
-  font-weight: 300;
-
-
+  font-weight: var(--font-weight-light);
+  font-size: var(--step-3);
 }
 
 .filter {
@@ -127,66 +154,64 @@ main {
 .filter-options {
   display: flex;
   flex-direction: column;
-  inline-size: clamp(100%, 33.8636rem + -42.7273vw, 12.5rem);
+  inline-size: var(--filter-clamp-width);
   list-style: none;
   justify-content: space-around;
-  font-weight: 100;
+  font-weight: var(--font-weight-thin);
 }
 
 .filter-options>li {
-  margin: 0px 0px var(--space-m) 0px;
-
+  margin: 0 0 var(--space-m) 0;
 }
 
 li>a {
-  opacity: 0.5
+  opacity: var(--opacity-muted);
 }
 
 li>a:hover {
-  opacity: 1;
+  opacity: var(--opacity-full);
 }
-
 
 .activity-portada {
   width: 100%;
-  height: 50px;
+  height: var(--card-cover-height);
 }
 
 .activity-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 4px;
+  margin: var(--space-xs);
 }
 
 .activity-icon {
-  width: 8px;
-  height: 2px;
+  width: var(--ellipsis-width);
+  height: var(--ellipsis-height);
 }
-
-
 
 .activity {
   display: flex;
   flex-direction: column;
   background-color: var(--color-work);
-  border-radius: 14px;
+  border-radius: var(--radius-outer-card);
 }
 
 .activity-information {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   padding: var(--space-l);
   background-color: var(--color-navy-900);
-  border-radius: 12px;
+  border-radius: var(--radius-card);
   height: 100%;
 }
-
 
 .activity-information:hover {
   background-color: var(--color-purple-500);
 }
 
 .activity-name {
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
   font-size: var(--step--1);
 }
 
@@ -194,7 +219,7 @@ li>a:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 5px;
+  gap: var(--space-s);
   flex-direction: column;
 }
 
@@ -204,53 +229,53 @@ li>a:hover {
 
 .activity-time--previous {
   font-size: var(--step--1);
-  font-weight: 100;
-  opacity: 0.6;
+  font-weight: var(--font-weight-thin);
+  opacity: var(--opacity-subtle);
 }
 
 .activity.work {
   background-image: url("./assets/images/icon-work.svg");
   background-repeat: no-repeat;
-  background-position-x: right 12px;
+  background-position-x: var(--background-icon-offset);
 }
 
 .activity.study {
   background-image: url("./assets/images/icon-study.svg");
   background-repeat: no-repeat;
-  background-position-x: right 12px;
+  background-position-x: var(--background-icon-offset);
   background-color: var(--color-study);
 }
 
 .activity.play {
   background-image: url("./assets/images/icon-play.svg");
   background-repeat: no-repeat;
-  background-position-x: right 12px;
+  background-position-x: var(--background-icon-offset);
   background-color: var(--color-play);
 }
 
 .activity.exercise {
   background-image: url("./assets/images/icon-exercise.svg");
   background-repeat: no-repeat;
-  background-position-x: right 12px;
+  background-position-x: var(--background-icon-offset);
   background-color: var(--color-exercise);
 }
 
 .activity.social {
   background-image: url("./assets/images/icon-social.svg");
   background-repeat: no-repeat;
-  background-position-x: right 12px;
+  background-position-x: var(--background-icon-offset);
   background-color: var(--color-social);
 }
 
 .activity.self-care {
   background-image: url("./assets/images/icon-self-care.svg");
   background-repeat: no-repeat;
-  background-position-x: right 12px;
+  background-position-x: var(--background-icon-offset);
   background-color: var(--color-self-care);
 }
 
 .is-select {
-  opacity: 1 !important;
+  opacity: var(--opacity-full) !important;
 }
 
 @media (max-width: 27.5em) {
@@ -259,11 +284,18 @@ li>a:hover {
     align-items: center;
   }
 
+  .activity-time {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .filter-options {
+    flex-direction: row;
+  }
 }
 
 @media (max-width: 28em) {
-
   .u-report {
-    margin: 0px 0px 0px 15px;
+    margin: 0 0 0 15px;
   }
 }
