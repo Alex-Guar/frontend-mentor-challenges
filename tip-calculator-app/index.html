@@ -31,7 +31,7 @@
               <button class="percentage" type="button">15%</button>
               <button class="percentage" type="button">25%</button>
               <button class="percentage" type="button">50%</button>
-              <input class="percentage-custom" id="percentage" type="number" placeholder="Custom" />
+              <input class="percentage-custom" id="percentageCustom" type="number" placeholder="Custom" />
             </div>
           </div>
 
@@ -39,7 +39,7 @@
             <label class="c_setting-numPeople-tag" for="numPeople">Number of People</label>
             <div class="c_container_input">
               <i class="c_container_input-icon-people" aria-hidden="true"></i>
-              <input class="c_setting_input" id="numPeople" type="number" placeholder="0" />
+              <input class="c_setting_input" id="numPeople" type="number" placeholder="0" min="0" />
             </div>
           </section>
 
@@ -50,7 +50,7 @@
             <section class="c_display-result">
               <h2 class="c_display_result_title">Tip Amount</h2>
               <h3 class="c_display_result_subtitle">/ person</h3>
-              <h4 class="c_display_result_total">$0.00</h4>
+              <h4 class="c_display_result_total" id="tipAmount">$0.00</h4>
             </section>
 
             <section class="c_display-result">
@@ -60,7 +60,7 @@
             </section>
           </div>
 
-          <input class="c_display_reset" type="reset" value="RESET" />
+          <input class="c_display_reset" id="total" type="reset" value="RESET" />
 
         </div>
 

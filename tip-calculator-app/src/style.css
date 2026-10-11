@@ -36,6 +36,18 @@ input {
   border: 0;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 2px;
+}
+
+h1 {
+  color: var(--grey-500);
+  max-inline-size: 5ch;
+  font-size: 18px;
+}
+
 *,
 *::before,
 *::after {
@@ -98,18 +110,34 @@ main {
   cursor: pointer;
 }
 
+.isIncorrect {
+  outline: red 2px solid;
+}
+
 .c_setting_input {
   font-family: "Space Mono", monospace;
-  font-weight: 600;
+  font-weight: 510;
   font-size: var(--step-0);
   width: 100%;
   text-align: end;
   color: var(--green-900);
   border: 0;
   background-color: var(--grey-50);
+  opacity: 0.5;
+
 }
 
-.c_setting_input:focus {
+.c_setting_input:focus-visible {
+  outline: 0;
+}
+
+
+.isWriting {
+  opacity: 1 !important;
+}
+
+
+.isActive .c_setting_input:focus {
   outline: 0;
   cursor: pointer;
   border: 0;
@@ -239,11 +267,22 @@ main {
   font-family: "Space Mono", monospace;
   font-size: 15px;
   font-weight: 800;
+  filter: brightness(1) contrast(60%);
+  opacity: 0.5;
+  cursor: pointer;
 }
 
-.c_display_reset:hover {
+.isComplete:hover {
   background-color: var(--grey-200);
   outline: 0;
   cursor: pointer;
   border: 0;
+  filter: none;
+  opacity: 0, 5;
+}
+
+.isActive {
+  background-color: var(--green-400);
+  opacity: 1;
+  filter: unset;
 }
