@@ -17,7 +17,7 @@
 
           <section class="c_setting-bill">
             <label class="c_setting-bill-tag" for="bill">Bill</label>
-            <div class="c_container_input">
+            <div class="c_container_input" id="billContainer">
               <i class="c_container_input-icon-bill" aria-hidden="true"></i>
               <input class="c_setting_input" type="number" id="bill" placeholder="0" />
             </div>
@@ -26,18 +26,18 @@
           <div class="c_setting-tip">
             <legend>Select Tip %</legend>
             <div class="percentages-container">
-              <button class="percentage" type="button">5%</button>
-              <button class="percentage" type="button">10%</button>
-              <button class="percentage" type="button">15%</button>
-              <button class="percentage" type="button">25%</button>
-              <button class="percentage" type="button">50%</button>
+              <button class="percentage" type="button" value="5">5%</button>
+              <button class="percentage" type="button" value="10">10%</button>
+              <button class="percentage" type="button" value="15">15%</button>
+              <button class="percentage" type="button" value="25">25%</button>
+              <button class="percentage" type="button" value="50">50%</button>
               <input class="percentage-custom" id="percentageCustom" type="number" placeholder="Custom" />
             </div>
           </div>
 
           <section class="c_setting-numPeople">
             <label class="c_setting-numPeople-tag" for="numPeople">Number of People</label>
-            <div class="c_container_input">
+            <div class="c_container_input" id="numPeopleContainer">
               <i class="c_container_input-icon-people" aria-hidden="true"></i>
               <input class="c_setting_input" id="numPeople" type="number" placeholder="0" min="0" />
             </div>
@@ -50,13 +50,15 @@
             <section class="c_display-result">
               <h2 class="c_display_result_title">Tip Amount</h2>
               <h3 class="c_display_result_subtitle">/ person</h3>
-              <h4 class="c_display_result_total" id="tipAmount">$0.00</h4>
+              <h4 class="c_display_result_total">
+                $<span id="tipAmount">0.00</span></h4>
             </section>
 
             <section class="c_display-result">
               <h2 class="c_display_result_title">Total</h2>
               <h3 class="c_display_result_subtitle">/ person </h3>
-              <h4 class="c_display_result_total">$0.00</h4>
+              <h4 class="c_display_result_total">
+                $<span id="total">0.00</span></h4>
             </section>
           </div>
 
