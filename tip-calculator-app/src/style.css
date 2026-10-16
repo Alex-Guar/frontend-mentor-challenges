@@ -185,6 +185,10 @@ main {
   border-radius: 3px;
 }
 
+.isSelect {
+  background-color: var(--green-400);
+}
+
 
 .percentage:hover {
   outline: 0;

@@ -2,11 +2,32 @@ import './style.css'
 
 let tipAmount = document.getElementById("tipAmount");
 let total = document.getElementById("total");
-const inputData = {
 
+const inputData = {
+  bill: 0,
+  percentaje: 0,
+  numPerson: 1,
+  tipAmount: 0,
+  total: 0,
 }
 
 let isPositive = (value) => !isNaN(value) && value > 0 ? true : false;
+
+
+function calculateTipAmoutPerson() {
+  inputData.tipAmount = (inputData.bill * (inputData.percentaje / 100)) / inputData.numPerson;
+}
+
+function renderTipAmountPerson() {
+  tipAmount.textContent = parseFloat(inputData.tipAmount).toFixed(2);
+}
+
+function calculateTotalAmoutPerson() {
+  inputData.total = inputData.tipAmount + (inputData.bill / inputData.numPerson)
+}
+function renderTotalAmoutPerson() {
+  total.textContent = parseFloat(inputData.total).toFixed(2);
+}
 
 
 class Bill {
@@ -25,8 +46,12 @@ class Bill {
       this.clearErrorState();
       this.value = valueNum;
       inputData.bill = this.value
-      this.setTotal();
-      this.renderTotal();
+
+      calculateTipAmoutPerson();
+      renderTipAmountPerson();
+      calculateTotalAmoutPerson();
+      renderTotalAmoutPerson();
+
       console.log(inputData);
     } else {
       this.renderErrorState();
@@ -41,12 +66,6 @@ class Bill {
     this.container.classList.remove("IsIncorrect");
   }
 
-  setTotal() {
-    inputData.total = this.value
-  }
-  renderTotal() {
-    total.textContent = inputData.total;
-  }
 
 
   addEventListener() {
@@ -67,18 +86,27 @@ class Percentaje {
     this.percentajes = document.getElementsByClassName(this.className); /* array-like*/
     this.percentajeCustom = document.getElementById(this.idCustom);
     this.percentajesArray = Array.from(this.percentajes);
-    console.log(this.percentajeCustom);
   }
 
   handleSelection = (e) => {
-
     const valueNum = Number.parseFloat(e.target.value);
     if (isPositive(valueNum)) {
+      if (e.type === "click") {
+        const elementId = e.target.getAttribute("id");
+        this.renderColorSelection(elementId);
+        this.removeInputTextCustom(this.idCustom);
+      } else {
+        this.removeColorSelection();
+      }
       this.clearErrorState();
       this.value = valueNum;
-      inputData.percentaje = this.value
-      this.calculateTipAmoutPerson();
-      this.calculateTotalAmoutPerson();
+
+      inputData.percentaje = this.value;
+
+      calculateTipAmoutPerson();
+      renderTipAmountPerson();
+      calculateTotalAmoutPerson();
+      renderTotalAmoutPerson();
     } else {
       this.renderErrorState();
     }
@@ -94,6 +122,30 @@ class Percentaje {
     }
   }
 
+  renderColorSelection(idPercentage) {
+
+    this.percentajesArray.forEach((percentaje) => {
+      percentaje.classList.remove("isSelect");
+    });
+
+    const element = document.getElementById(idPercentage);
+    element.classList.add("isSelect");
+  }
+
+  removeColorSelection() {
+    this.percentajesArray.forEach((percentaje) => {
+      percentaje.classList.remove("isSelect");
+    });
+  }
+
+  removeInputTextCustom(idCustomPercentaje) {
+
+    const customInputElement = document.getElementById(idCustomPercentaje);
+    customInputElement.textContent = "custom";
+
+  }
+
+
   renderErrorState() {
     this.percentajeCustom.classList.add("IsIncorrect");
   }
@@ -102,20 +154,6 @@ class Percentaje {
     this.percentajeCustom.classList.remove("IsIncorrect");
   }
 
-  calculateTipAmoutPerson() {
-    inputData.tipAmount = inputData.bill * (inputData.percentaje / 100);
-  }
-
-  renderTipAmountPerson() {
-    tipAmount.textContent = parseFloat(inputData.tipAmount).toFixed(2);
-  }
-
-  calculateTotalAmoutPerson() {
-    inputData.total = inputData.tipAmount + inputData.bill
-  }
-  renderTotalAmoutPerson() {
-    total.textContent = parseFloat(inputData.total).toFixed(2);
-  }
 }
 
 
@@ -139,10 +177,12 @@ class Person {
     if (!isNaN(valueNum) && valueNum >= 1) {
       this.clearErrorState();
       this.value = valueNum
-      inputData.numPerson = this.value
-      console.log(this.value);
-      this.calculateTipAmoutPerson();
-      this.calculateTotalAmoutPerson();
+      inputData.numPerson = this.value;
+      calculateTipAmoutPerson();
+      renderTipAmountPerson();
+      calculateTotalAmoutPerson();
+      renderTotalAmoutPerson();
+      console.log(inputData);
     } else {
       this.renderErrorState();
     }
@@ -160,15 +200,6 @@ class Person {
 
   clearErrorState() {
     this.container.classList.remove("IsIncorrect");
-  }
-
-  calculateTipAmoutPerson() {
-    this.tipAmount.textContent = parseFloat(this.tipAmount.textContent) / this.value;
-    this.tipAmount.textContent = parseFloat(this.tipAmount.textContent).toFixed(2);
-  }
-
-  calculateTotalAmoutPerson() {
-    this.total.textContent = parseFloat(this.tipAmount.textContent) + parseFloat(this.bill.value);
   }
 
 }
