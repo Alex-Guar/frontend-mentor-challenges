@@ -98,9 +98,10 @@ main {
   font-size: var(--step--3);
 }
 
-.c_setting-numPeople-tags{
+
+.c_setting-numPeople-tags {
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
 }
 
 .c_setting-numPeople-errorTag {
@@ -197,13 +198,17 @@ main {
   border-radius: 3px;
 }
 
+
 .isSelect {
   background-color: var(--green-400);
 }
 
 
+.percentage:focus-visible {
+  outline: var(--green-400) 2px solid;
+}
+
 .percentage:hover {
-  outline: 0;
   border: 0;
   background-color: var(--grey-200);
   color: var(--green-900);
@@ -252,7 +257,7 @@ main {
 .c_display_result_title {
   grid-column: 1;
   grid-row: 1;
-  font-size: var(--step--2);
+  font-size: var(--step--3);
   font-weight: 550;
 }
 
@@ -283,10 +288,19 @@ main {
   font-family: "Space Mono", monospace;
   font-size: 15px;
   font-weight: 800;
-  filter: brightness(1) contrast(60%);
-  opacity: 0.5;
   cursor: pointer;
 }
+
+
+.c_display_reset:hover {
+  background-color: hsl(169.6, 91%, 82.5%);
+}
+
+.c_display_reset-incomplete {
+  filter: brightness(1) contrast(60%);
+  opacity: 0.5;
+}
+
 
 .isComplete:hover {
   background-color: var(--grey-200);
@@ -301,4 +315,11 @@ main {
   background-color: var(--green-400);
   opacity: 1;
   filter: unset;
+}
+
+@media (width <=33.25em) {
+
+  .c_wrapper {
+    flex-direction: column;
+  }
 }
