@@ -1,10 +1,10 @@
-name: Deploy time-calculator-app to Pages
+name: Deploy tip-calculator-app to Pages
 
 on:
   push:
     branches: ['main']
     paths:
-      - 'time-calculator-app/**'
+      - 'tip-calculator-app/**'
   workflow_dispatch:
 
 permissions:
@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: time-calculator-app 
+        working-directory: tip-calculator-app 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -29,7 +29,7 @@ jobs:
         with:
           node-version: lts/*
           cache: 'npm'
-          cache-dependency-path: time-calculator-app/package-lock.json
+          cache-dependency-path: tip-calculator-app/package-lock.json
 
       - name: Install dependencies
         run: npm ci
@@ -44,6 +44,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./time-calculator-app/dist
-          destination_dir: time-calculator-app 
+          publish_dir: ./tip-calculator-app/dist
+          destination_dir: tip-calculator-app 
           keep_files: true
