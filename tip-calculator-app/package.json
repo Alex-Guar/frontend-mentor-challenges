@@ -8,7 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist --dest time-tracking-dashboard --add"
+    "deploy": "gh-pages -d dist --dest tip-calculator-app --add"
   },
   "devDependencies": {
     "jest": "^25.0.0",
