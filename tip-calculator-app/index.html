@@ -36,7 +36,10 @@
           </div>
 
           <section class="c_setting-numPeople">
-            <label class="c_setting-numPeople-tag" for="numPeople">Number of People</label>
+            <div class="c_setting-numPeople-tags">
+              <label class="c_setting-numPeople-tag" for="numPeople">Number of People</label>
+              <p class="c_setting-numPeople-errorTag" id="errorNumPeople">Can't be zero</p>
+            </div>
             <div class="c_container_input" id="numPeopleContainer">
               <i class="c_container_input-icon-people" aria-hidden="true"></i>
               <input class="c_setting_input" id="numPeople" type="number" placeholder="0" min="0" />

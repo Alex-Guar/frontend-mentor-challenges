@@ -141,7 +141,7 @@ class Percentaje {
   removeInputTextCustom(idCustomPercentaje) {
 
     const customInputElement = document.getElementById(idCustomPercentaje);
-    customInputElement.textContent = "custom";
+    customInputElement.value = "";
 
   }
 
@@ -168,6 +168,7 @@ class Person {
     this.total = document.getElementById("total");
     this.bill = bill;
     this.percentajes = percentaje;
+    this.headError = document.getElementById("errorNumPeople");
 
   }
 
@@ -196,9 +197,12 @@ class Person {
 
   renderErrorState() {
     this.container.classList.add("IsIncorrect");
+    this.headError.style.visibility = 'visible';
+
   }
 
   clearErrorState() {
+    this.headError.style.visibility = 'hidden';
     this.container.classList.remove("IsIncorrect");
   }
 

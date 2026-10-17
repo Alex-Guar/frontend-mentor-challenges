@@ -98,6 +98,17 @@ main {
   font-size: var(--step--3);
 }
 
+.c_setting-numPeople-tags{
+  display: flex;
+  justify-content:space-between;
+}
+
+.c_setting-numPeople-errorTag {
+  color: red;
+  filter: saturate(22%) brightness(2.8);
+  visibility: hidden;
+}
+
 .c_container_input {
   display: flex;
   align-items: center;
@@ -112,6 +123,7 @@ main {
 
 .isIncorrect {
   outline: red 2px solid;
+  filter: saturate(22%) brightness(2.8);
 }
 
 .c_setting_input {
