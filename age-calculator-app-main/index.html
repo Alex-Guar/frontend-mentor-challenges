@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>age-calculator-app-main</title>
+</head>
+
+<body>
+  <main>
+    <div class="calculator_container">
+      <form class="calculator_wrapper">
+
+        <div class="c_date_input">
+
+          <div class="c_date day">
+            <label for="day">DAY</label>
+            <input type="number" id="day" placeholder="DD" />
+            <p class="errorMessage" id="errorValidDay"><i>Must be a valid day</i></p>
+            <p class="errorMessage" id="errorRequiredDay"><i>This fields is required</i></p>
+          </div>
+
+          <div class="c_date month">
+            <label for="month">MONTH</label>
+            <input type="number" id="month" placeholder="MM" />
+            <p class="errorMessage" id="errorValidMonth"><i>Must be a valid month</i></p>
+            <p class="errorMessage" id="errorRequiredMonth"><i>This fields is required</i></p>
+          </div>
+
+          <div class="c_date year">
+            <label for="year">YEAR</label>
+            <input type="number" id="year" placeholder="YYYY" />
+            <p class="errorMessage" id="errorValidYear"><i>Must be in the past</i></p>
+            <p class="errorMessage" id="errorRequireYear"><i>This fields is required</i></p>
+          </div>
+        </div>
+
+        <div class="c_cutline">
+          <hr />
+          <button type="submit" id="sendData">
+            <img class="c_cutline_arrow" src="./src/assets/icon-arrow.svg" alt="arrow" />
+          </button>
+        </div>
+
+        <div class="c_results">
+          <div class="c_result">
+            <output class="c_result_output" id="resultYear"><i>- -</i></output>
+            <label class="c_result_tag" for="resultYear"><i>years</i></label>
+          </div>
+
+          <div class="c_result">
+            <output class="c_result_output" id="resultMonths"><i>- -</i></output>
+            <label class="c_result_tag" for="resultMonths"><i>months</i></label>
+          </div>
+
+          <div class="c_result">
+            <output class="c_result_output" id="resultDays"><i>- -</i></output>
+            <label class="c_result_tag" for="resultDays"><i>days</i></label>
+          </div>
+        </div>
+      </form>
+    </div>
+  </main>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --colour-white: hsl(0, 100%, 100%);
+  --colour-grey-100: hsl(0, 0%, 94%);
+  --colour-grey-200: hsl(0, 0%, 86%);
+  --colour-grey-500: hsl(0, 1%, 44%);
+  --colour-black: hsl(0, 0%, 0%);
+  --colour-purple-500: hsl(259, 100%, 65%);
+  --colour-red-400: hsl(0, 100%, 67%);
+
+  --step-7: clamp(4.0311rem, 3.6176rem + 1.8378vw, 5.0419rem);
+  --step-6: clamp(3.3592rem, 3.0965rem + 1.1678vw, 4.0015rem);
+  --step-3: clamp(1.944rem, 1.9209rem + 0.1025vw, 2.0004rem);
+
+  --space-m: clamp(1.5rem, 1.7642rem + -0.3409vw, 1.6875rem);
+  --space-6xl: clamp(8.6875rem, 10.2727rem + -2.0455vw, 9.8125rem);
+  --space-7xl: clamp(34.375rem, 40.4517rem + -7.8409vw, 38.6875rem);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: var(--colour-grey-100);
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+hr {
+  width: 90%;
+  border-color: var(--colour-grey-100);
+}
+
+input {
+  border-color: var(--colour-grey-200);
+  border-radius: 8px;
+  border-style: solid;
+  border-width: 0.5px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: var(--step-3);
+  padding: 0px 0px 0px 24px;
+  opacity: 0.8;
+}
+
+button {
+  border-radius: 60%;
+  border-style: solid;
+  border-color: var(--colour-purple-500);
+  background-color: var(--colour-purple-500);
+}
+
+.calculator_container {
+  width: 700px;
+  border: none;
+  background-color: var(--colour-white);
+  border-radius: 5% 5% 25% 5%;
+  padding: 45px;
+}
+
+.calculator_wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.c_date_input {
+  display: flex;
+  gap: var(--space-m);
+}
+
+.c_date {
+  display: flex;
+  flex-direction: column;
+  width: var(--space-6xl);
+  gap: 5px;
+}
+
+
+.c_date label {
+  font-weight: 600;
+  color: var(--colour-grey-500);
+}
+
+.errorMessage {
+  display: block;
+  color: var(--colour-red-400);
+  display: none;
+}
+
+.isInvalid {
+  display: block;
+}
+
+.isRequired {
+  display: block;
+}
+
+.c_date p {
+  font-size: 12px;
+}
+
+.c_cutline {
+  display: flex;
+  align-items: center;
+}
+
+img {
+  width: 54px;
+  height: 54px;
+}
+
+.c_cutline_arrow {
+  padding: 12px;
+}
+
+
+.c_result {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0px 0px -27px 0px;
+}
+
+.c_result_output {
+  color: var(--colour-purple-500);
+  font-weight: 800;
+  font-size: var(--step-6);
+}
+
+.c_result_tag {
+  font-weight: 800;
+  font-size: var(--step-7);
+  height: fit-content;
+}
