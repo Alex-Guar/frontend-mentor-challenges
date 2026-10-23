@@ -11,29 +11,29 @@
 <body>
   <main>
     <div class="calculator_container">
-      <form class="calculator_wrapper">
+      <form class="calculator_wrapper" id="birthday">
 
         <div class="c_date_input">
 
           <div class="c_date day">
             <label for="day">DAY</label>
-            <input type="number" id="day" placeholder="DD" />
+            <input type="number" id="day" placeholder="DD" name="day" />
             <p class="errorMessage" id="errorValidDay"><i>Must be a valid day</i></p>
             <p class="errorMessage" id="errorRequiredDay"><i>This fields is required</i></p>
           </div>
 
           <div class="c_date month">
             <label for="month">MONTH</label>
-            <input type="number" id="month" placeholder="MM" />
+            <input type="number" id="month" placeholder="MM" name="month" />
             <p class="errorMessage" id="errorValidMonth"><i>Must be a valid month</i></p>
             <p class="errorMessage" id="errorRequiredMonth"><i>This fields is required</i></p>
           </div>
 
           <div class="c_date year">
             <label for="year">YEAR</label>
-            <input type="number" id="year" placeholder="YYYY" />
+            <input type="number" id="year" placeholder="YYYY" name="year" />
             <p class="errorMessage" id="errorValidYear"><i>Must be in the past</i></p>
-            <p class="errorMessage" id="errorRequireYear"><i>This fields is required</i></p>
+            <p class="errorMessage" id="errorRequiredYear"><i>This fields is required</i></p>
           </div>
         </div>
 
