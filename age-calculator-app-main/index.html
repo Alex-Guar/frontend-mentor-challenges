@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/frontend-mentor-challenges/age-calculator-app-main/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>age-calculator-app-main</title>
+  <script type="module" crossorigin src="/frontend-mentor-challenges/age-calculator-app-main/assets/index-Cwmju5ql.js"></script>
+  <link rel="stylesheet" crossorigin href="/frontend-mentor-challenges/age-calculator-app-main/assets/index-CebPzyJK.css">
+</head>
+
+<body>
+  <main>
+    <div class="calculator_container">
+      <form class="calculator_wrapper" id="birthday">
+
+        <div class="c_date_input">
+
+          <div class="c_date day">
+            <label for="day">DAY</label>
+            <input type="number" id="day" placeholder="DD" name="day" />
+            <p class="errorMessage" id="errorValidDay"><i>Must be a valid day</i></p>
+            <p class="errorMessage" id="errorRequiredDay"><i>This fields is required</i></p>
+          </div>
+
+          <div class="c_date month">
+            <label for="month">MONTH</label>
+            <input type="number" id="month" placeholder="MM" name="month" />
+            <p class="errorMessage" id="errorValidMonth"><i>Must be a valid month</i></p>
+            <p class="errorMessage" id="errorRequiredMonth"><i>This fields is required</i></p>
+          </div>
+
+          <div class="c_date year">
+            <label for="year">YEAR</label>
+            <input type="number" id="year" placeholder="YYYY" name="year" />
+            <p class="errorMessage" id="errorValidYear"><i>Must be in the past</i></p>
+            <p class="errorMessage" id="errorRequiredYear"><i>This fields is required</i></p>
+            <p class="errorMessage" id="errorFutureYear"><i>Must be in the past</i></p>
+          </div>
+        </div>
+
+        <div class="c_cutline">
+          <hr />
+          <button type="submit" id="sendData">
+            <img class="c_cutline_arrow" src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='46'%20height='44'%20viewBox='0%200%2046%2044'%3e%3cg%20fill='none'%20stroke='%23FFF'%20stroke-width='2'%3e%3cpath%20d='M1%2022.019C8.333%2021.686%2023%2025.616%2023%2044M23%2044V0M45%2022.019C37.667%2021.686%2023%2025.616%2023%2044'/%3e%3c/g%3e%3c/svg%3e" alt="arrow" />
+          </button>
+        </div>
+
+        <div class="c_results">
+          <div class="c_result">
+            <output class="c_result_output" id="resultYear">- -</output>
+            <label class="c_result_tag" for="resultYear"><i>years</i></label>
+          </div>
+
+          <div class="c_result">
+            <output class="c_result_output" id="resultMonths">- -</output>
+            <label class="c_result_tag" for="resultMonths"><i>months</i></label>
+          </div>
+
+          <div class="c_result">
+            <output class="c_result_output" id="resultDays">- -</output>
+            <label class="c_result_tag" for="resultDays"><i>days</i></label>
+          </div>
+        </div>
+      </form>
+    </div>
+  </main>
+</body>
+
+</html>
