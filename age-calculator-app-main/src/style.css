@@ -9,13 +9,16 @@
   --colour-purple-500: hsl(259, 100%, 65%);
   --colour-red-400: hsl(0, 100%, 67%);
 
-  --step-7: clamp(4.0311rem, 3.6176rem + 1.8378vw, 5.0419rem);
-  --step-6: clamp(3.3592rem, 3.0965rem + 1.1678vw, 4.0015rem);
-  --step-3: clamp(1.944rem, 1.9209rem + 0.1025vw, 2.0004rem);
-
+  /* Retained core typography step and container space */
+  --step--1: clamp(0.8854rem, 0.8385rem + 0.2083vw, 1rem);
   --space-m: clamp(1.5rem, 1.7642rem + -0.3409vw, 1.6875rem);
-  --space-6xl: clamp(8.6875rem, 10.2727rem + -2.0455vw, 9.8125rem);
-  --space-7xl: clamp(34.375rem, 40.4517rem + -7.8409vw, 38.6875rem);
+  --space-8xl: clamp(39.375rem, 37.5852rem + 7.9545vw, 43.75rem);
+
+  /* New Date-specific custom variables */
+  --date-input-font: clamp(1.0625rem, 0.7557rem + 1.3636vw, 1.8125rem);
+  --date-input-margin-right: clamp(0rem, -3.1193rem + 13.8636vw, 7.625rem);
+  --date-result-font: clamp(2.3328rem, 1.2429rem + 4.844vw, 4.997rem);
+  --date-container-padding: clamp(1.6875rem, 1.3551rem + 1.4773vw, 2.5rem);
 }
 
 *,
@@ -31,7 +34,6 @@ html {
   box-sizing: border-box;
 }
 
-
 body {
   font-family: "Poppins", sans-serif;
   font-style: normal;
@@ -44,6 +46,7 @@ body {
 hr {
   width: 90%;
   border-color: var(--colour-grey-100);
+  anchor-name: --my-line;
 }
 
 input {
@@ -52,12 +55,12 @@ input {
   border-style: solid;
   border-width: 0.5px;
   font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-size: var(--step-3);
-  padding: 0px 0px 0px 24px;
+  font-weight: 700;
+  font-size: var(--date-input-font);
+  padding: 12px 0px 12px 24px;
   opacity: 0.8;
+  width: 100%;
 }
-
 
 button {
   border-radius: 60%;
@@ -66,12 +69,18 @@ button {
   background-color: var(--colour-purple-500);
 }
 
+button:hover {
+  background-color: black;
+  border-color: black;
+}
+
 .calculator_container {
-  width: 700px;
+  max-width: var(--space-8xl);
+  width: 100%;
   border: none;
   background-color: var(--colour-white);
   border-radius: 5% 5% 25% 5%;
-  padding: 45px;
+  padding: var(--date-container-padding);
 }
 
 .calculator_wrapper {
@@ -82,19 +91,24 @@ button {
 .c_date_input {
   display: flex;
   gap: var(--space-m);
+  margin-right: var(--date-input-margin-right);
 }
 
 .c_date {
   display: flex;
   flex-direction: column;
-  width: var(--space-6xl);
   gap: 5px;
 }
 
+.c_date.day, .c_date.month, .c_date.year {
+  min-width: 0;
+  flex: 1;
+}
 
 .c_date label {
-  font-weight: 600;
+  font-weight: 570;
   color: var(--colour-grey-500);
+  font-size: var(--step--1);
 }
 
 .errorMessage {
@@ -116,19 +130,21 @@ button {
 }
 
 .c_cutline {
-  display: flex;
-  align-items: center;
+  margin-top: 52px;
 }
 
 img {
   width: 54px;
   height: 54px;
+  padding: 10px;
 }
 
-.c_cutline_arrow {
-  padding: 12px;
+#sendData {
+  position: absolute;
+  position-anchor: --my-line;
+  align-self: anchor-center;
+  left: anchor(95%);
 }
-
 
 .c_result {
   display: flex;
@@ -140,11 +156,19 @@ img {
 .c_result_output {
   color: var(--colour-purple-500);
   font-weight: 800;
-  font-size: var(--step-6);
+  font-size: var(--date-result-font);
+  font-style: oblique 80deg;
 }
 
 .c_result_tag {
   font-weight: 800;
-  font-size: var(--step-7);
   height: fit-content;
+  font-size: var(--date-result-font);
+}
+
+@media (width <= 22.5em) {
+  .c_date_input { margin-left: 0; }
+  #sendData { left: anchor(40%); }
+  .c_cutline { margin-bottom: 52px; }
+  .c_result { margin: 0px 0px -10px 0px; }
 }

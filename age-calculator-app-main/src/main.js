@@ -1,11 +1,9 @@
 import './style.css'
 import * as z from "zod";
 
-const inputDay = document.getElementById('day');
-const inputMonth = document.getElementById('month');
-const inputYear = document.getElementById('year');
-const send = document.getElementById('sendData');
 const form = document.getElementById('birthday');
+
+const inputsElement = document.getElementsByTagName("input");
 
 const errorInvalidDay = document.getElementById('errorValidDay');
 const errorRequiredDay = document.getElementById('errorRequiredDay');
@@ -16,13 +14,17 @@ const errorRequiredMonth = document.getElementById('errorRequiredMonth');
 const errorInvalidYear = document.getElementById('errorValidYear');
 const errorRequiredYear = document.getElementById('errorRequiredYear');
 
+const errorFutureYear = document.getElementById('errorFutureYear');
+
+const inputsArray = Array.from(inputsElement);
+inputsArray.forEach((input) => input.addEventListener("click", () => input.style.opacity = 1))
+
 
 const dayBirthSchema = z.object({
   day: z.number().positive(),
   month: z.number().positive(),
   year: z.number().positive(),
 })
-
 
 const dayBirth = {
 }
@@ -78,27 +80,13 @@ function clearErrorRequiredYear() {
 function clearErrorInvalidYear() {
   errorInvalidYear.classList.remove('isInvalid');
 }
-/**
- * evalute the typeerro 
- * @param {array} issues - list of errors 
- **/
-function hanldleDay(event) {
-  if (inputDay.validity.valid) {
-    dayBirth.day = Number.parseInt(inputDay.value) ?? undefined;
-    clearErrorInvalidDay();
-  } else {
-    renderErrorInvalidDay();
-  }
 
+function renderErrorFutureYear() {
+  errorFutureYear.classList.add('isInvalid');
 }
 
-function hanldleMonth() {
-  dayBirth.month = Number.parseInt(inputMonth.value);
-  console.log(dayBirth);
-}
-function hanldleYear() {
-  dayBirth.year = Number.parseInt(inputYear.value);
-  console.log(dayBirth);
+function clearErrorFutureYear() {
+  errorFutureYear.classList.remove('isInvalid');
 }
 /**
   * determine what error is
@@ -158,6 +146,53 @@ function valid(data, value) {
   }
 
 }
+
+function validateCalculatedDate(date, value) {
+  const validated = true
+  if (date === "years") {
+    if (value >= 0) {
+      clearErrorFutureYear();
+      return validated
+    } else {
+      renderErrorFutureYear();
+      return !validated
+    }
+  }
+  if (date === "months") {
+    if (value >= 0) {
+      clearErrorInvalidMonth();
+      return validated
+    } else {
+      renderErrorInvalidMonth();
+      return !validated
+    }
+  }
+  if (date === "days") {
+    if (value >= 0) {
+      clearErrorInvalidDay();
+      return validated
+    } else {
+      renderErrorInvalidDay();
+      return !validated
+    }
+  }
+}
+
+
+function renderResultDate(yearsValue, monthsValue, daysValue) {
+  const controls = form.elements;
+  controls.resultYear.value = yearsValue;
+  controls.resultMonths.value = monthsValue;
+  controls.resultDays.value = daysValue;
+}
+
+function clearResultDate() {
+  const controls = form.elements;
+  controls.resultYear.value = "- -";
+  controls.resultMonths.value = "- -";
+  controls.resultDays.value = "- -";
+}
+
 function handleSend(event) {
   event.preventDefault();
   const dataInput = form.elements;
@@ -189,20 +224,22 @@ function handleSend(event) {
       const options = { largestUnit: "years", smallestUnit: "days" }
       const calculateTime = nowDate.since(dateBirthDay, options);
       const yearsCalculate = calculateTime.years;
-      if (yearsCalculate >= 0) {
+      const monthsCalculate = calculateTime.months;
+      const daysCalculate = calculateTime.days;
+      const yearValidatedCalculated = validateCalculatedDate("years", yearsCalculate);
+      const monthsValidatedCalculated = validateCalculatedDate("months", monthsCalculate);
+      const daysValidatedCalculated = validateCalculatedDate("days", daysCalculate);
 
-        const monthsCalculate = calculateTime.months;
-        const daysCalculate = calculateTime.days;
-
-        console.log(calculateTime);
-        dataInput.resultYear.value = yearsCalculate;
-        dataInput.resultMonths.value = monthsCalculate;
-        dataInput.resultDays.value = daysCalculate;
+      if (yearValidatedCalculated && monthsValidatedCalculated && daysValidatedCalculated) {
+        renderResultDate(yearsCalculate, monthsCalculate, daysCalculate);
+      } else {
+        clearResultDate();
       }
-
     } else {
       console.log("second test not pass");
     };
+  } else {
+    clearResultDate();
   }
 }
 
