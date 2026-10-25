@@ -1,8 +1,7 @@
 import './style.css'
-import * as z from "zod";
 
 const form = document.getElementById('birthday');
-
+const controls = form.elements;
 const inputsElement = document.getElementsByTagName("input");
 
 const errorInvalidDay = document.getElementById('errorValidDay');
@@ -19,22 +18,8 @@ const errorFutureYear = document.getElementById('errorFutureYear');
 const inputsArray = Array.from(inputsElement);
 inputsArray.forEach((input) => input.addEventListener("click", () => input.style.opacity = 1))
 
+const nowDate = Temporal.Now.plainDateISO();
 
-const dayBirthSchema = z.object({
-  day: z.number().positive(),
-  month: z.number().positive(),
-  year: z.number().positive(),
-})
-
-const dayBirth = {
-}
-
-/**
- *
- * data definition
- * dayBirth: is a structure that have:
- * day, month, year
- * */
 function renderErrorRequiredDay() {
   errorRequiredDay.classList.add('isRequired');
 }
@@ -42,6 +27,7 @@ function renderErrorRequiredDay() {
 function renderErrorInvalidDay() {
   errorInvalidDay.classList.add('isInvalid');
 }
+
 function clearErrorRequiredDay() {
   errorRequiredDay.classList.remove('isRequired');
 }
@@ -57,6 +43,7 @@ function renderErrorRequiredMonth() {
 function renderErrorInvalidMonth() {
   errorInvalidMonth.classList.add('isInvalid');
 }
+
 function clearErrorRequiredMonth() {
   errorRequiredMonth.classList.remove('isRequired');
 }
@@ -65,7 +52,6 @@ function clearErrorInvalidMonth() {
   errorInvalidMonth.classList.remove('isInvalid');
 }
 
-
 function renderErrorRequiredYear() {
   errorRequiredYear.classList.add('isRequired');
 }
@@ -73,6 +59,7 @@ function renderErrorRequiredYear() {
 function renderErrorInvalidYear() {
   errorInvalidYear.classList.add('isInvalid');
 }
+
 function clearErrorRequiredYear() {
   errorRequiredYear.classList.remove('isRequired');
 }
@@ -88,20 +75,18 @@ function renderErrorFutureYear() {
 function clearErrorFutureYear() {
   errorFutureYear.classList.remove('isInvalid');
 }
+
 /**
-  * determine what error is
-  * @param {string} issues - name of the problem 
-  **/
-
-function valid(data, value) {
-
+ * determine what error is
+ * @param {string} issues - name of the problem 
+ **/
+function isValidInputDate(data, value) {
   if (data === "day") {
     if (value <= 0 || value > 31) {
       renderErrorInvalidDay();
       clearErrorRequiredDay();
       return false;
-    }
-    else if (value === "" || isNaN(value)) {
+    } else if (value === "" || isNaN(value)) {
       renderErrorRequiredDay();
       clearErrorInvalidDay();
       return false;
@@ -109,15 +94,15 @@ function valid(data, value) {
       clearErrorInvalidDay();
       clearErrorRequiredDay();
       return true;
-    };
+    }
   }
+
   if (data === "month") {
     if (value <= 0 || value > 12) {
       renderErrorInvalidMonth();
       clearErrorRequiredMonth();
       return false;
-    }
-    else if (value === "" || isNaN(value)) {
+    } else if (value === "" || isNaN(value)) {
       renderErrorRequiredMonth();
       clearErrorInvalidMonth();
       return false;
@@ -125,16 +110,15 @@ function valid(data, value) {
       clearErrorInvalidMonth();
       clearErrorRequiredMonth();
       return true;
-    };
+    }
   }
 
   if (data === "year") {
-    if (value <= 0) {
+    if (value > nowDate.year || value <= 0) {
       renderErrorInvalidYear();
       clearErrorRequiredYear();
       return false;
-    }
-    else if (value === "" || isNaN(value)) {
+    } else if (value === "" || isNaN(value)) {
       renderErrorRequiredYear();
       clearErrorInvalidYear();
       return false;
@@ -142,45 +126,42 @@ function valid(data, value) {
       clearErrorInvalidYear();
       clearErrorRequiredYear();
       return true;
-    };
+    }
   }
-
 }
 
-function validateCalculatedDate(date, value) {
-  const validated = true
+function isValidCalculatedDate(date, value) {
+  const validated = true;
   if (date === "years") {
     if (value >= 0) {
       clearErrorFutureYear();
-      return validated
+      return validated;
     } else {
       renderErrorFutureYear();
-      return !validated
+      return !validated;
     }
   }
   if (date === "months") {
     if (value >= 0) {
       clearErrorInvalidMonth();
-      return validated
+      return validated;
     } else {
       renderErrorInvalidMonth();
-      return !validated
+      return !validated;
     }
   }
   if (date === "days") {
     if (value >= 0) {
-      clearErrorInvalidDay();
-      return validated
+      clearErrorInvalidMonth();
+      return validated;
     } else {
-      renderErrorInvalidDay();
-      return !validated
+      renderErrorInvalidMonth();
+      return !validated;
     }
   }
 }
 
-
 function renderResultDate(yearsValue, monthsValue, daysValue) {
-  const controls = form.elements;
   controls.resultYear.value = yearsValue;
   controls.resultMonths.value = monthsValue;
   controls.resultDays.value = daysValue;
@@ -195,40 +176,38 @@ function clearResultDate() {
 
 function handleSend(event) {
   event.preventDefault();
-  const dataInput = form.elements;
-  const dayFiel = dataInput[0];
-  const monthFiel = dataInput[1];
-  const yearFiel = dataInput[2];
-  const dayValue = Number.parseInt(dayFiel.value);
-  const monthValue = Number.parseInt(monthFiel.value);
-  const yearValue = Number.parseInt(yearFiel.value);
+  const dayFiel = controls[0];
+  const monthFiel = controls[1];
+  const yearFiel = controls[2];
+  const inputDayValue = Number.parseInt(dayFiel.value);
+  const inputMonthValue = Number.parseInt(monthFiel.value);
+  const inputYearValue = Number.parseInt(yearFiel.value);
 
-  const dayValid = valid("day", dayValue)
-  const monthValid = valid("month", monthValue)
-  const yearValid = valid("year", yearValue)
+  const dayInputPredicate = isValidInputDate("day", inputDayValue);
+  const monthInputPredicate = isValidInputDate("month", inputMonthValue);
+  const yearInputPredicate = isValidInputDate("year", inputYearValue);
 
-  if (dayValid && monthValid && yearValid) {
+  if (dayInputPredicate && monthInputPredicate && yearInputPredicate) {
     console.log("first teset pass");
     const dateBirthDay = Temporal.PlainDate.from({
-      year: yearValue,
-      month: monthValue,
-      day: dayValue
+      year: inputYearValue,
+      month: inputMonthValue,
+      day: inputDayValue
     });
-    const year = dateBirthDay.year;
-    const month = dateBirthDay.month;
-    const day = dateBirthDay.day;
+    const yearTemporal = dateBirthDay.year;
+    const monthTemporal = dateBirthDay.month;
+    const dayTemporal = dateBirthDay.day;
 
-    if (dayValue === day && monthValue === month && yearValue === year) {
+    if (inputYearValue === yearTemporal && inputMonthValue === monthTemporal && inputDayValue === dayTemporal) {
       console.log("seconde test pass");
-      const nowDate = Temporal.Now.plainDateISO();
-      const options = { largestUnit: "years", smallestUnit: "days" }
+      const options = { largestUnit: "years", smallestUnit: "days" };
       const calculateTime = nowDate.since(dateBirthDay, options);
       const yearsCalculate = calculateTime.years;
       const monthsCalculate = calculateTime.months;
       const daysCalculate = calculateTime.days;
-      const yearValidatedCalculated = validateCalculatedDate("years", yearsCalculate);
-      const monthsValidatedCalculated = validateCalculatedDate("months", monthsCalculate);
-      const daysValidatedCalculated = validateCalculatedDate("days", daysCalculate);
+      const yearValidatedCalculated = isValidCalculatedDate("years", yearsCalculate);
+      const monthsValidatedCalculated = isValidCalculatedDate("months", monthsCalculate);
+      const daysValidatedCalculated = isValidCalculatedDate("days", daysCalculate);
 
       if (yearValidatedCalculated && monthsValidatedCalculated && daysValidatedCalculated) {
         renderResultDate(yearsCalculate, monthsCalculate, daysCalculate);
@@ -237,11 +216,10 @@ function handleSend(event) {
       }
     } else {
       console.log("second test not pass");
-    };
+    }
   } else {
     clearResultDate();
   }
 }
 
 form.addEventListener('submit', handleSend);
-

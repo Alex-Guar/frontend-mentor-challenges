@@ -112,7 +112,6 @@ button:hover {
 }
 
 .errorMessage {
-  display: block;
   color: var(--colour-red-400);
   display: none;
 }
