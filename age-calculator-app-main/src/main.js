@@ -19,6 +19,7 @@ const inputsArray = Array.from(inputsElement);
 inputsArray.forEach((input) => input.addEventListener("click", () => input.style.opacity = 1))
 
 const nowDate = Temporal.Now.plainDateISO();
+console.log(typeof nowDate);
 
 function renderErrorRequiredDay() {
   errorRequiredDay.classList.add('isRequired');
