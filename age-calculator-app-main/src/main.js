@@ -18,7 +18,7 @@ const errorFutureYear = document.getElementById('errorFutureYear');
 const inputsArray = Array.from(inputsElement);
 inputsArray.forEach((input) => input.addEventListener("click", () => input.style.opacity = 1))
 
-const nowDate = new Temporal.Now.plainDateISO();
+let nowDate = Temporal.Now.plainDateISO();
 
 function renderErrorRequiredDay() {
   errorRequiredDay.classList.add('isRequired');
