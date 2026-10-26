@@ -18,8 +18,8 @@ const errorFutureYear = document.getElementById('errorFutureYear');
 const inputsArray = Array.from(inputsElement);
 inputsArray.forEach((input) => input.addEventListener("click", () => input.style.opacity = 1))
 
-const nowDate = Temporal.Now.plainDateISO();
-console.log(typeof nowDate);
+let nowDate;
+nowDate = Temporal.Now.plainDateISO();
 
 function renderErrorRequiredDay() {
   errorRequiredDay.classList.add('isRequired');
@@ -169,7 +169,6 @@ function renderResultDate(yearsValue, monthsValue, daysValue) {
 }
 
 function clearResultDate() {
-  const controls = form.elements;
   controls.resultYear.value = "- -";
   controls.resultMonths.value = "- -";
   controls.resultDays.value = "- -";
@@ -190,7 +189,9 @@ function handleSend(event) {
 
   if (dayInputPredicate && monthInputPredicate && yearInputPredicate) {
     console.log("first teset pass");
-    const dateBirthDay = Temporal.PlainDate.from({
+
+    let dateBirthDay;
+    dateBirthDay = Temporal.PlainDate.from({
       year: inputYearValue,
       month: inputMonthValue,
       day: inputDayValue
