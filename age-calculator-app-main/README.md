@@ -44,10 +44,11 @@ The project is organised into different folders. The `src` folder contains the C
 ## Questions
 
 ### What are you most proud of, and what would you do differently next time?
+I was able to control the form in my project.
 
 
 ### What challenges did you encounter, and how did you overcome them?
-
+I had problems related to dates and times. At first, I was working with Date, but later I decided to use Temporal. This helped me control the form and get the values I needed.
 
 ### What specific areas of your project would you like help with?
 
