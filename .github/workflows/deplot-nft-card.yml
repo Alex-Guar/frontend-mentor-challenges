@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: recipe-page-main
+        working-directory: nft-preview-card-component-main 
     steps:
       - name: Checkout
         uses: actions/checkout@v4

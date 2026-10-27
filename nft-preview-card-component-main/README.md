@@ -23,8 +23,8 @@
 
 ### Links
 
-* Solution URL: [link](https://github.com/Alex-Guar/frontend-mentor-challenges/tree/main/age-calculator-app-main/)
-* Live Site URL: [link](https://alex-guar.github.io/frontend-mentor-challenges/age-calculator-app-main/)
+* Solution URL: [link](https://github.com/Alex-Guar/frontend-mentor-challenges/tree/main/nft-preview-card-component-main/)
+* Live Site URL: [link](https://alex-guar.github.io/frontend-mentor-challenges/nft-preview-card-component-main/)
 * HTML: [link](./index.html)
 * CSS: [link](./src/style.css)
 * JS: [link](./src/main.js)
