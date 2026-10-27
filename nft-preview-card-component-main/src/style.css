@@ -43,6 +43,8 @@ hr {
   color: white;
   padding: 23px;
   border-radius: 0.75rem;
+  margin: 3.75rem 1.37rem 3.75rem 1.37rem;
+  box-shadow: 0 25px 40px hsla(217, 54%, 4%, 0.5);
 }
 
 .card-wrapper {
@@ -55,23 +57,23 @@ hr {
   background: no-repeat url("./assets/icon-view.svg");
   background-position: center;
   background-color: var(--colour-cyan-400);
-  border-radius: 0.74em;
-  max-height: 336px;
+  border-radius: 0.88em;
+  height: clamp(14.3125rem, 11.5767rem + 12.1591vw, 21rem);
 }
+
 .card-image {
   width: 100%;
   border-radius: 0.74em;
-  object-fit: fill;
+  height: 100%;
 
 }
 
 .card-image:hover {
   opacity: 0.4;
-  background-color: red;
 }
 
 .card-image:hover {
-  opacity: 0.2;
+  opacity: 0.5;
 }
 
 .card-background:hover {
