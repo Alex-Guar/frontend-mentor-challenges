@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+:root {
+  --colour-blue-500: hsl(215, 51%, 70%);
+  --colour-cyan-400: hsl(178, 100%, 50%);
+  --colour-blue-950: hsl(217, 54%, 11%);
+  --colour-blue-900: hsl(216, 50%, 16%);
+  --colour-blue-800: hsl(215, 32%, 27%);
+  --colour-white: hsl(0, 0%, 100%);
+  --step-0: clamp(1rem, 0.9489rem + 0.2273vw, 1.125rem);
+  --step-1: clamp(1.2rem, 1.0774rem + 0.5448vw, 1.4996rem);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: var(--colour-blue-950);
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+hr {
+  opacity: 0.1;
+}
+
+.card-container {
+  max-width: 23.8750em;
+  width: 100%;
+  background-color: var(--colour-blue-900);
+  color: white;
+  padding: 23px;
+  border-radius: 0.75rem;
+}
+
+.card-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.card-banner {
+  background: no-repeat url("./assets/icon-view.svg");
+  background-position: center;
+  background-color: var(--colour-cyan-400);
+  border-radius: 0.74em;
+  max-height: 336px;
+}
+.card-image {
+  width: 100%;
+  border-radius: 0.74em;
+  object-fit: fill;
+
+}
+
+.card-image:hover {
+  opacity: 0.4;
+  background-color: red;
+}
+
+.card-image:hover {
+  opacity: 0.2;
+}
+
+.card-background:hover {
+  background-color: var(--colour-cyan-400);
+}
+
+.card-title {
+  font-size: var(--step-1);
+  font-weight: 450;
+
+}
+
+.card-title:hover {
+  color: var(--colour-cyan-400);
+}
+
+.card-description {
+  font-size: var(--step-0);
+  font-weight: 200;
+  color: var(--colour-blue-500)
+}
+
+.card-states {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-cost {
+  display: flex;
+  gap: 5px;
+  color: var(--colour-cyan-400);
+}
+
+.card-time {
+  display: flex;
+  gap: 0.31rem;
+  align-items: center;
+  color: var(--colour-blue-500);
+}
+
+.card-userCreator {
+  display: flex;
+  align-items: center;
+  gap: 0.93rem;
+}
+
+.card-creatorImage {
+  width: 2.12rem;
+  height: 2.12rem;
+  border-radius: 50%;
+  border: 1px white solid;
+}
+
+.card-descriptionCreator {
+  color: var(--colour-blue-500);
+  font-weight: 350;
+}
+
+.card-userName {
+  color: white;
+}
+
+.card-userName:hover {
+  color: var(--colour-cyan-400);
+}

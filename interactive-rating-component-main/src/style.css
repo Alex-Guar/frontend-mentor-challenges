@@ -8,18 +8,19 @@
   --color-grey-950: hsl(216, 12%, 8%);
 }
 
+
+html {
+  box-sizing: border-box;
+  font-family: "Overpass", sans-serif;
+  background-color: var(--color-grey-950);
+}
+
 *,
 *::before,
 *::after {
   box-sizing: inherit;
   margin: 0;
   padding: 0;
-}
-
-html {
-  box-sizing: border-box;
-  font-family: "Overpass", sans-serif;
-  background-color: var(--color-grey-950);
 }
 
 body {
@@ -34,9 +35,7 @@ body {
 li {
   background-color: var(--color-grey-900);
   padding: 32px;
-  border-radius: 50%;
-
-
+  clip-path: circle(26px);
 }
 
 .container_raiting {
