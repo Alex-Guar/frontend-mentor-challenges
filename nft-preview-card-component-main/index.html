@@ -2,37 +2,40 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>nft-preview-card-component-main</title>
 </head>
 
 <body>
-  <div class="card-container">
-    <div class="card-wrapper">
-      <div class="card-banner">
-        <img class="card-image" src="./src/assets/image-equilibrium.jpg" alt="cube" />
-      </div>
-      <h1 class="card-title">Equilibrium #3429</h1>
-      <p class="card-description">Our Equilibrium collection promotes balance and calm.</p>
-      <div class="card-states">
-        <div class="card-cost">
-          <img class="card-logoMoney" src="./src/assets/icon-ethereum.svg" alt="coint of ethereum" />
-          <span class="card-value">0.041 ETH</span>
+  <main>
+    <div class="card-container">
+      <div class="card-wrapper">
+        <div class="card-banner">
+          <img class="card-image" src="./src/assets/image-equilibrium.jpg" alt="cube">
+          <img class="card-imageOverlay" src="./src/assets/icon-view.svg" alt="eye">
         </div>
-        <div class="card-time">
-          <img class="card-timeLogo" src="src/assets/icon-clock.svg" alt="clock" />
-          <span class="card-timeValue">3 days left</span>
+        <h1 class="card-title">Equilibrium #3429</h1>
+        <p class="card-description">Our Equilibrium collection promotes balance and calm.</p>
+        <div class="card-states">
+          <div class="card-cost">
+            <img class="card-logoMoney" src="./src/assets/icon-ethereum.svg" alt="coin of ethereum">
+            <span class="card-value">0.041 ETH</span>
+          </div>
+          <div class="card-time">
+            <img class="card-timeLogo" src="./src/assets/icon-clock.svg" alt="clock">
+            <span class="card-timeValue">3 days left</span>
+          </div>
         </div>
-      </div>
-      <hr>
-      <div class="card-userCreator">
-        <img class="card-creatorImage" src="./src/assets/image-avatar.png" alt="face of  Jules">
-        <p class="card-descriptionCreator">Creation by<span class="card-userName"> Jules Wyvern</span> </p>
+        <hr>
+        <div class="card-userCreator">
+          <img class="card-creatorImage" src="./src/assets/image-avatar.png" alt="face of Jules">
+          <p class="card-descriptionCreator">Creation by <span class="card-userName">Jules Wyvern</span></p>
+        </div>
       </div>
     </div>
-  </div>
+  </main>
   <script type="module" src="/src/main.js"></script>
 </body>
 

@@ -7,8 +7,17 @@
   --colour-blue-900: hsl(216, 50%, 16%);
   --colour-blue-800: hsl(215, 32%, 27%);
   --colour-white: hsl(0, 0%, 100%);
+
   --step-0: clamp(1rem, 0.9489rem + 0.2273vw, 1.125rem);
   --step-1: clamp(1.2rem, 1.0774rem + 0.5448vw, 1.4996rem);
+
+  --space-2xs: clamp(0.25rem, 0.2244rem + 0.1136vw, 0.3125rem);
+  --space-m: clamp(1.3125rem, 1.2614rem + 0.2273vw, 1.4375rem);
+
+  --shifY-shadow: 25px;
+  --shifX-shadow: 0;
+  --blurRadius: 40px;
+  --color-shadow: hsla(217, 54%, 4%, 0.5);
 }
 
 *,
@@ -41,44 +50,51 @@ hr {
   width: 100%;
   background-color: var(--colour-blue-900);
   color: white;
-  padding: 23px;
+  padding: var(--space-m);
   border-radius: 0.75rem;
   margin: 3.75rem 1.37rem 3.75rem 1.37rem;
-  box-shadow: 0 25px 40px hsla(217, 54%, 4%, 0.5);
+  box-shadow: var(--shifX-shadow) var(--shifY-shadow) var(--blurRadius) var(--color-shadow);
 }
 
 .card-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: var(--space-m);
 }
 
 .card-banner {
-  background: no-repeat url("./assets/icon-view.svg");
-  background-position: center;
+  position: relative;
   background-color: var(--colour-cyan-400);
   border-radius: 0.88em;
-  height: clamp(14.3125rem, 11.5767rem + 12.1591vw, 21rem);
 }
 
 .card-image {
+  display: block;
   width: 100%;
+  height: auto;
   border-radius: 0.74em;
-  height: 100%;
+  transition: .5s ease;
 
 }
 
-.card-image:hover {
+.card-imageOverlay {
+  position: absolute;
+  top: 40%;
+  left: 45%;
+  transition: .5s ease;
+  opacity: 0;
+
+}
+
+
+.card-banner:hover .card-imageOverlay {
+  opacity: 0.9;
+}
+
+.card-banner:hover .card-image {
   opacity: 0.4;
 }
 
-.card-image:hover {
-  opacity: 0.5;
-}
-
-.card-background:hover {
-  background-color: var(--colour-cyan-400);
-}
 
 .card-title {
   font-size: var(--step-1);
@@ -104,7 +120,7 @@ hr {
 
 .card-cost {
   display: flex;
-  gap: 5px;
+  gap: var(--space-2xs);
   color: var(--colour-cyan-400);
 }
 
