@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+:root {
+  --head-height: clamp(35.75rem, 33.5rem + 10vw, 41.25rem);
+  --head-padding-l-r: clamp(9.4375rem, 8.8494rem + 2.6136vw, 10.875rem);
+  --head-padding-top: clamp(3.5rem, 3.2699rem + 1.0227vw, 4.0625rem);
+  --head-padding-bottom: clamp(7.75rem, 7.2642rem + 2.1591vw, 8.9375rem);
+  --head-gap: clamp(6.5625rem, 6.1278rem + 1.9318vw, 7.625rem);
+  --main-height: 2086;
+  --interactive-height: clamp(43.9375rem, 41.1506rem + 12.3864vw, 50.75rem);
+  --interactive-padding-t-b: clamp(8.625rem, 8.0625rem + 2.5vw, 10rem);
+
+  --hero-padding-t-b: clamp(2.125rem, 1.9716rem + 0.6818vw, 2.5rem);
+
+
+  --head-step: clamp(2.0218rem, 1.2347rem + 3.498vw, 3.9457rem);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+
+  list-style-type: none;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Alata", sans-serif;
+  min-height: 100vh;
+}
+
+.l-container {
+  padding-left: var(--head-padding-l-r);
+  padding-right: var(--head-padding-l-r);
+}
+
+.l-header .l-container {
+  background-image: url("./assets/desktop/image-hero.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  height: var(--head-height);
+  padding-top: var(--head-padding-top);
+  padding-bottom: var(--head-padding-bottom);
+  gap: var(--head-gap);
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navigation-list {
+  display: flex;
+}
+
+.navigation-link {
+  color: white;
+}
+
+.hero {
+  border: 1px white solid;
+  width: max-content;
+  padding-top: var(--hero-padding-t-b);
+  padding-bottom: var(--hero-padding-t-b);
+  padding-left: var(--hero-padding-t-b);
+  padding-right: var(--hero-padding-t-b);
+}
+
+.hero-title {
+  color: white;
+  text-transform: uppercase;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 300;
+  font-size: var(--head-step);
+  max-inline-size: 12ch;
+}
