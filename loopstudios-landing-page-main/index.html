@@ -9,6 +9,36 @@
 </head>
 
 <body>
+  <div class="l-aside" id="aside">
+    <div class="l-container">
+      <nav class="aside-navigation" aria-label="Main navigation">
+        <a class="aside-navigation-logo" href="/" aria-label="Loopstudios home">
+          <img src="./src/assets/logo.svg" alt="" />
+        </a>
+
+        <ul class="aside-navigation-list">
+          <li class="aside-navigation-item">
+            <a class="aside-navigation-link" href="#about">About</a>
+          </li>
+          <li class="aside-navigation-item">
+            <a class="aside-navigation-link" href="#footer">Careers</a>
+          </li>
+          <li class="aside-navigation-item">
+            <a class="aside-navigation-link" href="#creations">Events</a>
+          </li>
+          <li class="aside-navigation-item">
+            <a class="aside-navigation-link" href="#creations">Products</a>
+          </li>
+          <li class="aside-navigation-item">
+            <a class="aside-navigation-link" href="#footer">Support</a>
+          </li>
+        </ul>
+      </nav>
+      <a class="aside-close" href="aside">
+        <img src="./src/assets/icon-close.svg" alt="close" />
+      </a>
+    </div>
+  </div>
   <header class="l-header">
     <div class="l-container">
       <nav class="navigation" aria-label="Main navigation">
@@ -33,6 +63,10 @@
             <a class="navigation-link" href="#footer">Support</a>
           </li>
         </ul>
+
+        <a class="navigation-hamburger" href="#aside" aria-label="Options navigation">
+          <img src="./src/assets/icon-hamburger.svg" alt="icon with white line" />
+        </a>
       </nav>
 
       <section class="hero">
@@ -47,8 +81,11 @@
     <section class="interactive" id="about">
       <div class="l-container">
         <div class="interactive-media">
-          <img class="interactive-image" src="./src/assets/desktop/image-interactive.jpg"
-            alt="Person wearing a virtual reality headset" />
+          <picture>
+            <source media="(width <= 784px)" srcset="./src/assets/mobile/image-interactive.jpg" />
+            <img class="interactive-image" src="./src/assets/desktop/image-interactive.jpg"
+              alt="Person wearing a virtual reality headset" />
+          </picture>
         </div>
 
         <div class="interactive-content">
@@ -80,41 +117,49 @@
           <article class="creation-card">
             <img class="creation-image" src="./src/assets/desktop/image-deep-earth.jpg" alt="" />
             <h3 class="creation-title">Deep earth</h3>
+            <div class="creation-filter"></div>
           </article>
 
           <article class="creation-card">
             <img class="creation-image" src="./src/assets/desktop/image-night-arcade.jpg" alt="" />
             <h3 class="creation-title">Night arcade</h3>
+            <div class="creation-filter"></div>
           </article>
 
           <article class="creation-card">
             <img class="creation-image" src="./src/assets/desktop/image-soccer-team.jpg" alt="" />
             <h3 class="creation-title">Soccer team VR</h3>
+            <div class="creation-filter"></div>
           </article>
 
           <article class="creation-card">
             <img class="creation-image" src="./src/assets/desktop/image-grid.jpg" alt="" />
             <h3 class="creation-title">The grid</h3>
+            <div class="creation-filter"></div>
           </article>
 
           <article class="creation-card">
             <img class="creation-image" src="./src/assets/desktop/image-from-above.jpg" alt="" />
             <h3 class="creation-title">From above VR</h3>
+            <div class="creation-filter"></div>
           </article>
 
           <article class="creation-card">
             <img class="creation-image" src="./src/assets/desktop/image-pocket-borealis.jpg" alt="" />
             <h3 class="creation-title">Pocket borealis</h3>
+            <div class="creation-filter"></div>
           </article>
 
           <article class="creation-card">
             <img class="creation-image" src="./src/assets/desktop/image-curiosity.jpg" alt="" />
             <h3 class="creation-title">The curiosity</h3>
+            <div class="creation-filter"></div>
           </article>
 
           <article class="creation-card">
             <img class="creation-image" src="./src/assets/desktop/image-fisheye.jpg" alt="" />
             <h3 class="creation-title">Make it fisheye</h3>
+            <div class="creation-filter"></div>
           </article>
         </div>
       </div>
