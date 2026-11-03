@@ -1,79 +1,74 @@
 @import url('https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
 :root {
-  /* Head Height: 572px → 660px */
-  --head-height: clamp(35.75rem, 33.5rem + 10vw, 41.25rem);
-  /* Head Padding Left/Right: 38px →100px */
-  --head-padding-l: clamp(2.375rem, 0.4063rem + 8.75vw, 7.1875rem);
-  /* Head Padding Left/Right: 86px →100px */
-  --head-padding-r: clamp(5.375rem, 5.017rem + 1.5909vw, 6.25rem);
-  /* Head Padding Top: 56px → 65px */
-  --head-padding-top: clamp(3.5rem, 3.2699rem + 1.0227vw, 4.0625rem);
-  /* Head Padding Bottom: 124px → 143px */
-  --head-padding-bottom: clamp(7.75rem, 7.2642rem + 2.1591vw, 8.9375rem);
+  /* --- Variables de Espaciado (Space) renombradas y ordenadas de menor a mayor --- */
 
-  /* Head Gap: 105px → 122px */
-  --head-gap: clamp(6.5625rem, 6.1278rem + 1.9318vw, 7.625rem);
+  /* Space 1: 14px → 17px */
+  --space-1: clamp(0.875rem, 0.7983rem + 0.3409vw, 1.0625rem);
 
-  /* Nav Gap: 26px → 30px */
-  --nav-gap: clamp(1.625rem, 1.5227rem + 0.4545vw, 1.875rem);
+  /* Space 2: 18px → 21px */
+  --space-2: clamp(1.125rem, 1.0483rem + 0.3409vw, 1.3125rem);
 
-  /* Main Height: 2086px */
-  --main-height: 2086;
+  /* Space 3: 26px → 30px */
+  --space-3: clamp(1.625rem, 1.5227rem + 0.4545vw, 1.875rem);
 
-  /* Interactive Height: 703px → 812px */
-  --interactive-height: clamp(43.9375rem, 41.1506rem + 12.3864vw, 50.75rem);
+  /* Space 4: 32px → 63px */
+  --space-4: clamp(2.0218rem, 1.2347rem + 3.498vw, 3.9457rem);
 
-  /* Interactive Padding Top/Bottom: 138px → 160px */
-  --interactive-padding-t-b: clamp(8.625rem, 8.0625rem + 2.5vw, 10rem);
+  /* Space 5 / Hero Padding Top/Bottom: 34px → 40px */
+  --space-5: clamp(2.125rem, 1.9716rem + 0.6818vw, 2.5rem);
 
-  /* Hero Padding Top/Bottom: 34px → 40px */
-  --hero-padding-t-b: clamp(2.125rem, 1.9716rem + 0.6818vw, 2.5rem);
+  /* Space 6: 38px → 100px */
+  --space-6: clamp(2.375rem, 0.4063rem + 8.75vw, 7.1875rem);
 
-  /* Head Step: 32px → 63px */
-  --head-step: clamp(2.0218rem, 1.2347rem + 3.498vw, 3.9457rem);
+  /* Space 7: 56px → 65px */
+  --space-7: clamp(3.5rem, 3.2699rem + 1.0227vw, 4.0625rem);
 
-  /* Space 2: 82px → 95px */
-  --space-2: clamp(5.125rem, 4.7926rem + 1.4773vw, 5.9375rem);
+  /* Space 8: 69px → 80px */
+  --space-8: clamp(4.3125rem, 4.0313rem + 1.25vw, 5rem);
 
-  /* Space 3: 139px → 161px */
-  --space-3: clamp(8.6875rem, 8.125rem + 2.5vw, 10.0625rem);
+  /* Space 9: 82px → 95px */
+  --space-9: clamp(5.125rem, 4.7926rem + 1.4773vw, 5.9375rem);
 
-  /* Space 4: 69px → 80px */
-  --space-4: clamp(4.3125rem, 4.0313rem + 1.25vw, 5rem);
-  /* Space 5: 159px → 183px */
-  --space-5: clamp(9.9375rem, 9.3239rem + 2.7273vw, 11.4375rem);
+  /* Space 10: 105px → 122px */
+  --space-10: clamp(6.5625rem, 6.1278rem + 1.9318vw, 7.625rem);
 
-  /* Space 6: 34px → 40px */
-  --space-6: clamp(2.125rem, 1.9716rem + 0.6818vw, 2.5rem);
+  /* Space 11: 124px → 143px */
+  --space-11: clamp(7.75rem, 7.2642rem + 2.1591vw, 8.9375rem);
 
-  /* Space 7: 14px → 17px */
-  --space-7: clamp(0.875rem, 0.7983rem + 0.3409vw, 1.0625rem);
+  /* Space 12: 139px → 161px */
+  --space-12: clamp(8.6875rem, 8.125rem + 2.5vw, 10.0625rem);
+
+  /* Space 13: 159px → 183px */
+  --space-13: clamp(9.9375rem, 9.3239rem + 2.7273vw, 11.4375rem);
+
+  /* Space 14: 572px → 660px */
+  --space-14: clamp(35.75rem, 33.5rem + 10vw, 41.25rem);
+
+
+  /* --- Variables de Tipografía (Font Step) --- */
+
+  /* Step h2-cards: 22.464px → 35.5289px */
+  --font-step-h2-card: clamp(1.404rem, 1.07rem + 1.4846vw, 2.2206rem);
 
   /* Font Size H2: 27px → 47px */
-  --font-size-h2: clamp(1.6848rem, 1.1631rem + 2.3185vw, 2.96rem);
+  --font-step-h2: clamp(1.6848rem, 1.1631rem + 2.3185vw, 2.96rem);
 
   /* Font Size P1: 13px → 15px */
-  --font-size-p1: clamp(0.8125rem, 0.7614rem + 0.2273vw, 0.9375rem);
+  --font-step-p1: clamp(0.8125rem, 0.7614rem + 0.2273vw, 0.9375rem);
 
-  /* Step H3: */
-  --font-size-h3: clamp(1.404rem, 1.07rem + 1.4846vw, 2.2206rem);
-
-/* Space gap grid: 18px → 21px */
-  --space-gap-grid: clamp(1.125rem, 1.0483rem + 0.3409vw, 1.3125rem);
-/* Step h2-cards: 22.464px → 35.5289px */
-  --font-size-h2-card: clamp(1.404rem, 1.07rem + 1.4846vw, 2.2206rem);
+  /* Step H3 */
+  --font-step-h3: clamp(1.404rem, 1.07rem + 1.4846vw, 2.2206rem);
 }
 
-
 @mixin style-font($h) {
-  @if $h == h1 or $h==h2 {
-  text-transform: uppercase;
+  @if $h == h1 or $h == h2 {
+    text-transform: uppercase;
     font-family: "Josefin Sans", sans-serif;
     font-weight: 300;
   }
-  @if $h==h3{
-  text-transform: uppercase;
+  @if $h == h3 {
+    text-transform: uppercase;
     font-family: "Josefin Sans", sans-serif;
     font-weight: 200;
   }
@@ -81,13 +76,11 @@
 
 @mixin underline {
   background-image: linear-gradient(white 0 0);
-  background-position: bottom center; /*Adjust the background-position to move the line*/
+  background-position: bottom center;
   background-repeat: no-repeat;
-  background-size: 50% 2px; /*Adjust the background size to control length and height*/
-  padding-bottom: 7px; /* this can also control the position */
+  background-size: 50% 2px;
+  padding-bottom: 7px;
 }
-   
-
 
 *,
 *::before,
@@ -111,7 +104,7 @@ html {
 }
 
 button {
-  border:0;
+  border: 0;
   text-transform: uppercase;
   font-family: "Alata", sans-serif;
   font-weight: 300;
@@ -120,72 +113,67 @@ button {
   letter-spacing: 1ch;
 }
 
-
 body {
-  position: relative;
-  font-family: "Alata", sans-serif;
-  min-height:100vh;
   display: grid;
   grid-template-columns: 1fr;
+  position: relative;
+  min-height: 100vh;
+  font-family: "Alata", sans-serif;
 }
 
 .l-container {
-  padding-left: var(--head-padding-l);
-  padding-right: var(--head-padding-l);
+  padding-left: var(--space-6);
+  padding-right: var(--space-6);
 }
 
 .l-aside {
   display: none;
   position: absolute;
-  background: black;
+  z-index: 5;
   width: 100%;
   height: 100%;
-  z-index: 5;
-  &:target {
-  display: block;
-}
+  background-color: black;
 
+  &:target {
+    display: block;
+  }
 
   .l-container {
-    padding-top: var(--head-padding-top);
     display: flex;
     justify-content: space-between;
+    padding-top: var(--space-7);
   }
 
   .aside-navigation {
     display: flex;
     flex-direction: column;
-    gap: var(--nav-gap);
+    gap: var(--space-3);
 
     &-list {
       display: flex;
       flex-direction: column;
     }
+
     &-link {
       text-transform: uppercase;
       @include style-font(h2);
-}
-
-
+    }
   }
 }
-
-
 
 .l-header {
   .l-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-10);
+    height: var(--space-14);
+    padding-top: var(--space-7);
+    padding-bottom: var(--space-11);
     background-image: url("./assets/desktop/image-hero.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    display: flex;
-    flex-direction: column;
-    height: var(--head-height);
-    padding-top: var(--head-padding-top);
-    padding-bottom: var(--head-padding-bottom);
-    gap: var(--head-gap);
   }
 }
-
 
 .navigation {
   display: flex;
@@ -194,165 +182,170 @@ body {
 
   &-list {
     display: flex;
-    gap: var(--nav-gap);
+    gap: var(--space-3);
   }
 
   &-link {
-    color: white;
     text-decoration: none;
-    
+    color: white;
+
     &:hover {
-     @include underline 
+      @include underline;
     }
   }
+
   &-hamburger {
     display: none;
   }
 }
 
 .hero {
-  border: 1px white solid;
   width: max-content;
-  padding: var(--hero-padding-t-b);
+  border: 1px white solid;
+  padding: var(--space-5);
 
   &-title {
-    @include style-font(h1);
-    color: white;
-    font-size: var(--head-step);
     max-inline-size: 12ch;
+    font-size: var(--space-4);
+    color: white;
+    @include style-font(h1);
   }
 }
 
 .interactive {
-    padding-top:var(--space-3);
-    padding-bottom: var(--space-3);
+  padding-top: var(--space-12);
+  padding-bottom: var(--space-12);
+
   .l-container {
     position: relative;
   }
 
   &-content {
-    position: absolute;
-    background-color: white;
-    width: fit-content;
     display: flex;
     flex-direction: column;
-    gap: var(--nav-gap);
-    top:200px;
-    left:700px;
-    padding-left: var(--space-2);
-    padding-top: var(--space-2);
+    gap: var(--space-3);
+    width: fit-content;
+    padding-left: var(--space-9);
+    padding-top: var(--space-9);
+    position: absolute;
+    top: 200px;
+    left: 700px;
+    background-color: white;
   }
 
   &-title {
     @include style-font(h2);
-    font-size: var(--font-size-h2);
+    font-size: var(--font-step-h2);
     max-inline-size: 15ch;
   }
 
   &-text {
-    font-size: var(--font-size-p1);
+    font-size: var(--font-step-p1);
     max-inline-size: 45.2ch;
     color: Grey;
   }
 
   &-image {
-    max-width: 100%
+    max-width: 100%;
   }
-
 }
 
 .creations {
-
   .l-container {
     display: flex;
     flex-direction: column;
-    gap: var(--space-4);
-    padding-bottom: var(--space-5);
-}
+    gap: var(--space-8);
+    padding-bottom: var(--space-13);
+  }
+
   &-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
+
   &-title {
-    @include style-font(h3);
-    font-size: var(--font-size-h3);
+    @include style-font(h2);
+    font-size: var(--font-step-h3);
   }
 
   &-grid {
     display: grid;
-grid-template-columns: repeat(auto-fill,
-              minmax(256px, 1fr));
-    gap: var(--space-gap-grid);
+    grid-template-columns: repeat(auto-fill, minmax(256px, 1fr));
+    gap: var(--space-2);
     align-items: center;
     justify-content: stretch;
     justify-items: center;
-    }
-
-
+  }
 }
 
-  .btn {
-    border: black 1px solid;
-   height: stretch;
-   padding-left:var(--hero-padding-t-b);
-   padding-right:var(--hero-padding-t-b);
-   &:hover {
-     background-color: black;
-     color: white;
-     cursor: pointer;
-   }
+.btn {
+  height: stretch;
+  border: black 1px solid;
+  padding-left: var(--space-5);
+  padding-right: var(--space-5);
+
+  &:hover {
+    cursor: pointer;
+    color: white;
+    background-color: black;
   }
+}
 
 .creation {
-
   &-card {
     position: relative;
-    
   }
-    &-filter {
-      position: absolute;
-      content: "";
-      display: block;
-      width:100%;
-      height: 100%;
-      top: 0;
-      background: linear-gradient(0deg,rgba(0, 0, 0, 0.57) 10%,
-                  rgba(36, 31, 31, 0.35) 35%,
-                  rgba(255, 255, 255, 0) 54%);
-      z-index: 2;
-    }
+
+  &-filter {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.57) 10%,
+      rgba(36, 31, 31, 0.35) 35%,
+      rgba(255, 255, 255, 0) 54%
+    );
+  }
 
   &-image {
     display: block;
-    object-fit: fill;
     max-width: 100%;
     z-index: 1;
-    }
+    object-fit: fill;
+  }
+
   &-title {
-    color: white;
     position: absolute;
-    @include style-font(h3);
-    font-size: var(--font-size-h2-card);
-    max-inline-size: 7.5ch;
-    letter-spacing: 0;
     bottom: 37px;
     left: 37px;
     z-index: 4;
+    color: white;
+    @include style-font(h3);
+    font-size: var(--font-step-h2-card);
+    max-inline-size: 7.5ch;
+    letter-spacing: 0;
   }
 }
 
 .l-footer {
   background-color: black;
   color: white;
+
   .l-container {
-    padding-top: var(--space-6);
-    padding-bottom: var(--space-6);
+    padding-top: var(--space-5);
+    padding-bottom: var(--space-5);
   }
 }
+
 .creation-card:hover .creation-filter {
   background: white;
-  filter: opacity(0.8)
+  filter: opacity(0.8);
 }
 
 .creation-card:hover .creation-title {
@@ -363,88 +356,82 @@ grid-template-columns: repeat(auto-fill,
 .footer-content {
   display: flex;
   justify-content: space-between;
-  align-items:center;
+  align-items: center;
 }
 
 .footer-primary {
   display: flex;
-  flex-direction:column;
-  gap: var(--nav-gap);
+  flex-direction: column;
+  gap: var(--space-3);
 }
 
 .footer-navigation-list {
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: var(--nav-gap);
-} 
-.footer-navigation-link {
-    &:hover {
-     @include underline 
-    }
+  gap: var(--space-3);
+  width: 100%;
 }
+
+.footer-navigation-link {
+  &:hover {
+    @include underline;
+  }
+}
+
 .footer-secondary {
   display: flex;
-  flex-direction:column;
-  gap: var(--nav-gap);
-  align-items: flex-end
+  flex-direction: column;
+  gap: var(--space-3);
+  align-items: flex-end;
 }
 
 .social-links {
   display: flex;
-  gap: var(--space-7);
+  gap: var(--space-1);
 }
 
 .social-link {
-    &:hover {
-     @include underline 
-    }
+  &:hover {
+    @include underline;
   }
+}
 
 .footer-copyright {
   color: Grey;
 }
 
-
-
 @media (max-width: 49em) {
-.hero {
-  align-self: center;
-}
+  .hero {
+    align-self: center;
+  }
+
   .interactive {
     .l-container {
       display: flex;
       flex-direction: column;
-        align-items: center;
+      align-items: center;
     }
+
     &-content {
-      position: static;
       padding-left: 0;
+      position: static;
     }
+  }
+
+  .creations {
+    .l-container {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-8);
+      padding-bottom: var(--space-13);
+      align-items: center;
     }
-
-
-.creations {
-
-  .l-container {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-4);
-    padding-bottom: var(--space-5);
-    align-items: center;
-}
-}
-
-
-
-
-
+  }
 
   .footer-content {
     flex-direction: column;
-
-    gap: var(--nav-gap);
+    gap: var(--space-3);
   }
 
   .footer-navigation-list {
@@ -452,21 +439,21 @@ grid-template-columns: repeat(auto-fill,
   }
 
   .footer-secondary {
-align-items: center;
-}
+    align-items: center;
+  }
 
-.navigation {
-  &-list {
-    display: none;
+  .navigation {
+    &-list {
+      display: none;
+    }
+    &-hamburger {
+      display: block;
+    }
   }
-  &-hamburger {
-    display: block;
-  }
-}
-.l-header {
-  .l-container {
-    background-image: url("./assets/mobile/image-hero.jpg");
-  }
-}
-}
 
+  .l-header {
+    .l-container {
+      background-image: url("./assets/mobile/image-hero.jpg");
+    }
+  }
+}
