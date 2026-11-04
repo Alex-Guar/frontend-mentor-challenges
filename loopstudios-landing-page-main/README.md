@@ -27,7 +27,7 @@
 * Solution URL: [link](https://github.com/Alex-Guar/frontend-mentor-challenges/tree/main/loopstudios-landing-page-main)
 * Live Site URL: [link](https://alex-guar.github.io/frontend-mentor-challenges/loopstudios-landing-page-main/)
 * HTML: [link](./index.html)
-* CSS: [link](./src/style.css)
+* CSS: [link](./src/style.scss)
 * JS: [link](./src/main.js)
 
 ## My process
