@@ -1,0 +1,129 @@
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  background: black;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+
+body {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 100vh;
+}
+
+.navigation.l-container {
+
+    display: grid;
+    width: 100%;
+    position: absolute;
+    grid-template-columns: 0.8fr 1.2fr;
+    justify-content: space-between;
+    align-items: center;
+    scroll-behavior: smooth;
+  padding: 12px;
+  }
+
+
+.l-header {
+  position: relative;
+
+  .carousel {
+    &-items {
+      display: flex;
+      width: 100vw;
+      overflow-x: scroll;
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+
+      // Nested correctly inside .carousel-items matching your HTML
+      .carousel-item {
+        scroll-snap-align: center;
+        flex: 0 0 100%;
+      }
+
+      .carousel-image {
+        width: 100%;
+      }
+    }
+    &-navigation {
+      background-color: black;
+      position: absolute;
+      top: calc(100% - 28px);
+      left: calc(100% - 32px);
+      
+    }
+  }
+}
+
+.products {
+  &-lists {
+    display: flex;
+    width: 100vw;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  &:-webkit-scrollbar {
+  display: none;
+}
+  }
+  &-item {
+      scroll-snap-align: center;
+      flex: 0 0 100%;
+    }
+
+}
+
+
+.scenary {
+  width: 100%;
+}
+
+.fade-out {
+  animation: fade-out 0.3s linear both;
+}
+
+.fade-in {
+  animation: fade-in 0.3s linear both;
+}
+
+
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

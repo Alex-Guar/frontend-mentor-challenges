@@ -5,58 +5,142 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>room-homepage-master--</title>
+  <title>Room Homepage</title>
 </head>
 
 <body>
   <header class="l-header">
-    <div class="navigation">
-      <img class="navigation-hamburgerns" src="./src/assets/images/icon-hamburger.svg">
-      <a class="navigation-logo" href="#aside">
-        <img src="./src/assets/images/logo.svg">
+    <div class="navigation l-container">
+      <a class="navigation-hamburger" href="#aside" aria-label="Open menu">
+        <img src="./src/assets/images/icon-hamburger.svg" alt="Open menu">
+      </a>
+      <a class="navigation-logo" href="#">
+        <img src="./src/assets/images/logo.svg" alt="Room Logo">
       </a>
     </div>
-    <div class="slide">
-      <img class="slide-image" src="./src/assets/images/desktop-image-hero-1.jpg" />
-      <button class="slide-btm slide-btm-l" type="button"></button>
-      <button class="slide-btm slide-btm-r" type="button"></button>
+
+    <div class="carousel">
+      <ul class="carousel-items">
+        <li class="carousel-item">
+          <img class="carousel-image" src="./src/assets/images/mobile-image-hero-1.jpg" alt="Hero image 1">
+        </li>
+        <li class="carousel-item">
+          <img class="carousel-image" src="./src/assets/images/mobile-image-hero-2.jpg" alt="Hero image 2">
+        </li>
+        <li class="carousel-item">
+          <img class="carousel-image" src="./src/assets/images/mobile-image-hero-3.jpg" alt="Hero image 3">
+        </li>
+      </ul>
+      <div class="carousel-navigation">
+        <a class="carousel-navigation--left">
+          <img class="carousel-navigation-icon" src="./src/assets/images/icon-angle-left.svg">
+        </a>
+        <a class="carousel-navigation--right">
+          <img class="carousel-navigation-icon" src="./src/assets/images/icon-angle-right.svg">
+        </a>
+      </div>
     </div>
   </header>
+
   <main class="l-main">
-    <article class="product">
-      <header class="product-header">
-        <h1 class="product-title">Discover innovative ways
-          to decorate</h1>
+    <section class="products">
+      <ul class="products-lists">
+        <li class="products-item">
+          <article class="product">
+            <header class="product-header">
+              <h1 class="product-title">Discover innovative ways to decorate</h1>
+            </header>
+            <p class="product-description">
+              We provide unmatched quality, comfort, and style
+              for property owners across the country.
+              Our experts combine form and function in
+              bringing your vision to life. Create a room
+              in your own style with our collection and make
+              your property a reflection of you and what you love.
+            </p>
+            <a class="buy" href="#">
+              <span class="buy-title">SHOP NOW</span>
+              <img class="buy-icon" src="./src/assets/images/icon-arrow.svg" alt="Arrow icon">
+            </a>
+          </article>
+        </li>
+
+        <li class="products-item">
+          <article class="product">
+            <header class="product-header">
+              <h2 class="product-title">We are available all across the globe</h2>
+            </header>
+            <p class="product-description">
+              With stores all over the world, it's easy for
+              you to find furniture for your home or place
+              of business. Locally, we're in most major
+              cities throughout the country. Find the branch
+              nearest you using our store locator.
+              Any questions? Don't hesitate to contact us today.
+            </p>
+            <a class="buy" href="#">
+              <span class="buy-title">SHOP NOW</span>
+              <img class="buy-icon" src="./src/assets/images/icon-arrow.svg" alt="Arrow icon">
+            </a>
+          </article>
+        </li>
+
+        <li class="products-item">
+          <article class="product">
+            <header class="product-header">
+              <h2 class="product-title">Manufactured with the best materials</h2>
+            </header>
+            <p class="product-description">
+              Our modern furniture store provide a high level of quality.
+              Our company has invested in advanced technology to ensure that
+              every product is made as perfect and as consistent as possible.
+              With three decades of experience in this industry,
+              we understand what customers want for their home and office.
+            </p>
+            <a class="buy" href="#">
+              <span class="buy-title">SHOP NOW</span>
+              <img class="buy-icon" src="./src/assets/images/icon-arrow.svg" alt="Arrow icon">
+            </a>
+          </article>
+        </li>
+      </ul>
+    </section>
+
+    <img class="scenary" src="./src/assets/images/image-about-dark.jpg" alt="Dark furniture background">
+
+    <section class="about">
+      <header class="about-header">
+        <h2 class="about-title">About our furniture</h2>
       </header>
-      <p class="product-description">We provided..,.</p>
-      <a class="buy">
-        <p class="buy-title">Shop Now</p>
-        <p class="buy-icon">--></p>
-      </a>
-    </article>
-    <img class="scenary" src="./src/assets/images/image-about-dark.jpg" />
-    <img class="scenary" src="./src/assets/images/image-about-light.jpg" />
+      <p class="about-description">
+        Our multifunctional collection blends
+        design and function to suit your individual
+        taste. Make each room unique, or pick a cohesive
+        theme that best express your interests and what
+        inspires you. Find the furniture pieces you need,
+        from traditional to contemporary styles or anything in between.
+        Product specialists are available to help you create your dream space.
+      </p>
+    </section>
+
+    <img class="scenary" src="./src/assets/images/image-about-light.jpg" alt="Light furniture background">
   </main>
 
-  <div class="aside">
-    <nav class="navigation-list">
-      <ol class="navigation-items">
-        <li class="navigation-item">
-          <a class="navigation-link" href="#">home</a>
-        </li>
-        <li class="navigation-item">
-          <a class="navigation-link" href="#">shope</a>
-        </li>
-        <li class="navigation-item">
-          <a class="navigation-link" href="#">about</a>
-        </li>
-        <li class="navigation-item">
-          <a class="navigation-link" href="#">contact</a>
-        </li>
-      </ol>
-    </nav>
+  <div class="aside" id="aside">
+    <div class="aside-container">
+      <a class="aside-close" href="#" aria-label="Close menu">
+        <img src="./src/assets/images/icon-close.svg" alt="Close menu">
+      </a>
+      <nav class="navigation-list">
+        <ul class="navigation-items">
+          <li class="navigation-item"><a class="navigation-link" href="#">home</a></li>
+          <li class="navigation-item"><a class="navigation-link" href="#">shop</a></li>
+          <li class="navigation-item"><a class="navigation-link" href="#">about</a></li>
+          <li class="navigation-item"><a class="navigation-link" href="#">contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </div>
-
 
   <script type="module" src="/src/main.js"></script>
 </body>
