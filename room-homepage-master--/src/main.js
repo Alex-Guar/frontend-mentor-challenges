@@ -87,4 +87,4 @@ function handleScrollTouch() {
 }
 ImagesCarousel.addEventListener("scrollend", handleScrollTouch)
 
-navationLinks.forEach((linkBtn) => linkBtn.addEventListener("click",hideFilterBlackContent))
+navationLinks.forEach((linkBtn)=> linkBtn.addEventListener("click",hideFilterBlackContent))
