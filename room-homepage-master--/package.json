@@ -7,6 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist --dest room-homepage-master-- --add"
   },
   "devDependencies": {
     "sass-embedded": "^1.107.1",
