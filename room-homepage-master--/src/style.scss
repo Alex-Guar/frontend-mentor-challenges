@@ -1,3 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
+:root {
+  /* Space 1: 30px → 101px */
+  --space-1: clamp(1.875rem, 0.0597rem + 8.0682vw, 6.3125rem); /* Min: 30px, Max: 101px */
+
+  /* Step -1: 11.25px → 12.8px */
+  --step--1: clamp(0.7031rem, 0.6635rem + 0.1761vw, 0.8rem); /* Min: 11.25px, Max: 12.8px */
+
+  /* Step 0: 13.5px → 16px */
+  --step-0: clamp(0.8438rem, 0.7798rem + 0.2841vw, 1rem); /* Min: 13.5px, Max: 16px */
+
+  /* Step 5: 33.59px → 40.83px */
+  --step-5: clamp(2.0995rem, 1.71rem + 1.7313vw, 2.5518rem); /* Min: 33.59px, Max: 40.83px */
+
+  /* Space m-l: 60px → 120px */
+  --space-m-l: clamp(3.75rem, 2.2159rem + 6.8182vw, 7.5rem); /* Min: 60px, Max: 120px */
+
+  /* Space 2: 15px → 25px */
+  --space-2: clamp(0.9375rem, 0.6818rem + 1.1364vw, 1.5625rem); /* Min: 15px, Max: 25px */
+
+  /* Space 3: 50px → 66px */
+  --space-3: clamp(3.125rem, 2.7159rem + 1.8182vw, 4.125rem); /* Min: 50px, Max: 66px */
+
+  /* Space 4: 40px → 48px */
+  --space-4: clamp(2.5rem, 2.2955rem + 0.9091vw, 3rem); /* Min: 40px, Max: 48px */
+
+  /* Space 5: 14px → 25px */
+  --space-5: clamp(0.875rem, 0.5938rem + 1.25vw, 1.5625rem); /* Min: 14px, Max: 25px */
+
+  /* Space 6: 22px → 31px */
+  --space-6: clamp(1.375rem, 1.1449rem + 1.0227vw, 1.9375rem); /* Min: 22px, Max: 31px */
+
+  /* Space 7: 40px → 60px */
+  --space-7: clamp(2.5rem, 1.9886rem + 2.2727vw, 3.75rem); /* Min: 40px, Max: 60px */
+}
 
 *,
 *::before,
@@ -7,112 +43,279 @@
   padding: 0;
 }
 
+.scenary1 {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
 html {
   box-sizing: border-box;
-  background: black;
-  color: white;
+  background: white;
+  color: black;
 }
 
 a {
   text-decoration: none;
 }
 
+h2, h1 {
+  font-size: var(--step-5);
+}
+
+h3 {
+  font-size: var(--step--1);
+  letter-spacing: 46%;
+  text-transform: uppercase;
+}
+
 ul {
   list-style-type: none;
 }
 
-
 body {
+  position: relative;
+  min-width: 100vw;
+  min-height: 100vh;
+  font-family: "League Spartan", sans-serif;
+  font-size: var(--step-0);
+}
+
+.grid-content {
+  position: relative;
   width: 100%;
+  height: 100%;
   display: grid;
   grid-template-columns: 1fr;
-  min-height: 100vh;
+}
+
+.grid-content-filter {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
+
+.is-active-content-filter {
+  display: block;
+}
+
+.l-header {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+
+  @media (min-width: 48em) {
+    width: 58.333vw;
+  }
 }
 
 .navigation.l-container {
+  position: absolute;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 3.75rem;
+  padding-left: 3.75rem;
+  scroll-behavior: smooth;
 
-    display: grid;
-    width: 100%;
-    position: absolute;
-    grid-template-columns: 0.8fr 1.2fr;
-    justify-content: space-between;
-    align-items: center;
-    scroll-behavior: smooth;
-  padding: 12px;
-  }
-
-
-.l-header {
-  position: relative;
-
-  .carousel {
-    &-items {
-      display: flex;
-      width: 100vw;
-      overflow-x: scroll;
-      scroll-behavior: smooth;
-      scroll-snap-type: x mandatory;
-      scrollbar-width: none;
-
-      // Nested correctly inside .carousel-items matching your HTML
-      .carousel-item {
-        scroll-snap-align: center;
-        flex: 0 0 100%;
-      }
-
-      .carousel-image {
-        width: 100%;
-      }
-    }
-    &-navigation {
-      background-color: black;
-      position: absolute;
-      top: calc(100% - 28px);
-      left: calc(100% - 32px);
-      
-    }
+  @media (min-width: 48em) {
+    grid-template-columns: 0.3fr 1.2fr;
   }
 }
 
-.products {
-  &-lists {
-    display: flex;
-    width: 100vw;
-    overflow-x: scroll;
-    scroll-behavior: smooth;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-  &:-webkit-scrollbar {
-  display: none;
-}
+.navigation-hamburger {
+  @media (min-width: 48em) {
+    display: none;
   }
-  &-item {
-      scroll-snap-align: center;
-      flex: 0 0 100%;
-    }
-
 }
 
-
-.scenary {
+.l-main {
   width: 100%;
 }
 
+.carousel {
+  position: relative;
+}
+
+.carousel-items {
+  width: 100vw;
+  display: flex;
+  overflow-x: scroll;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  touch-action: pan-x;
+}
+
+.carousel-item {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+}
+
+.carousel-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  max-height: 534px;
+  object-fit: cover;
+
+  @media (min-width: 47em) {
+    width: 100%;
+  }
+}
+
+.carousel-navigation {
+  position: absolute;
+  top: calc(100% - 27.5px - (2 * var(--space-5)));
+  left: calc(100% - 2 * 14px - (1 * var(--space-7)) - 2 * (var(--space-6)));
+  z-index: 1;
+  display: flex;
+  gap: var(--space-7);
+  padding-top: var(--space-5);
+  padding-bottom: var(--space-5);
+  padding-left: var(--space-6);
+  padding-right: var(--space-6);
+  background-color: black;
+}
+
+.products {
+  width: 100%;
+}
+
+.products-lists {
+  width: 100vw;
+  display: flex;
+  overflow-x: scroll;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  touch-action: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.products-item {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+}
+
+.product,
+.about {
+  padding-left: var(--space-1);
+  padding-right: var(--space-1);
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding-top: var(--space-m-l);
+  padding-bottom: var(--space-m-l);
+}
+
+.product-title {
+  letter-spacing: -5%;
+
+  @media (min-width: 48em) {
+    padding-bottom: 0;
+  }
+}
+
+.buy-title {
+  color: black;
+  font-weight: 600;
+  letter-spacing: 95%;
+}
+
+.buy.isActive:focus {
+  display: inline;
+}
+
+.buy:focus {
+  display: none;
+}
+
+.scenary1,
+.scenary2 {
+  display: block;
+  width: 100%;
+
+  @media (min-width: 48em) {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25em;
+  padding-top: var(--space-3);
+  padding-bottom: var(--space-3);
+
+  @media (min-width: 48em) {
+    padding-bottom: 0;
+  }
+}
+
 .fade-out {
-  animation: fade-out 0.3s linear both;
+  animation: fade-out 1000ms linear both;
 }
 
 .fade-in {
-  animation: fade-in 0.3s linear both;
+  animation: fade-in 1000ms linear both;
 }
 
+.aside {
+  position: absolute;
+  z-index: 4;
+  top: 0;
+  min-width: 100vw;
+  display: none;
+  background-color: white;
 
+  &:target {
+    display: block;
+    animation: fade-in 1000ms;
+  }
+}
+
+.aside-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: var(--space-4);
+  padding-bottom: var(--space-4);
+  padding-left: var(--space-1);
+  padding-right: var(--space-1);
+}
+
+.navigation-items {
+  display: flex;
+  gap: 12px;
+  font-weight: 600;
+}
+
+.navigation-link {
+  color: black;
+
+  @media (min-width: 48em) {
+    color: white;
+    font-weight: 450;
+  }
+}
 
 @keyframes fade-out {
   from {
-    opacity: 1;
+    opacity: 0.6;
   }
-
   to {
     opacity: 0;
   }
@@ -122,8 +325,46 @@ body {
   from {
     opacity: 0;
   }
-
   to {
-    opacity: 1;
+    opacity: 0.6;
+  }
+}
+
+@media (min-width: 48em) {
+  .l-main {
+    display: grid;
+    grid-template-columns: 0.2916fr 0.2916fr 0.1111fr 0.3055fr;
+    grid-template-rows: 0.6675fr 0.3325fr;
+    grid-template-areas:
+      "h h m m"
+      "a b b c";
+  }
+
+  .carousel {
+    grid-area: h;
+
+    &-items {
+      width: 58.333vw;
+    }
+  }
+
+  .products {
+    grid-area: m;
+  }
+
+  .products-lists {
+    width: 41.66vw;
+  }
+
+  .scenary1 {
+    grid-area: a;
+  }
+
+  .about {
+    grid-area: b;
+  }
+
+  .scenary2 {
+    grid-area: c;
   }
 }
