@@ -139,6 +139,7 @@ body {
 
 .carousel {
   position: relative;
+    height: fit-content;
 }
 
 .carousel-items {
@@ -148,7 +149,6 @@ body {
   scrollbar-width: none;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
-  touch-action: pan-x;
 }
 
 .carousel-item {
@@ -194,7 +194,7 @@ body {
   scrollbar-width: none;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
-  touch-action: none;
+  touch-action:  pan-y;
 
   &::-webkit-scrollbar {
     display: none;
