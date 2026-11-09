@@ -10,7 +10,7 @@ const mediaQueryLapton = window.matchMedia("(min-width: 48em)");
 const navigationItems = document.querySelector(".navigation-list");
 const containerHeader = document.querySelector(".navigation.l-container");
 const asideContainer = document.querySelector(".aside-container");
-
+const navationLinks = Array.from(document.getElementsByClassName("navigation-link"))
 
 function moveNavagiationItems(e) {
   if (e.matches === false) {
@@ -29,14 +29,14 @@ const hamburgerBtn = document.querySelector(".navigation-hamburger");
 const filterBlackContent = document.querySelector(".grid-content-filter");
 const closeAsideBtn = document.querySelector(".aside-close");
 
-function showFilterBaclackContent() {
+function showFilterBlackContent() {
   const className = filterBlackContent.classList;
   className.add("is-active-content-filter")
   className.add("fade-in")
   className.remove("fade-out");
 }
 
-function hideFilterBaclackContent() {
+function hideFilterBlackContent() {
   const className = filterBlackContent.classList;
   className.remove("fade-in");
   className.add("fade-out")
@@ -46,13 +46,13 @@ function hideFilterBaclackContent() {
 }
 
 function handledHumber() {
-  showFilterBaclackContent();
+  showFilterBlackContent();
 }
 
 hamburgerBtn.addEventListener("click", handledHumber);
 
 function handledCloseAside() {
-  hideFilterBaclackContent();
+  hideFilterBlackContent();
 }
 
 closeAsideBtn.addEventListener("click", handledCloseAside)
@@ -86,3 +86,5 @@ function handleScrollTouch() {
   activeFocus(imageIndex);
 }
 ImagesCarousel.addEventListener("scrollend", handleScrollTouch)
+
+navationLinks.forEach((linkBtn) => linkBtn.addEventListener("click",hideFilterBlackContent))
