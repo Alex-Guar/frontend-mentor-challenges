@@ -38,6 +38,12 @@
   --color-2:hsl(0, 0%, 27%);
 }
 
+html {
+  box-sizing: border-box;
+  background: white;
+  color: black;
+}
+
 *,
 *::before,
 *::after {
@@ -52,11 +58,6 @@
   object-fit: cover;
 }
 
-html {
-  box-sizing: border-box;
-  background: white;
-  color: black;
-}
 
 a {
   text-decoration: none;
