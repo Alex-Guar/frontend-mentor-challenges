@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>interactive-rating-component-main</title>
+</head>
+
+<body class="min-h-screen flex flex-col 
+    justify-center items-center
+    bg-gray-950 text-white
+    font-overpass
+    ">
+  <main>
+    <div class="container_raiting 
+        ">
+      <form class="
+        flex
+        flex-col
+        gap-5
+        m-auto
+        p-5
+        bg-gray-900
+          ">
+        <img class="bg-[#262e38] w-10 p-3 rounded-full" src="./src/assets/icon-star.svg" class="start" />
+        <h1 class="text-3xl font-medium">How did we do?</h1>
+        <p class="text-sm text-gray-500 font-semibold ">Please let us know how we did with your support
+          request. All feedback is appreciated to help us improve
+          our offering!</p>
+        <ul class="flex w-full flex items-center justify-around">
+          <li>
+            <label class="block  bg-[#262e38] text-mist-400 size-10 p-[9px] rounded-full 
+                text-center hover:not-has-checked:bg-orange-500 
+                not-data-focus:not-has-checked:ring-inset
+                has-checked:bg-white has-checked:text-black
+                has-checked:ring-0 has-checked:hover:bg-orange-500
+                has-focus-visible:outline-2 has-focus-visible:outline-offset-2 
+                has-focus-visible:outline-indigo-600 data-focus:ring-2 
+                data-focus:ring-indigo-600 data-focus:ring-offset-2 
+                data-focus:has-checked:ring-2  
+              ">
+              <input type="radio" name="evaluation" value="1" class="sr-only">
+              <span>1</span>
+            </label>
+          </li>
+          <li>
+            <label class="block  bg-[#262e38] text-mist-400 size-10 p-[9px] rounded-full 
+                text-center hover:not-has-checked:bg-orange-500 
+                not-data-focus:not-has-checked:ring-inset
+                has-checked:bg-white has-checked:text-black
+                has-checked:ring-0 has-checked:hover:bg-orange-500
+                has-focus-visible:outline-2 has-focus-visible:outline-offset-2 
+                has-focus-visible:outline-indigo-600 data-focus:ring-2 
+                data-focus:ring-indigo-600 data-focus:ring-offset-2 
+                data-focus:has-checked:ring-2  
+              ">
+              <input type="radio" name="evaluation" value="1" class="sr-only">
+              <span>2</span>
+            </label>
+          </li>
+          <li>
+            <label class="block  bg-[#262e38] text-mist-400 size-10 p-[9px] rounded-full 
+                text-center hover:not-has-checked:bg-orange-500 
+                not-data-focus:not-has-checked:ring-inset
+                has-checked:bg-white has-checked:text-black
+                has-checked:ring-0 has-checked:hover:bg-orange-500
+                has-focus-visible:outline-2 has-focus-visible:outline-offset-2 
+                has-focus-visible:outline-indigo-600 data-focus:ring-2 
+                data-focus:ring-indigo-600 data-focus:ring-offset-2 
+                data-focus:has-checked:ring-2  
+              ">
+              <input type="radio" name="evaluation" value="1" class="sr-only">
+              <span>3</span>
+            </label>
+          </li>
+          <li>
+            <label class="block  bg-[#262e38] text-mist-400 size-10 p-[9px] rounded-full 
+                text-center hover:not-has-checked:bg-orange-500 
+                not-data-focus:not-has-checked:ring-inset
+                has-checked:bg-white has-checked:text-black
+                has-checked:ring-0 has-checked:hover:bg-orange-500
+                has-focus-visible:outline-2 has-focus-visible:outline-offset-2 
+                has-focus-visible:outline-indigo-600 data-focus:ring-2 
+                data-focus:ring-indigo-600 data-focus:ring-offset-2 
+                data-focus:has-checked:ring-2  
+              ">
+              <input type="radio" name="evaluation" value="1" class="sr-only">
+              <span>4</span>
+            </label>
+          </li>
+          <li>
+            <label class="block  bg-[#262e38] text-mist-400 size-10 p-[9px] rounded-full 
+                text-center hover:not-has-checked:bg-orange-500 
+                not-data-focus:not-has-checked:ring-inset
+                has-checked:bg-white has-checked:text-black
+                has-checked:ring-0 has-checked:hover:bg-orange-500
+                has-focus-visible:outline-2 has-focus-visible:outline-offset-2 
+                has-focus-visible:outline-indigo-600 data-focus:ring-2 
+                data-focus:ring-indigo-600 data-focus:ring-offset-2 
+                data-focus:has-checked:ring-2  
+              ">
+              <input type="radio" name="evaluation" value="1" class="sr-only">
+              <span>5</span>
+            </label>
+          </li>
+        </ul>
+        <button class="bg-orange-500 rounded-full py-3" type="submit">SUBMIT</button>
+      </form>
+    </div>
+  </main>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
