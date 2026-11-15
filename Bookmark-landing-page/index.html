@@ -9,7 +9,252 @@
 </head>
 
 <body>
-  <div id="app" class="option-select  bg-sky-500 hover:bg-sky-700 focus:outline-2 w-fit">Hola</div>
+  <header class="l-header">
+    <div class="header l-container">
+      <img class="header-logo" src="./src/assets/images/logo-bookmark.svg" alt="logo of bookmark">
+      <img class="header-hamburger-logo" src="./src/assets/images/icon-hamburger.svg" alt="icon of menu">
+    </div>
+  </header>
+
+  <main class="l-main">
+    <section class="hero">
+      <div class="hero-portada">
+        <img class="hero-illustration" src="./src/assets/images/illustration-hero.svg" alt="web with illustration">
+        <svg class="hero-background" preserveAspectRatio="xMaxYMid meet" viewBox="0 0 400 320" width="100%" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <!-- 
+        Path breakdown:
+        - Starts at (80, 108) with a 16px rounded top-left corner curving up to (96, 92)
+        - Runs horizontally to the right edge (400, 92)
+        - Runs down the right edge to (400, 290)
+        - Runs left along the bottom to (185, 290)
+        - Curves up with a large 105px radius to (80, 185)
+        - Closes cleanly back to (80, 108)
+      -->
+          <path d="M 80 108 
+           A 16 16 0 0 1 96 92 
+           H 400 
+           V 300 
+           H 185 
+           A 105 105 0 0 1 80 185 
+           Z" fill="#4F67E3" />
+        </svg>
+      </div>
+      <div class="presentation">
+        <h1 class="presentation-title">A Simple Bookmark Manager</h1>
+        <p class="presentation-description">
+          A clean and simple interface to organize your favourite websites.
+          Open a new browser tab and see your sites load instantly. Try it for free.
+        </p>
+        <div class="presentation-actions-button">
+          <a class="presentation-action option1">Get it on Chrome</a>
+          <a class="presentation-action option2">Get it on Firefox</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <header class="features-header">
+        <h2 class="features-title">Features</h2>
+        <p class="features-description">
+          Our aim is to make it quick and easy for you to access your favourite websites.
+          Your bookmarks sync between your devices so you can access them on the go.
+        </p>
+      </header>
+
+      <table class="features-list">
+        <tbody class="features-table">
+          <tr>
+            <th class="features-item"><a class="feature-link" href="#feature1">Simple Bookmarking</a></th>
+          </tr>
+          <tr>
+            <th class="features-item"><a class="feature-link" href="#feature2">Speed Searching</a></th>
+          </tr>
+          <tr>
+            <th class="features-item"><a class="feature-link" href="#feature3">Easy Sharing</a></th>
+          </tr>
+        </tbody>
+      </table>
+
+      <ul class="features-list-description">
+        <li id="feature1" class="feature-card">
+          <div class="feature-canva">
+            <img class="feature-illustration" src="./src/assets/images/illustration-features-tab-1.svg"
+              alt="Feature 1 illustration">
+          </div>
+          <h3 class="feature-title">Bookmark in one click</h3>
+          <p class="feature-description">
+            Organize your bookmarks however you like.
+            Our simple drag-and-drop interface gives you complete
+            control over how you manage your favourite sites.
+          </p>
+          <a class="moreinfo">More info</a>
+        </li>
+        <li id="feature2" class="feature-card">
+          <div class="feature-canva">
+            <img class="feature-illustration" src="./src/assets/images/illustration-features-tab-2.svg"
+              alt="Feature 2 illustration">
+          </div>
+          <h3 class="feature-title">Intelligent search</h3>
+          <p class="feature-description">
+            Our powerful search feature will help you find saved sites in no time at all.
+            No need to trawl through all of your bookmarks.
+          </p>
+          <a class="moreinfo">More info</a>
+        </li>
+        <li id="feature3" class="feature-card">
+          <div class="feature-canva">
+            <img class="feature-illustration" src="./src/assets/images/illustration-features-tab-3.svg"
+              alt="Feature 3 illustration">
+          </div>
+          <h3 class="feature-title">Share your bookmarks</h3>
+          <p class="feature-description">
+            Easily share your bookmarks and collections with others.
+            Create a shareable link that you can send at the click of a button.
+          </p>
+          <a class="moreinfo">More info</a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="download">
+      <header class="download-header">
+        <h3 class="download-title">Download the extension</h3>
+        <p class="download-description">
+          We’ve got more browsers in the pipeline.
+          Please do let us know if you’ve got a favourite you’d like us to prioritize.
+        </p>
+      </header>
+      <div class="extensions">
+        <article class="extension">
+          <header class="extension-header">
+            <img class="extension-illustration" src="./src/assets/images/logo-chrome.svg" alt="google chrome">
+            <h3 class="extension-title">Add to Chrome</h3>
+            <p class="extension-version">Minimum version 62</p>
+          </header>
+          <img class="extension-dots" src="./src/assets/images/bg-dots.svg" alt="horizontal dots" />
+          <a class="extension-link">Add & Install Extension</a>
+        </article>
+        <article class="extension">
+          <header class="extension-header">
+            <img class="extension-illustration" src="./src/assets/images/logo-firefox.svg" alt="google Firefox">
+            <h3 class="extension-title">Add to Firefox</h3>
+            <p class="extension-version">Minimum version 55</p>
+          </header>
+          <img class="extension-dots" src="./src/assets/images/bg-dots.svg" alt="horizontal dots" />
+          <a class="extension-link">Add & Install Extension</a>
+        </article>
+        <article class="extension">
+          <header class="extension-header">
+            <img class="extension-illustration" src="./src/assets/images/logo-opera.svg" alt="google Opera">
+            <h3 class="extension-title">Add to Opera</h3>
+            <p class="extension-version">Minimum version 46</p>
+          </header>
+          <img class="extension-dots" src="./src/assets/images/bg-dots.svg" alt="horizontal dots" />
+          <a class="extension-link">Add & Install Extension</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="questions">
+      <header class="questions-header">
+        <h2 class="questions-title">Frequently Asked Questions</h2>
+        <p class="questions-description">
+          Here are some of our FAQs. If you have any other questions you’d like answered please feel free to email us.
+        </p>
+      </header>
+
+      <ul class="questions-list">
+
+        <li class="question">
+          <details class="question-item">
+            <summary class="question-header">
+              <h4 class="question-title">What is Bookmark?</h4>
+              <img class="question-icon" src="./src/assets/images/icon-arrow.svg" alt="arrow">
+            </summary>
+            <p class="question-answ">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt justo eget ultricies fringilla.
+              Phasellus blandit ipsum quis quam ornare mattis.
+            </p>
+          </details>
+        </li>
+
+        <li class="question">
+          <details class="question-item">
+            <summary class="question-header">
+              <h4 class="question-title">How can I request a new browser?</h4>
+              <img class="question-icon" src="./src/assets/images/icon-arrow.svg" alt="arrow">
+            </summary>
+            <p class="question-answ">
+              Vivamus luctus eros aliquet convallis ultricies.
+              Mauris augue massa, ultricies non ligula.
+              Suspendisse imperdiet. Vivamus luctus eros aliquet convallis ultricies.
+              Mauris augue massa, ultricies non ligula.
+              Suspendisse imperdie tVivamus luctus eros aliquet convallis ultricies.
+              Mauris augue massa, ultricies non ligula.
+              Suspendisse imperdiet.
+            </p>
+          </details>
+        </li>
+
+        <li class="question">
+          <details class="question-item">
+            <summary class="question-header">
+              <h4 class="question-title">Is there a mobile app?</h4>
+              <img class="question-icon" src="./src/assets/images/icon-arrow.svg" alt="arrow">
+            </summary>
+            <p class="question-answ">
+              Sed consectetur quam id neque fermentum accumsan.
+              Praesent luctus vestibulum dolor, ut condimentum urna vulputate eget.
+              Cras in ligula quis est pharetra mattis sit amet pharetra purus.
+              Sed sollicitudin ex et ultricies bibendum.
+            </p>
+          </details>
+        </li>
+
+        <li class="question">
+          <details class="question-item">
+            <summary class="question-header">
+              <h4 class="question-title">What about other Chromium browsers?</h4>
+              <img class="question-icon" src="./src/assets/images/icon-arrow.svg" alt="arrow">
+            </summary>
+            <p class="question-answ">
+              Integer condimentum ipsum id imperdiet finibus.
+              Vivamus in placerat mi, at euismod dui.
+              Aliquam vitae neque eget nisl gravida pellentesque non ut velit.
+            </p>
+          </details>
+        </li>
+      </ul>
+      <a class="moreinfo">More info</a>
+    </section>
+
+    <form class="subscription">
+      <header class="subscription-header">
+        <p class="subscription-description">35,000+ already joined</p>
+        <h2 class="subscription-title">Stay up-to-date with what we’re doing</h2>
+      </header>
+      <input class="subscription-email" type="email" name="email" id="email" placeholder="Enter your email address"
+        required />
+      <input class="subscription-send" type="submit" value="Contact Us" />
+    </form>
+  </main>
+
+  <footer class="l-foot">
+    <nav class="navigation foot">
+      <img class="navigation-logo foot" src="./src/assets/images/logo-bookmark-white.svg" alt="logo">
+      <ol class="navigation-items foot">
+        <li class="navigation-item foot"><a href="#features">FEATURES</a></li>
+        <li class="navigation-item foot"><a href="#">PRICING</a></li>
+        <li class="navigation-item foot"><a href="#contact">CONTACT</a></li>
+      </ol>
+    </nav>
+    <div class="media" id="contact">
+      <img class="media-logo" src="./src/assets/images/icon-facebook.svg" alt="facebook">
+      <img class="media-logo" src="./src/assets/images/icon-twitter.svg" alt="twitter">
+    </div>
+  </footer>
+
   <script type="module" src="/src/main.js"></script>
 </body>
 

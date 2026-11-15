@@ -4,4 +4,27 @@
 
 @theme {
   --font-overpass: "Overpass", sans-serif;
+  --color-background-principal: #141519;
+  --color-card: radial-gradient(ellipse at top, #232a34 0%,  #1d242e 55%,  #171e28 100%);
+  --color-options: #262e38;
+  
+  --animate-input: input 2s ease-in-out forwards;
+  --animate-outside: outside 2s ease-in-out forwards;
+  @keyframes input {
+    0% {
+    opacity: 0
+    }
+    100% {
+    opacity: 1
+    }
+  }
+  
+  @keyframes outside {
+    0% {
+    opacity: 1
+    }
+    100% {
+    opacity: 0
+    }
+  }
 }
