@@ -215,7 +215,7 @@ body {
     width: 100%;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
-
+    scroll-behavior: smooth;
     scrollbar-width: none;
   }
 
@@ -409,14 +409,22 @@ tr {
 
   &-item {
     max-width: 290px;
+
     background: {
       image: linear-gradient( #CFCFCF,#CFCFCF);
       position: bottom center;
       repeat: no-repeat;
       size: 100% 1px;
+
     };
+
+    transition: background-image  9s ease-in-out;
+
     &:open {
-      background-image: none;
+      background-image: linear-gradient( white,white);
+      > .question-answ {
+        opacity: 1;
+      }
     }
   }
 
@@ -442,7 +450,8 @@ tr {
     font-size: var(--step-1);
     line-height: 1.9;
     color: gray;
-
+    opacity: 0;
+    transition:opacity 500ms ease-in-out;
 
   }
 }
@@ -471,11 +480,69 @@ tr {
     text-transform: uppercase;
   }
 
+  &-field-email {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.18rem;
+  }
+
+  &-input-email {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 0.18rem;
+  }
+
+  &-email-error-icon {
+    display: none;
+    position: absolute;
+    right: 0;
+    padding-inline: var(--space-xs);
+    animation: 80ms ease-in  reverse both running slide-in;
+  }
+
+
   &-email {
-    border-radius: 3px;
+    display: block;
+    flex: 1 1 100%;
+    border-radius: 0.18rem;
     background-color: white;
     padding-block: var(--space-s);
     padding-inline: var(--space-xs);
+
+    &:invalid {
+      background-color: white;
+    }
+
+    &:valid {
+      outline: none;
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  &-message-error {
+    display: none;
+    padding-inline: var(--space-xs);
+    background-color: var(--color-2);
+    color: white;
+    font-style: italic;
+    font-size: var(--step--2);
+
+    padding-block: var(--space-2xs);
+    font-weight: 400;
+  }
+
+  &-isActive {
+    display: block;
+  }
+
+  &-showError {
+
+    outline: 2px solid var(--color-2);
   }
 
   &-send {
@@ -518,4 +585,17 @@ tr {
   }
 
 
+}
+
+/* animation */ 
+@keyframes slide-in {
+  from {
+    translate: 0 -0.1rem;
+    opacity: 1;
+  }
+
+  to {
+    translate: 0  0.1rem;
+    opacity: 0;
+  }
 }

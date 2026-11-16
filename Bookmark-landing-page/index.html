@@ -76,7 +76,7 @@
         </tbody>
       </table>
 
-      <ul class="features-list-description">
+      <ul class="features-list-description" id="descriptions-carousel" disabled>
         <li id="feature1" class="feature-card">
           <div class="feature-canva">
             <img class="feature-illustration" src="./src/assets/images/illustration-features-tab-1.svg"
@@ -88,7 +88,7 @@
             Our simple drag-and-drop interface gives you complete
             control over how you manage your favourite sites.
           </p>
-          <a class="moreinfo">More info</a>
+          <a class="moreinfo" href="#">More info</a>
         </li>
         <li id="feature2" class="feature-card">
           <div class="feature-canva">
@@ -229,13 +229,19 @@
       <a class="moreinfo">More info</a>
     </section>
 
-    <form class="subscription">
+    <form class="subscription" novalidate>
       <header class="subscription-header">
         <p class="subscription-description">35,000+ already joined</p>
         <h2 class="subscription-title">Stay up-to-date with what we’re doing</h2>
       </header>
-      <input class="subscription-email" type="email" name="email" id="email" placeholder="Enter your email address"
-        required />
+      <div class="subscription-field-email" id="field-email">
+        <div class="subscription-input-email">
+          <input class="subscription-email" type="email" name="email" id="email" placeholder="Enter your email address"
+            required />
+          <image class="subscription-email-error-icon" id="email-error-icon" src="./src/assets/images/icon-error.svg" />
+        </div>
+        <span class="subscription-message-error" id="email-error-message">Whoops, make sure it's an email</span>
+      </div>
       <input class="subscription-send" type="submit" value="Contact Us" />
     </form>
   </main>
