@@ -32,7 +32,7 @@ function showCrouselItem(idFinded) {
   * @param {str} elementID - Id that is finded 
   * @returns {number} the coord where is id element
   */
-function searchElement(elementID) {
+function getPositionElement(elementID) {
   let position;
   carouselItems.forEach((item) => {
     if (item.id === elementID) {
@@ -54,10 +54,33 @@ function handledClick() {
       const elementID = getIDTag(e);
       showCrouselItem(elementID);
 
-      const move = async () => await window.scrollBy(0, searchElement(elementID));
-      requestAnimationFrame(move);
-    })
 
+      let lastTime = 0;
+      const currentlyPosition = window.scrollY;
+      const elementPosition = carousel.getBoundingClientRect().top;
+      console.log(elementPosition)
+      let y = 0;
+      let currentPosition = currentlyPosition;
+      function animateScrolY(now) {
+        const speed = 10; //px per second
+        if (lastTime === 0) {
+          lastTime = now;
+        }
+
+        const dt = Math.min((now - lastTime) / 1000, 5);
+        lastTime = now;
+        const dy = speed * dt;
+        y += dy
+        window.scrollBy(0, y);
+        currentPosition += y
+        if (currentPosition < currentlyPosition + elementPosition) {
+          requestAnimationFrame(animateScrolY);
+        }
+      }
+
+      requestAnimationFrame(animateScrolY);
+
+    })
   })
 }
 
