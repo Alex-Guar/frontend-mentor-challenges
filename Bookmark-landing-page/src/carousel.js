@@ -2,6 +2,25 @@ const carousel = document.getElementById("descriptions-carousel");
 const carouselItems = Array.from(document.getElementsByClassName("feature-card"));
 const handledItem = Array.from(document.getElementsByClassName("feature-link"));
 
+
+const ReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+
+const handledQueryMotion = e => {
+  if (e.matches) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+let isActivatedReduceMotion = handledQueryMotion(ReducedMotion);
+
+const updataSettingUserAnimation = () => {
+  isActivatedReduceMotion = handledQueryMotion(ReducedMotion);
+}
+ReducedMotion.addEventListener("change", updataSettingUserAnimation);
+
 function getIDTag(e) {
   const hrefAttribute = e.target.href
   const pattern = new RegExp('#feature[1-9]', 'g');
@@ -15,10 +34,8 @@ function showCrouselItem(idFinded) {
     item.hidden = false;
     const idItem = item.id;
     if (idFinded != idItem) {
-      item.setAttribute("inert", "");
-      setTimeout(item.hidden = true, 5000);
+      item.hidden = true;
     } else {
-      item.removeAttribute("inert");
       item.hidden = false;
     }
   })
@@ -42,50 +59,80 @@ function getPositionElement(elementID) {
   return position.top
 }
 
-
-
+function lerp(minValue, maxValue, interpo) {
+  let position = minValue + (maxValue - minValue) * interpo
+  return position
+}
 
 
 
 function handledClick() {
   handledItem.forEach((link) => {
-    link.addEventListener("click", async (e) => {
+    link.addEventListener("click", (e) => {
       e.preventDefault();
       const elementID = getIDTag(e);
       showCrouselItem(elementID);
 
-
-      let lastTime = 0;
       const currentlyPosition = window.scrollY;
       const elementPosition = carousel.getBoundingClientRect().top;
-      console.log(elementPosition)
-      let y = 0;
-      let currentPosition = currentlyPosition;
-      function animateScrolY(now) {
-        const speed = 10; //px per second
-        if (lastTime === 0) {
-          lastTime = now;
+      const start = document.timeline.currentTime;
+
+
+
+      if (isActivatedReduceMotion) {
+        window.scroll(0, currentlyPosition + elementPosition);
+
+      } else {
+        const duration = 1; // seconds 
+        let Animation1 = requestAnimationFrame(animateScrolY);
+        let Animation2 = requestAnimationFrame(fadeIn);
+
+        if (Animation1 > 1 && Animation2 > 2) {
+          window.cancelAnimationFrame(Animation2);
+          window.cancelAnimationFrame(Animation1);
+        } else {
+          Animation1 = requestAnimationFrame(animateScrolY);
+          Animation2 = requestAnimationFrame(fadeIn);
         }
 
-        const dt = Math.min((now - lastTime) / 1000, 5);
-        lastTime = now;
-        const dy = speed * dt;
-        y += dy
-        window.scrollBy(0, y);
-        currentPosition += y
-        if (currentPosition < currentlyPosition + elementPosition) {
-          requestAnimationFrame(animateScrolY);
+
+        function fadeIn(now) {
+          const selectedElement = document.getElementById(elementID);
+          const value = Math.min((now - start) / (duration * 1000), 1); // animation-timing-function: linear
+          if (value < 1) {
+            selectedElement.style.opacity = value;
+            Animation2 = requestAnimationFrame((t) => fadeIn(t));
+          } else {
+            selectedElement.style.opacity = 1;
+            window.cancelAnimationFrame(Animation2);
+          }
         }
+
+        function animateScrolY(now) {
+          const t = Math.min((now - start) / (duration * 1000), 1);
+          const y = lerp(currentlyPosition, currentlyPosition + elementPosition + 70, Math.sin(t));
+          window.scroll(0, y);
+          if (t < 1) {
+            Animation1 = requestAnimationFrame(animateScrolY);
+          } else {
+            window.cancelAnimationFrame(Animation1);
+          }
+        }
+
+        console.log(Animation1, Animation2);
+
       }
-
-      requestAnimationFrame(animateScrolY);
 
     })
   })
 }
 
 function componentCarousel() {
+  showCrouselItem("feature1");
   handledClick();
+
+
+
 
 }
 
