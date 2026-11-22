@@ -1,5 +1,6 @@
 import './style.scss'
 import * as carousel from './carousel.js';
+import * as questions from './questions.js';
 const formELement = document.querySelector("form");
 const emailFied = document.getElementById("field-email");
 const emailInput = document.getElementById("email");
@@ -10,6 +11,7 @@ const emailErrorIcon = document.getElementById("email-error-icon");
 const emailRegExp = /^[\w.!#$%&'*+/=?^`{|}~-]+@[a-z\d-]+(?:\.[a-z\d-]+)*$/i;
 
 carousel.componentCarousel();
+questions.componentQuestions();
 
 // Check if the email is valid
 const isValidEmail = () => {

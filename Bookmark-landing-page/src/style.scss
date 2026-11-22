@@ -383,6 +383,9 @@ tr {
   gap: var(--space-l);
   margin-block: var(--space-2xl);
 
+  &-list { width: 90%;
+  }
+
   &-header {
   display: flex;
   flex-direction: column;
@@ -407,8 +410,9 @@ tr {
 
 .question {
 
+
   &-item {
-    max-width: 290px;
+    width: inherit;
 
     background: {
       image: linear-gradient( #CFCFCF,#CFCFCF);
@@ -429,6 +433,7 @@ tr {
   }
 
   &-header {
+    width: inherit;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -437,7 +442,10 @@ tr {
   }
 
   &-icon {
-    height:max-content;
+    width: 18px;
+    height: 12px;
+    background-color: var(--color-1);
+    mask-image: url("./assets/images/icon-arrow.svg");
   }
 
   &-title {
@@ -446,7 +454,8 @@ tr {
   }
 
   &-answ {
-    max-inline-size: min(80vw,40ch);
+    /* max-inline-size: min(80vw,40ch); */
+    width: inherit;
     font-size: var(--step-1);
     line-height: 1.9;
     color: gray;

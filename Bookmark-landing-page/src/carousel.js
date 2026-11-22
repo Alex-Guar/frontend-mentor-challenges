@@ -31,12 +31,13 @@ function getIDTag(e) {
 
 function showCrouselItem(idFinded) {
   carouselItems.forEach((item) => {
-    item.hidden = false;
     const idItem = item.id;
-    if (idFinded != idItem) {
+    if (idFinded !== idItem) {
       item.hidden = true;
+      item.style.opacity = 0;
     } else {
       item.hidden = false;
+      item.style.opacity = 1;
     }
   })
 
@@ -59,12 +60,66 @@ function getPositionElement(elementID) {
   return position.top
 }
 
-function lerp(minValue, maxValue, interpo) {
-  let position = minValue + (maxValue - minValue) * interpo
+function lerp(minValue, maxValue, t) {
+  let position = minValue + (maxValue - minValue) * t;
   return position
 }
 
+let IDAnimationScroll;
+let IDAnimationOpacity;
 
+/**
+  * activate fadeIN effect on an element
+  *
+  * @param {number} timestamp - time of ending of each of previos frame.
+  * @param {number} starTimestamp - time when the first frame started.
+  * @param {number} duration - time when end the animation.
+  * @param {Element} element - the element that receive the effet.
+  *
+  */
+
+function fadeIn(timestamp, starTimestamp, duration, element, updateCallback) {
+  const value = Math.min((timestamp - starTimestamp) / (duration * 1000), 1); // animation-timing-function: linear
+  if (value < 1) {
+    element.style.opacity = value;
+    const IDRequest = requestAnimationFrame((t) => fadeIn(t, starTimestamp, duration, element, updateCallback));
+    updateIDAnimationOpacity(IDRequest);
+  } else {
+    element.style.opacity = 1;
+  }
+}
+
+
+function updateIDAnimationOpacity(assignment) {
+  IDAnimationOpacity = assignment;
+}
+
+
+/**
+  *  change the position of window in vertical direction
+  *
+  * @param {number} timestamp - time of ending of each of previos frame.
+  * @param {number} starTimestamp - time when the first frame started.
+  * @param {number} duration - time when end the animation.
+  * @param {number} starPostion - pixels where is the scroll.
+  * @param {number} endPostion - pixels where must to finish the scroll effect.
+  *
+  */
+function animateScrolY(timestamp, startTimestamp, duration, startPostion, endPosition, updateCallback) {
+  const progress = Math.min((timestamp - startTimestamp) / (duration * 1000), 1);
+  const easyingFunction = Math.sin((Math.PI / 2) * progress);
+  const y = lerp(startPostion, endPosition, easyingFunction);
+
+  if (progress < 1) {
+    window.scroll(0, y);
+    const IDRequest = requestAnimationFrame((frameTime) => animateScrolY(frameTime, startTimestamp, duration, startPostion, endPosition, updateCallback))
+    updateCallback(IDRequest);
+  }
+}
+
+function updateIDAnimationScrool(assignment) {
+  IDAnimationScroll = assignment;
+}
 
 function handledClick() {
   handledItem.forEach((link) => {
@@ -72,55 +127,22 @@ function handledClick() {
       e.preventDefault();
       const elementID = getIDTag(e);
       showCrouselItem(elementID);
-
-      const currentlyPosition = window.scrollY;
+      const selectedElement = document.getElementById(elementID);
+      window.cancelAnimationFrame(IDAnimationScroll);
+      window.cancelAnimationFrame(IDAnimationOpacity);
+      const startPosition = window.scrollY;
       const elementPosition = carousel.getBoundingClientRect().top;
-      const start = document.timeline.currentTime;
-
-
-
+      const endPosition = startPosition + elementPosition;
+      const startTimestamp = document.timeline.currentTime;
       if (isActivatedReduceMotion) {
-        window.scroll(0, currentlyPosition + elementPosition);
-
+        window.scroll(0, endPosition);
+        selectedElement.style.opacity = 1;
       } else {
         const duration = 1; // seconds 
-        let Animation1 = requestAnimationFrame(animateScrolY);
-        let Animation2 = requestAnimationFrame(fadeIn);
-
-        if (Animation1 > 1 && Animation2 > 2) {
-          window.cancelAnimationFrame(Animation2);
-          window.cancelAnimationFrame(Animation1);
-        } else {
-          Animation1 = requestAnimationFrame(animateScrolY);
-          Animation2 = requestAnimationFrame(fadeIn);
-        }
-
-
-        function fadeIn(now) {
-          const selectedElement = document.getElementById(elementID);
-          const value = Math.min((now - start) / (duration * 1000), 1); // animation-timing-function: linear
-          if (value < 1) {
-            selectedElement.style.opacity = value;
-            Animation2 = requestAnimationFrame((t) => fadeIn(t));
-          } else {
-            selectedElement.style.opacity = 1;
-            window.cancelAnimationFrame(Animation2);
-          }
-        }
-
-        function animateScrolY(now) {
-          const t = Math.min((now - start) / (duration * 1000), 1);
-          const y = lerp(currentlyPosition, currentlyPosition + elementPosition + 70, Math.sin(t));
-          window.scroll(0, y);
-          if (t < 1) {
-            Animation1 = requestAnimationFrame(animateScrolY);
-          } else {
-            window.cancelAnimationFrame(Animation1);
-          }
-        }
-
-        console.log(Animation1, Animation2);
-
+        IDAnimationScroll = requestAnimationFrame(
+          (t) => animateScrolY(t, startTimestamp, duration, startPosition, endPosition, updateIDAnimationScrool));
+        IDAnimationOpacity = requestAnimationFrame(
+          (t) => fadeIn(t, startTimestamp, duration, selectedElement, updateIDAnimationOpacity));
       }
 
     })
@@ -131,19 +153,7 @@ function componentCarousel() {
   showCrouselItem("feature1");
   handledClick();
 
-
-
-
 }
-
-
-
-
-
-
-
-
-
 
 
 
