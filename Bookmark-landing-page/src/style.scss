@@ -422,15 +422,8 @@ tr {
 
     };
 
-    transition: background-image  9s ease-in-out;
-
-    &:open {
-      background-image: linear-gradient( white,white);
-      > .question-answ {
-        opacity: 1;
-      }
-    }
   }
+
 
   &-header {
     width: inherit;
@@ -459,7 +452,7 @@ tr {
     font-size: var(--step-1);
     line-height: 1.9;
     color: gray;
-    opacity: 0;
+    opacity: 1;
     transition:opacity 500ms ease-in-out;
 
   }

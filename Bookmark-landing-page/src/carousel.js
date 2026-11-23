@@ -79,9 +79,9 @@ let IDAnimationOpacity;
   */
 
 function fadeIn(timestamp, starTimestamp, duration, element, updateCallback) {
-  const value = Math.min((timestamp - starTimestamp) / (duration * 1000), 1); // animation-timing-function: linear
-  if (value < 1) {
-    element.style.opacity = value;
+  const progress = Math.min((timestamp - starTimestamp) / (duration * 1000), 1); // animation-timing-function: linear
+  if (progress < 1) {
+    element.style.opacity = progress;
     const IDRequest = requestAnimationFrame((t) => fadeIn(t, starTimestamp, duration, element, updateCallback));
     updateIDAnimationOpacity(IDRequest);
   } else {
@@ -105,14 +105,14 @@ function updateIDAnimationOpacity(assignment) {
   * @param {number} endPostion - pixels where must to finish the scroll effect.
   *
   */
-function animateScrolY(timestamp, startTimestamp, duration, startPostion, endPosition, updateCallback) {
+function animateScrolY(timestamp, startTimestamp, duration, startPosition, endPosition, updateCallback) {
   const progress = Math.min((timestamp - startTimestamp) / (duration * 1000), 1);
   const easyingFunction = Math.sin((Math.PI / 2) * progress);
-  const y = lerp(startPostion, endPosition, easyingFunction);
+  const y = lerp(startPosition, endPosition, easyingFunction);
 
   if (progress < 1) {
     window.scroll(0, y);
-    const IDRequest = requestAnimationFrame((frameTime) => animateScrolY(frameTime, startTimestamp, duration, startPostion, endPosition, updateCallback))
+    const IDRequest = requestAnimationFrame((frameTime) => animateScrolY(frameTime, startTimestamp, duration, startPosition, endPosition, updateCallback))
     updateCallback(IDRequest);
   }
 }
