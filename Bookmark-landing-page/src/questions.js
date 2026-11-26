@@ -2,6 +2,7 @@ const questionItems = Array.from(document.getElementsByClassName("question-item"
 
 const ReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
+let animationHiddenID;
 
 const handledQueryMotion = e => {
   if (e.matches) {
@@ -51,7 +52,7 @@ function animateOpenAnswer(timestamp, startTimestamp, duration, endPosition, ele
   }
 }
 
-function animateCloseAnswer(timestamp, startTimestamp, duration, startPosition, element) {
+function animateCloseAnswer(timestamp, startTimestamp, duration, startPosition, element, father, callbackUpdate) {
 
   element.style.overflow = "hidden";
   const progress = Math.min((timestamp - startTimestamp) / (duration * 1000), 1);
@@ -62,12 +63,19 @@ function animateCloseAnswer(timestamp, startTimestamp, duration, startPosition, 
 
   if (parseHeight !== 0) {
     const concatHeight = `${y}px`
-    console.log(y);
     element.style.height = concatHeight;
-    const IDRequest = window.requestAnimationFrame((frameTime) => { animateCloseAnswer(frameTime, startTimestamp, duration, startPosition, element) })
+    const IDRequest = window.requestAnimationFrame((frameTime) => { animateCloseAnswer(frameTime, startTimestamp, duration, startPosition, element, father, callbackUpdate) })
+    callbackUpdate(IDRequest);
+
   } else {
-    element.style.height = startPosition;
+    father.open = false;
+    element.style.height = "max-content";
   }
+}
+
+
+function updateIDHiddenAnswer(assigmente) {
+  animationHiddenID = assigmente;
 }
 
 
@@ -80,24 +88,23 @@ function componentQuestions() {
     const questionAnswer = question.children.item(1);
     const computedStyleAnswer = window.getComputedStyle(questionAnswer);
 
-
-
     questionHeader.addEventListener("click", (e) => {
       e.preventDefault();
 
       if (question.open) {
-        console.log("closing")
 
-
+        console.log("closing");
         if (isActivatedReduceMotion) {
           questionIcon.style.backgroundColor = "hsl(231, 69%, 60%)";
           questionIcon.style.transform = "rotate(0deg)";
         } else {
-
+          window.cancelAnimationFrame(animationHiddenID);
+          questionAnswer.style.height = "max-content";
           const startTimestamp = document.timeline.currentTime;
           const startPosition = computedStyleAnswer.height;
+          console.log(startPosition);
           window.requestAnimationFrame((timestamp) => {
-            animateCloseAnswer(timestamp, startTimestamp, 0.5, startPosition, questionAnswer)
+            animateCloseAnswer(timestamp, startTimestamp, 0.5, startPosition, questionAnswer, question, updateIDHiddenAnswer)
           });
         }
 
